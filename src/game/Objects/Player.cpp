@@ -16943,12 +16943,22 @@ void Player::_SaveInventory()
 
         static SqlStatementID delInv ;
         static SqlStatementID delItemInst ;
+        static SqlStatementID delItemLoot;
 
         SqlStatement stmt = CharacterDatabase.CreateStatement(delInv, "DELETE FROM `character_inventory` WHERE `item_guid` = ?");
         stmt.PExecute(item->GetGUIDLow());
 
         stmt = CharacterDatabase.CreateStatement(delItemInst, "DELETE FROM `item_instance` WHERE `guid` = ?");
         stmt.PExecute(item->GetGUIDLow());
+
+        // An opened container sold with loot still in it, such as a clam, leaves its
+        // loot rows behind otherwise, and the next login reports them as belonging to a
+        // nonexistent item. Item::SaveToDB writes them again if the item is bought back.
+        if (item->HasSavedLoot())
+        {
+            stmt = CharacterDatabase.CreateStatement(delItemLoot, "DELETE FROM `item_loot` WHERE `guid` = ?");
+            stmt.PExecute(item->GetGUIDLow());
+        }
 
         m_items[i]->FSetState(ITEM_NEW);
     }
