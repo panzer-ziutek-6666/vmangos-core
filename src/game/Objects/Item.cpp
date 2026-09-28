@@ -310,6 +310,12 @@ void Item::SaveToDB()
             stmt.addUInt8(generatedLoot); // can't use bool, SQL ERROR: Using unsupported buffer type: 16  (parameter: 13), todo, maybe.
             stmt.addUInt32(guid);
             stmt.Execute();
+
+            // A new item has no loot rows in the database, whatever its loot state says.
+            // An item sold to a vendor is saved as new again when it is bought back, and
+            // its loot rows were deleted with it, so rewrite any loot it still carries.
+            if (uState == ITEM_NEW && m_lootState == ITEM_LOOT_UNCHANGED)
+                m_lootState = ITEM_LOOT_CHANGED;
         }
         break;
         case ITEM_REMOVED:
