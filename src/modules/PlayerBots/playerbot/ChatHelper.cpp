@@ -1185,10 +1185,18 @@ std::string ChatHelper::stripUnsupportedLinks(const std::string& text)
     // The 1.12.1 client's ItemRef.lua only knows the link types the vanilla UI can
     // itself produce - clicking anything else pops "Unknown link type". The core's
     // own isValidChatMessage, written for this client, accepts "item" and
-    // "enchant", so those two pass through untouched. Everything else - quest and
-    // spell links, which arrived with 2.0, and the "found" and "entry" types the
-    // module invented - keeps its colour and its bracketed label but loses the
-    // hyperlink, so clicking it does nothing rather than throwing.
+    // "enchant", so those two pass through untouched.
+    //
+    // "quest" is kept as well. The stock client cannot open it, but pfQuest can: it
+    // hooks SetItemRef for any "quest:<id>:..." link and puts the same links into
+    // chat when a player shift-clicks a quest in the log - so on this realm a quest
+    // a player links is clickable, and one a bot links has to be too. formatQuest
+    // already writes that format, quest:<id>:<level>. A client without pfQuest gets
+    // "Unknown link type" on clicking it, exactly as it does for a player's link.
+    //
+    // Everything else - spell links, which arrived with 2.0, and the "found" and
+    // "entry" types the module invented - keeps its colour and its bracketed label
+    // but loses the hyperlink, so clicking it does nothing rather than throwing.
     //
     // This runs where a message is handed to the client. The module builds its own
     // commands out of the same formatters and reads the guids back out of them
@@ -1212,7 +1220,7 @@ std::string ChatHelper::stripUnsupportedLinks(const std::string& text)
         size_t typeEnd = text.find(':', start + 2);
         std::string type = (typeEnd == std::string::npos || typeEnd > header) ? text.substr(start + 2, header - start - 2) : text.substr(start + 2, typeEnd - start - 2);
 
-        if (type == "item" || type == "enchant")
+        if (type == "item" || type == "enchant" || type == "quest")
         {
             // Leave the link alone and carry on past its header.
             out.append(text, pos, header + 2 - pos);
