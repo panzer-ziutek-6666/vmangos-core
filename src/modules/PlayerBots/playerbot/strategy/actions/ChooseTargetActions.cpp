@@ -90,6 +90,12 @@ bool ai::AttackAnythingAction::Execute(Event& event)
 
 bool AttackEnemyPlayerAction::isUseful()
 {
+    // A flag carrier runs the flag home rather than stopping for every enemy it passes,
+    // the same rule DpsAssistAction keeps. This matters more now that the action also
+    // runs from the non-combat engine in a battleground.
+    if (bot->HasAura(23333) || bot->HasAura(23335) || bot->HasAura(34976))
+        return false;
+
     return !sPlayerbotAIConfig.IsInPvpProhibitedZone(sServerFacade.GetAreaId(bot));
 }
 

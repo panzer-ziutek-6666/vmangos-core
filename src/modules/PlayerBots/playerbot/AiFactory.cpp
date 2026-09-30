@@ -1005,7 +1005,16 @@ void AiFactory::AddDefaultNonCombatStrategies(Player* player, PlayerbotAI* const
     // Battleground switch
     if (player->InBattleGround())
     {
-        nonCombatEngine->addStrategies("racials", "nc", "default", "buff", "food", "mount", "collision", "dps assist", "attack tagged", "emote", NULL);
+        // "pvp" is what lets an idle bot notice an enemy player standing next to it and
+        // attack. Its non-combat trigger exists for exactly this, but it was only ever added
+        // to the combat engine, which an idle bot is not in - so a bot walking to an
+        // objective ignored enemies until one landed a hit it could recognise.
+        //
+        // "emote" is removed rather than added: answering another bot's emote runs at
+        // relevance 10 against 1 for "bg move to objective", so in a battleground full of
+        // bots the idle ladder spent its turns bowing and clucking instead of playing.
+        nonCombatEngine->addStrategies("racials", "nc", "default", "buff", "food", "mount", "collision", "dps assist", "attack tagged", "pvp", NULL);
+        nonCombatEngine->removeStrategy("emote");
         nonCombatEngine->removeStrategy("custom::say");
         nonCombatEngine->removeStrategy("travel");
         nonCombatEngine->removeStrategy("tfish");
