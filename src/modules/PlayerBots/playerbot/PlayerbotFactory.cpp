@@ -180,12 +180,16 @@ void PlayerbotFactory::Prepare()
     }
 }
 
-void PlayerbotFactory::Randomize(bool incremental, bool syncWithMaster)
+void PlayerbotFactory::Randomize(bool incremental, bool syncWithMaster, bool freshBot)
 {
     sLog.outDetail("Preparing to %s randomize...", (incremental ? "incremental" : "full"));
     Prepare();
 
-    if (sPlayerbotAIConfig.disableRandomLevels)
+    // Pinned levels mean an established bot is never rebuilt. A bot that has never played
+    // has nothing to lose, and one created above level 1 needs the whole build - skills,
+    // talents, gear, flight paths - or it plays its level with a starting kit. The factory
+    // level is the bot's own, so nothing below changes it.
+    if (sPlayerbotAIConfig.disableRandomLevels && !freshBot)
     {
         return;
     }
@@ -5621,7 +5625,7 @@ void PlayerbotFactory::InitGems() //WIP
 #endif
 }
 
-void PlayerbotFactory::InitTaxiNodes()
+void PlayerbotFactory::InitTaxiNodes(bool levelOnly)
 {
     auto pmo = sPerformanceMonitor.start(PERF_MON_RNDBOT, "PlayerbotFactory_TaxiNodes");
     uint32 startMap = bot->GetMapId();
@@ -5641,10 +5645,10 @@ void PlayerbotFactory::InitTaxiNodes()
         if (taxiNodeLevel.MapId == 530 && bot->GetLevel() < 58) //Don't learn nodes in outland before level 58.
             continue;
 
-        if (taxiNodeLevel.Level > bot->GetLevel() && urand(0, 20)) //Limit nodes in high level area's.
+        if (taxiNodeLevel.Level > bot->GetLevel() && (levelOnly || urand(0, 20))) //Limit nodes in high level area's.
             continue;
 
-        if (taxiNodeLevel.MapId != startMap && taxiNodeLevel.Level + 20 > bot->GetLevel() && urand(0, 4)) //Limit nodes on other map.
+        if (taxiNodeLevel.MapId != startMap && taxiNodeLevel.Level + 20 > bot->GetLevel() && (levelOnly || urand(0, 4))) //Limit nodes on other map.
             continue;
 
         bot->GetTaxi().SetTaximaskNode(taxiNodeLevel.Index);

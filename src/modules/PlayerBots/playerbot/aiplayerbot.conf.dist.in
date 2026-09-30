@@ -238,6 +238,17 @@ AiPlayerbot.DisableRandomLevels = 0
 # Recommended: 5+
 AiPlayerbot.randombotStartingLevel = 1
 
+# A second starting level for part of the newly created bots, when
+# "AiPlayerbot.DisableRandomLevels" is enabled. RandombotAltStartingLevelPercent
+# of the bots start at RandombotAltStartingLevel, the rest at
+# randombotStartingLevel. With UseFixedClassRaceCounts the share is exact for
+# every class/race combination (so for each faction too); otherwise it is rolled.
+# On its first login a bot created above level 1 gets the full build of a
+# randomized bot of that level - gear, skills, talents, flight paths. Only affects
+# bots created from now on. 0 disables it.
+# AiPlayerbot.RandombotAltStartingLevel = 0
+# AiPlayerbot.RandombotAltStartingLevelPercent = 50
+
 # Set XP rate for bots (default: 1)
 # Server XP Rate * AiPlayerbot.XPRate
 AiPlayerbot.XPRate = 3
@@ -1134,7 +1145,9 @@ AiPlayerbot.RandomBotCountChangeMaxInterval = 7200
 # they log in, split evenly over that faction's three cities - Orgrimmar, Thunder
 # Bluff and Undercity for the horde, Ironforge, Stormwind and Darnassus for the
 # alliance. 30 therefore puts 10% of each faction in each of its capitals. The
-# rest keep the normal random placement. 0 disables it.
+# rest keep the normal random placement. Applies to a bot's first login only, so
+# it sets where a bot starts rather than pulling it back on every login. 0
+# disables it.
 # AiPlayerbot.CitySpawnPercent = 0
 
 # How far random bots are teleported after death

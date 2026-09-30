@@ -1300,6 +1300,7 @@ bool UseHearthStoneAction::Execute(Event& event)
         // travel_map.csv and still tells the bot the place was not reachable.
         if (TravelTarget* travelTarget = AI_VALUE(TravelTarget*, "travel target"))
         {
+            travelTarget->SetEndReason("hearthstone " + event.getSource());
             travelTarget->SetStatus(TravelStatus::TRAVEL_STATUS_COOLDOWN);
             travelTarget->SetExpireIn(60000);
         }

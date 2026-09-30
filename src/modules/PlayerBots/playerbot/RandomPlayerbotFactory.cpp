@@ -273,7 +273,7 @@ uint8 RandomPlayerbotFactory::GetRandomRace(uint8 cls, Team team)
     return candidates[urand(0, candidates.size() - 1)];
 }
 
-bool RandomPlayerbotFactory::CreateRandomBot(uint8 cls, uint8 inputRace)
+bool RandomPlayerbotFactory::CreateRandomBot(uint8 cls, uint8 inputRace, uint32 startLevel)
 {
     std::lock_guard<std::mutex> lock(nameMutex);
     EnsureNamesInitialized();
@@ -414,9 +414,13 @@ bool RandomPlayerbotFactory::CreateRandomBot(uint8 cls, uint8 inputRace)
     // would normally apply randombotStartingLevel, is itself gated off by that
     // same config flag) - so a brand new bot would otherwise stay at whatever
     // level core character creation gave it (1) forever. GiveLevel (not
-    // SetLevel) so stats/HP/mana/talent points are set up correctly.
-    if (sPlayerbotAIConfig.disableRandomLevels && sPlayerbotAIConfig.randombotStartingLevel > 1)
-        player->GiveLevel(sPlayerbotAIConfig.randombotStartingLevel);
+    // SetLevel) so stats/HP/mana/talent points are set up correctly. The caller may
+    // ask for a different level - RandombotAltStartingLevel - for part of the bots.
+    if (!startLevel)
+        startLevel = sPlayerbotAIConfig.randombotStartingLevel;
+
+    if (sPlayerbotAIConfig.disableRandomLevels && startLevel > 1)
+        player->GiveLevel(startLevel);
 
     sObjectAccessor.AddObject(player);
 
@@ -766,7 +770,12 @@ void RandomPlayerbotFactory::CreateRandomBots()
     CharacterDatabase.PExecute("DELETE FROM ai_playerbot_random_bots WHERE ai_playerbot_random_bots.event = 'temporary'");
 
     //Loop over randombot accounts that have no characters and delete them as well, to clean up after temporary bots.
-    auto temporaryAccounts = LoginDatabase.PQuery("SELECT id FROM account WHERE username like '%s%%' and id >= %u", sPlayerbotAIConfig.randomBotAccountPrefix.c_str(), sPlayerbotAIConfig.randomBotAccountCount);
+    //Temporary bots live on accounts numbered past RandomBotAccountCount, so the test is on the
+    //number in the name. It used to compare the account id with the count, which caught every
+    //regular bot account whose id happened to be larger - all of them, on a realm with a few
+    //human accounts - and a bot wipe that emptied them left nothing to keep them alive.
+    auto temporaryAccounts = LoginDatabase.PQuery("SELECT id FROM account WHERE username like '%s%%' and CAST(SUBSTRING(username, %u) AS UNSIGNED) >= %u",
+        sPlayerbotAIConfig.randomBotAccountPrefix.c_str(), uint32(sPlayerbotAIConfig.randomBotAccountPrefix.size() + 1), sPlayerbotAIConfig.randomBotAccountCount);
 
     if (temporaryAccounts)
     {
@@ -1016,7 +1025,16 @@ void RandomPlayerbotFactory::CreateRandomBots()
 	                continue;
 #endif
 
-	            if (factory.CreateRandomBot(cls, race))
+	            // Spread the alternative level evenly through each combination's count
+	            // instead of rolling for it, so every class/race combination - and with it
+	            // each faction - gets exactly its share.
+	            uint32 startLevel = 0;
+	            uint32 const left = remaining[key];
+	            uint32 const altPercent = sPlayerbotAIConfig.randombotAltStartingLevelPercent;
+	            if (sPlayerbotAIConfig.randombotAltStartingLevel && left * altPercent / 100 != (left - 1) * altPercent / 100)
+	                startLevel = sPlayerbotAIConfig.randombotAltStartingLevel;
+
+	            if (factory.CreateRandomBot(cls, race, startLevel))
 	            {
 	                created++;
 	                botsCreated++;
@@ -1043,7 +1061,11 @@ void RandomPlayerbotFactory::CreateRandomBots()
                 {
                     uint8 rclss = factory.GetRandomClass();
                     botsCreated++;
-                    factory.CreateRandomBot(rclss);
+                    uint32 startLevel = 0;
+                    if (sPlayerbotAIConfig.randombotAltStartingLevel && urand(1, 100) <= sPlayerbotAIConfig.randombotAltStartingLevelPercent)
+                        startLevel = sPlayerbotAIConfig.randombotAltStartingLevel;
+
+                    factory.CreateRandomBot(rclss, 0, startLevel);
                     bar1.step();
                 }
             }

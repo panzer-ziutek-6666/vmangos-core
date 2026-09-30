@@ -1564,6 +1564,7 @@ void PlayerbotAI::Reset(bool full)
         RESET_AI_VALUE(LastMovement&,"last taxi");
 
         TravelTarget* target = AI_VALUE(TravelTarget*, "travel target");
+        target->SetEndReason("ai reset");
         sTravelMgr.SetNullTravelTarget(target);
         target->SetStatus(TravelStatus::TRAVEL_STATUS_EXPIRED);
         target->SetExpireIn(1000);

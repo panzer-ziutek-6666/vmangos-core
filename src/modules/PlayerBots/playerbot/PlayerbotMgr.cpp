@@ -897,6 +897,15 @@ void PlayerbotHolder::OnBotLogin(Player * const bot)
         // of that level would have. Catch it up once, on its first ever login.
         if (sPlayerbotAIConfig.disableRandomLevels && !bot->GetTotalPlayedTime())
         {
+            // Spells alone leave a bot created at level 30 in level 1 gear with level 1
+            // weapon skills and no flight paths. Give it the full build a randomized bot
+            // of that level gets - once, since this only runs before its first minute played.
+            if (bot->GetLevel() > 1)
+            {
+                PlayerbotFactory factory(bot, bot->GetLevel());
+                factory.Randomize(false, false, true);
+            }
+
             ai->DoSpecificAction("auto learn spell");
         }
     }

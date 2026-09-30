@@ -361,7 +361,7 @@ namespace ai
 
 		bool IsForced() const { return forced; }
 
-		bool IsConditionsActive(bool clear = false);
+		bool IsConditionsActive(bool clear = false, std::string* failedCondition = nullptr);
 		bool IsDestinationActive();
 
 		void CheckStatus();
@@ -396,6 +396,10 @@ namespace ai
 		//purpose; nothing else derives it from the destination.
 		void SetPurposeName(std::string const& name) { purposeName = name; }
 		std::string const& GetPurposeName() const { return purposeName; }
+
+		//Why the trip about to end is ending, for the travel_map.csv row. Set just
+		//before the status change that closes it; any status change clears it.
+		void SetEndReason(std::string const& reason) { endReason = reason; }
 	private:
 		//How long the journey ahead should reasonably take. See the definition: the
 		//distance behind it is a straight line, so the answer needs slack.
@@ -417,6 +421,7 @@ namespace ai
 		//long the trip took. startTime is reset by every status change.
 		uint32 travelStartTime = 0;
 		std::string purposeName;
+		std::string endReason;
 
 		bool forced = false;
 		bool visitor = true;

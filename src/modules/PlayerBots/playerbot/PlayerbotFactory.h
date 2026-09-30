@@ -52,7 +52,7 @@ public:
     static ObjectGuid GetRandomBot();
     static void Init();
     void Refresh();
-    void Randomize(bool incremental, bool syncWithMaster);
+    void Randomize(bool incremental, bool syncWithMaster, bool freshBot = false);
     static std::list<uint32> classQuestIds;
     static std::list<uint32> specialQuestIds;
     void InitSkills();
@@ -69,6 +69,9 @@ public:
     void InitAmmo();
     void InitPet();
     void InitPetSpells();
+    // levelOnly: learn exactly the nodes of the bot's level range, with none of the
+    // random extras - safe to call again on every level-up.
+    void InitTaxiNodes(bool levelOnly = false);
 
 private:
     void Prepare();
@@ -93,7 +96,6 @@ private:
     // class has no premade specs configured.
     bool SelectPremadeSpecNo();
     void InitQuests(std::list<uint32>& questMap);
-    void InitTaxiNodes();
     void ClearInventory();
     void ClearAllItems();
     void ResetQuests();

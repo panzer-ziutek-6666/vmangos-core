@@ -3388,6 +3388,12 @@ void RandomPlayerbotMgr::UpdateGearSpells(Player* bot)
         sLog.outBasic("Bot #%d <%s> lvl %d: UpdateGearSpells direct path (DisableRandomLevels=1)",
             bot->GetGUIDLow(), bot->GetName(), level);
         factory.UpgradeGearBest();
+
+        // A player picks up flight paths on the way through each zone; a bot almost never
+        // does - "rpg discover" ran 4 times across 120 bots in a 29 hour run. The travel
+        // graph only routes a flight leg to a node the bot knows, so without this every
+        // long trip was a walk. Learn the nodes of the bot's own level range as it grows.
+        factory.InitTaxiNodes(true);
     }
     else
     {
@@ -4009,6 +4015,11 @@ void RandomPlayerbotMgr::CitySpawnOnLogin(Player* bot)
     if (!sPlayerbotAIConfig.citySpawnPercent)
         return;
 
+    // Where a bot starts, not where it is kept. Applied on every login it pulled a bot
+    // back to its capital each time it logged in, undoing whatever journey it was on.
+    if (bot->GetTotalPlayedTime())
+        return;
+
     uint32 const guid = bot->GetGUIDLow();
     if (guid % 100 >= sPlayerbotAIConfig.citySpawnPercent)
         return;
@@ -4490,6 +4501,7 @@ void RandomPlayerbotMgr::RandomTeleportForRpg(Player* bot, bool activeOnly)
         AiObjectContext* context = GetBotAI(bot)->GetAiObjectContext();
         TravelTarget* travelTarget = AI_VALUE(TravelTarget*, "travel target");
 
+        travelTarget->SetEndReason("random teleport");
         sTravelMgr.SetNullTravelTarget(travelTarget);
         travelTarget->SetStatus(TravelStatus::TRAVEL_STATUS_COOLDOWN);
         travelTarget->SetExpireIn(10 * MINUTE * IN_MILLISECONDS);
