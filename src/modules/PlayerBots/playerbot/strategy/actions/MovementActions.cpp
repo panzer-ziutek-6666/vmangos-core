@@ -328,6 +328,8 @@ bool MovementAction::UseTaxi(PlayerbotAI* ai, uint32 entry, bool needNpc)
 
     if (!goTaxi)
         bot->SetMoney(botMoney);
+    else
+        sPlayerbotAIConfig.logEvent(ai, "TravelTaxi", std::to_string(tEntry->from) + "->" + std::to_string(tEntry->to), std::to_string(entry));
 
     return goTaxi;
 }

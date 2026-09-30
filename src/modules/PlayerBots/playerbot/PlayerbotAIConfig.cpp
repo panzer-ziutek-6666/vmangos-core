@@ -601,6 +601,8 @@ bool PlayerbotAIConfig::Initialize()
     RandombotsWalkingRPGInDoors = config.GetBoolDefault("AiPlayerbot.RandombotsWalkingRPG.InDoors", false);
     minEnchantingBotLevel = config.GetIntDefault("AiPlayerbot.minEnchantingBotLevel", 60);
     randombotStartingLevel = config.GetIntDefault("AiPlayerbot.randombotStartingLevel", 5);
+    randombotAltStartingLevel = config.GetIntDefault("AiPlayerbot.RandombotAltStartingLevel", 0);
+    randombotAltStartingLevelPercent = std::min(config.GetIntDefault("AiPlayerbot.RandombotAltStartingLevelPercent", 50), 100);
     gearscorecheck = config.GetBoolDefault("AiPlayerbot.GearScoreCheck", false);
     levelCheck = config.GetIntDefault("AiPlayerbot.LevelCheck", 30);
 	randomBotPreQuests = config.GetBoolDefault("AiPlayerbot.PreQuests", true);

@@ -277,6 +277,8 @@ public:
     uint32 diffEmpty;
     uint32 minEnchantingBotLevel;
     uint32 randombotStartingLevel;
+    uint32 randombotAltStartingLevel;
+    uint32 randombotAltStartingLevelPercent;
     bool randomBotSayWithoutMaster;
     bool randomBotInvitePlayer;
     bool randomBotGroupNearby;
