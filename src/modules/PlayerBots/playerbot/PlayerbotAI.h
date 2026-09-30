@@ -753,6 +753,9 @@ public:
     void StopMoving();
     bool IsInRealGuild();
     void SetPlayerFriend(bool isFriend) {isPlayerFriend = isFriend;}
+    // A bot created above level 1 still needs its full factory build. Asked for at login,
+    // done on the first update that finds the bot in the world - see UpdateAI.
+    void SetNeedsFreshBuild() { needsFreshBuild = true; }
     bool IsPlayerFriend() { return isPlayerFriend; }
     bool HasPlayerRelation();
 
@@ -867,6 +870,7 @@ protected:
     time_t strandedCheckTimer = 0;
     uint32 faceTargetUpdateDelay;
     bool isPlayerFriend = false;
+    bool needsFreshBuild = false;
     bool isMovingToTransport = false;
     bool shouldLogOut = false;
     // Quest ids this bot dropped, with the time it happened. See RecentlyDroppedQuest().

@@ -426,6 +426,20 @@ void PlayerbotAI::UpdateAI(uint32 elapsed, bool minimal)
         }
     }
 
+    // The build cannot run at login: a bot placed in a capital by CitySpawnOnLogin is
+    // already mid-teleport there, out of the world with no map, and the pet setup inside
+    // the build asserts on GetMap. That crashed the server on the first capital bot.
+    if (needsFreshBuild && bot->IsInWorld() && !bot->IsBeingTeleported())
+    {
+        needsFreshBuild = false;
+        PlayerbotFactory factory(bot, bot->GetLevel());
+        factory.Randomize(false, false, true);
+
+        // The build clears the bags, and the hearthstone login handed out went with them.
+        if (!bot->HasItemCount(6948, 1))
+            bot->StoreNewItemInBestSlots(6948, 1);
+    }
+
     // Leontiesh - fix movement desync
     bool botMoving = false;
     if (!bot->IsStopped() || bot->GetMotionMaster()->GetCurrentMovementGeneratorType() != IDLE_MOTION_TYPE) 
