@@ -470,6 +470,17 @@ bool AttackersValue::InCombat(Unit* target, Player* player, bool checkPullTarget
         }
     }
 
+    // A player keeps no threat list, and GetVictim is only set by melee auto-attack, so the
+    // two tests above never see an enemy player who fights with spells or a bow. A mage or
+    // hunter shooting a bot was therefore not an attacker: the bot stayed in the non-combat
+    // engine and stood there, doing idle emotes, while it died. Two players are fighting
+    // when both are in combat and either one has the other selected.
+    if (!inCombat && target->GetTypeId() == TYPEID_PLAYER && target->IsInCombat() && player->IsInCombat())
+    {
+        inCombat = target->GetTargetGuid() == player->GetObjectGuid() ||
+                   player->GetTargetGuid() == target->GetObjectGuid();
+    }
+
     // A target the bot has merely decided to attack is not fighting it yet, and saying
     // otherwise without a time limit is what let one stale decision hold a bot in combat
     // state for hours. AttackAnythingAction sets "attack target" the moment it starts a
