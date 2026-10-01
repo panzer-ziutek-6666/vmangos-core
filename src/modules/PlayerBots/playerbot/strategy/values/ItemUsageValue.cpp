@@ -899,8 +899,11 @@ bool ItemUsageValue::IsNeededForQuest(Player* player, uint32 itemId, bool ignore
         if (!quest)
             continue;
 
+        // A completed quest still in the log needs its items until it is turned in: without
+        // them it falls back to incomplete. Only the keep check asks about those; the
+        // inventory check would report them as surplus.
         QuestStatusData& qData = player->GetQuestStatusMap()[quest->GetQuestId()];
-        if (qData.m_status != QUEST_STATUS_INCOMPLETE)
+        if (qData.m_status != QUEST_STATUS_INCOMPLETE && !(ignoreInventory && qData.m_status == QUEST_STATUS_COMPLETE))
             continue;
 
         for (int i = 0; i < 4; i++)
