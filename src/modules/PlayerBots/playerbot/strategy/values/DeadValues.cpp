@@ -147,8 +147,13 @@ WorldSafeLocsEntry const* GraveyardValue::GetAnotherAppropriateClosestGraveyard(
         if (!graveyardAreaEntry)
             continue;
 
-        //skip higher level zones
-        if (bot->GetLevel() + 5 < (uint32)graveyardAreaEntry->AreaLevel)
+        // Skip higher level zones. Use the module's computed level, not AreaLevel from
+        // area_template: every zone row there carries area_level 0, so this check never
+        // rejected anything. After three deaths in Hillsbrad, level 13 Horde bots were sent to
+        // graveyard 829 at the Alterac Valley mouth. It is neutral, its zone is level 32, and
+        // it stands beside the level 61 Stormpike Battleguards, who killed each bot within five
+        // seconds of it reviving.
+        if ((int32)bot->GetLevel() + 5 < sTravelMgr.GetAreaLevel(graveyardZoneId))
             continue;
 
         float dist = WorldPosition(corpse).sqDistance(graveyardCoreEntry);
