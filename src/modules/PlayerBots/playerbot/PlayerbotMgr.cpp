@@ -181,6 +181,15 @@ void PlayerbotHolder::HandlePlayerBotLoginCallback(std::unique_ptr<QueryResult> 
     PendingBotLogin info = it->second;
     m_pendingBotLogins.erase(it);
 
+    // A holder still queued when the world stops is run by SqlResultQueue::CancelAll from
+    // Database::StopServer, after MapManager::UnloadAll. Logging the bot in there creates its
+    // map again, and that map outlives the zone scripts it points at until static destruction.
+    if (World::IsStopped())
+    {
+        delete holder;
+        return;
+    }
+
     LoginQueryHolder* lqh = static_cast<LoginQueryHolder*>(holder);
 
     // Already loaded? (race protection)
