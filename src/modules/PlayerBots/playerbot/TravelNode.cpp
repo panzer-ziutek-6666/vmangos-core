@@ -1069,7 +1069,12 @@ bool TravelPath::UpcommingSpecialMovement(WorldPosition startPos, float maxDist,
     //We are using a hearthstone
     if (nextP->type == PathNodeType::NODE_TELEPORT)
     {
-        cutTo(*nextP, false);
+        // A teleport is a departure and an arrival point. getNextPoint stops on the
+        // departure (shouldMoveToNextPoint), so here nextP is the arrival, and cutting to it
+        // dropped the departure: HandleSpecialMovement then saw the arrival as its current
+        // point, which it has no case for, and the move failed every tick (2614 of 10040
+        // move-failed rows on 2026-10-02). Keep the departure so the next point is the spell.
+        cutTo(startP->type == PathNodeType::NODE_TELEPORT ? *startP : *nextP, false);
         return true;
     }
 
