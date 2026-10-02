@@ -199,6 +199,10 @@ bool ShipTransport::TeleportTransport(uint32 newMapid, float x, float y, float z
     Relocate(x, y, z, o);
     GetMap()->Add<ShipTransport>(this);
 
+    // AddToWorld inserts the collision model where it was before the jump, and only the next
+    // movement update moves it. Until then nothing stands under the passengers just relocated.
+    UpdateModelPosition();
+
     return newMap != oldMap;
 }
 
