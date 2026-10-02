@@ -4779,10 +4779,10 @@ void Player::BuildPlayerRepop()
     Corpse* corpse;
     if (corpse = GetCorpse())
     {
-        sLog.Out(LOG_BASIC, LOG_LVL_MINIMAL, "[Player/Crash] 'BuildPlayerRepop' %s (%u) {%.2f %.2f %.2f %u,%u} a deja un corps {%.2f %.2f %.2f %u,%u}",
+        sLog.Out(LOG_BASIC, LOG_LVL_MINIMAL, "[Player/Crash] 'BuildPlayerRepop' %s (%u) {%.2f %.2f %.2f %u,%u} already has a corpse {%.2f %.2f %.2f %u,%u}",
                         GetName(), GetGUIDLow(), GetPositionX(), GetPositionY(), GetPositionZ(), GetMapId(), GetInstanceId(),
                         corpse->GetPositionX(), corpse->GetPositionY(), corpse->GetPositionZ(), corpse->GetMapId(), corpse->GetInstanceId());
-        // La fonction s'en sort tres bien meme si y'a deja un corpse.
+        // The function copes fine even when there is already a corpse.
         //return;
     }
 
