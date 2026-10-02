@@ -1289,8 +1289,44 @@ bool MovementAction::MoveTo2(const WorldPosition& endPos, bool idle, bool react,
     if (specialMovement)
         return HandleSpecialMovement(movePath);
     
-    if (bot->GetTransport()) //Transports needed to be handled before now.
+    if (GenericTransport* transport = bot->GetTransport()) //Transports needed to be handled before now.
+    {
+        // A path that still rides the transport was handled above, so a bot that gets here is
+        // aboard with a path that no longer contains it: a fight on the landing or a new
+        // destination replaced the path that boarded it. Nothing ever took such a bot off an
+        // elevator again. Every move failed with "on transport" while the platform carried it
+        // up and down, and the Addled Lepers at the Gnomeregan Vator landing killed it there,
+        // because it could not chase or flee. In the 2026-10-02 run, 1034 of the 2542 move
+        // failures came from that one shaft, from bots of level 28 to 58, and they caused 15 of
+        // the 18 repops that found a corpse already present. A ship carries its passengers to a
+        // dock, so waiting aboard is still right there. An elevator stops at a landing, and the
+        // landing has a travel node next to it. Step off onto that node, but only while the
+        // platform stands within reach of it. Mid-shaft there is no node in range, so the bot
+        // keeps riding to the next stop.
+        if (dynamic_cast<ElevatorTransport*>(transport))
+        {
+            for (TravelNode* node : sTravelNodeMap.getNodes(startPos, 15.0f))
+            {
+                // The shaft's own nodes sit on the platform's path; stepping onto one is
+                // stepping into the shaft.
+                bool const onShaft = std::any_of(node->getLinks()->begin(), node->getLinks()->end(), [](auto const& link)
+                {
+                    return link.second->getPathType() == TravelNodePathType::transport && link.second->getPathObject();
+                });
+
+                if (onShaft)
+                    continue;
+
+                WorldPosition const landing = *node->getPosition();
+                transport->RemovePassenger(bot);
+                bot->NearTeleportTo(landing.getX(), landing.getY(), landing.getZ(), bot->GetOrientation());
+                lastMove.clear();
+                return true;
+            }
+        }
+
         return false;
+    }
 
     if (!movePath.empty())
     {
