@@ -516,7 +516,10 @@ bool MovementAction::UseTransport(PlayerbotAI* ai, uint32 entry, WorldPosition d
         if (transportName.empty())
             transportName = data->name;
 
-        if (dockPosition.mapId == bot->GetMapId() && dockPosition.sqDistance2d(transport) < INTERACTION_DISTANCE * INTERACTION_DISTANCE)
+        // A caller that is boarding passes no exit (WorldPosition() is map 0, 0,0,0). A bot
+        // already aboard at its boarding dock used to be "moved off" to that empty exit and
+        // teleported to the world origin; with no exit there is nothing to get off to yet.
+        if (exitPosition && dockPosition.mapId == bot->GetMapId() && dockPosition.sqDistance2d(transport) < INTERACTION_DISTANCE * INTERACTION_DISTANCE)
         {
             MoveOffTransport(ai, exitPosition, doTeleport);
             ai->TellDebug(ai->GetMaster(), "Leaving transport " + transportName, "debug move");
@@ -775,7 +778,7 @@ bool MovementAction::WaitForTransport()
 
     TravelPath path = lastMove.lastPath;
 
-    if(!path.UpcommingSpecialMovement(bot, 0.0f, bot->GetTransport()))
+    if(!path.UpcommingSpecialMovement(bot, 0.0f, bot->GetTransport()) || path.getPath().size() < 2)
         return false;
 
     PathNodePoint dockPoint = path.getPath().front();
@@ -935,7 +938,7 @@ bool MovementAction::HandleSpecialMovement(TravelPath& path)
         }
         else
         {
-            if (!bot->GetTransport())
+            if (!bot->GetTransport() && nextPoint.point)
                 return bot->TeleportTo(nextPoint.point.getMapId(), nextPoint.point.getX(), nextPoint.point.getY(), nextPoint.point.getZ(), nextPoint.point.getO(), 0) ? true : false;
 
             lastTransportEntry = nextPoint.entry;
