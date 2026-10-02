@@ -1910,6 +1910,7 @@ TravelPath TravelNodeMap::getFullPath(WorldPosition startPos, WorldPosition endP
     if (route.isEmpty())
     {
         route.cleanTempNodes();
+        sTravelNodeMap.m_nMapMtx.unlock_shared();
         return movePath;
     }
 
