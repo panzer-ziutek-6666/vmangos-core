@@ -108,7 +108,7 @@ ZoneScript* ZoneScriptMgr::GetZoneScriptToZoneId(uint32 zoneid)
     if (itr == m_ZoneScriptsMap.end())
     {
         // no handle for this zone, return
-        //sLog.Out(LOG_BASIC, LOG_LVL_DETAIL, "Pas de script pour la zone %u", zoneid);
+        //sLog.Out(LOG_BASIC, LOG_LVL_DETAIL, "No script for zone %u", zoneid);
         return nullptr;
     }
     return itr->second;
