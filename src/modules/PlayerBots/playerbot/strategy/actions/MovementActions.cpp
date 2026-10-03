@@ -550,7 +550,14 @@ bool MovementAction::UseTransport(PlayerbotAI* ai, uint32 entry, WorldPosition d
     {
         float distance = dockPosition.sqDistance2d(trans);
 
-        if (minDist && distance > minDist)
+        // This was `minDist && distance > minDist`, which reads a candidate at distance zero
+        // as "nothing chosen yet" and lets the next one in the set replace it. The Vator
+        // travel nodes sit exactly on the Vator's x and y, so the Vator scored zero and the
+        // Plunger beside it - a 12 yard piston above the Gnomeregan shaft that goes nowhere -
+        // won instead: 2107 Plunger boardings against 136 Vator ones in an 18 hour run that
+        // ended 2026-10-03. Bots stood on the piston, every move failed "on transport", and
+        // the Addled Lepers at the landing killed them there, 153 times.
+        if (transport && distance >= minDist)
             continue;
 
         transport = trans;
