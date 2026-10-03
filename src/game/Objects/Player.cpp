@@ -17022,7 +17022,12 @@ void Player::_SaveInventory()
         {
             case ITEM_NEW:
             {
-                SqlStatement stmt = CharacterDatabase.CreateStatement(insertInventory, "INSERT INTO `character_inventory` (`guid`, `bag`, `slot`, `item_guid`, `item_id`) VALUES (?, ?, ?, ?, ?)");
+                // REPLACE, like the item_instance write in Item::SaveToDB. An item can be new in
+                // memory while its row still exists, and a plain INSERT then fails on the key,
+                // which rolls back the whole character save it belongs to. Seen 2026-10-03: a
+                // Conjured Water stack saved since 06:56 failed this insert at 09:38 and took the
+                // rest of that save with it.
+                SqlStatement stmt = CharacterDatabase.CreateStatement(insertInventory, "REPLACE INTO `character_inventory` (`guid`, `bag`, `slot`, `item_guid`, `item_id`) VALUES (?, ?, ?, ?, ?)");
                 stmt.addUInt32(GetGUIDLow());
                 stmt.addUInt32(bagGuid);
                 stmt.addUInt8(item->GetSlot());
