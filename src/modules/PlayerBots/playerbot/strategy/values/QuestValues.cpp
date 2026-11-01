@@ -479,8 +479,13 @@ uint32 DialogStatusValue::getDialogStatus(Player* bot, int32 questgiver, uint32 
 
 		QuestStatus status = bot->GetQuestStatus(itr->second);
 
+		// The client marks an auto-complete quest the player could take as ready, items or not
+		// (QuestHandler, finisher markings), but a bot can only hand one in that it can be
+		// rewarded for. A Donation of Wool and Distracting Jarven need items the bots never
+		// carried, and counting them sent bots to those givers to fail 6595 hand-ins in a
+		// 33 hour run.
 		if ((status == QUEST_STATUS_COMPLETE && !bot->GetQuestRewardStatus(itr->second)) ||
-			(pQuest->IsAutoComplete() && bot->CanTakeQuest(pQuest, false)))
+			(pQuest->IsAutoComplete() && bot->CanTakeQuest(pQuest, false) && bot->CanRewardQuest(pQuest, false)))
 		{
 			if (pQuest->IsAutoComplete() && pQuest->IsRepeatable())
 			{
