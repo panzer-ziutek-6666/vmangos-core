@@ -118,7 +118,21 @@ int32 MoveSplineInit::Launch()
         moveFlags &= ~MOVEFLAG_ONTRANSPORT;
 
     if (args.velocity == 0.f)
+    {
         args.velocity = unit.GetSpeed(SelectSpeedType(moveFlags));
+
+        // A slow of -100% or more leaves the unit no speed at all: Slow (246) is -150% in the
+        // 1.12.1 data, and UpdateSpeed floors the result at zero. Such a unit cannot move, as
+        // under a root, so a move has nothing to launch and is not an error. A stop covers no
+        // distance, so its speed does not matter, and it must still reach the clients.
+        if (args.velocity <= 0.f)
+        {
+            if (!args.flags.done)
+                return 0;
+
+            args.velocity = baseMoveSpeed[MOVE_RUN];
+        }
+    }
 
     if (!args.Validate(&unit))
         return 0;
