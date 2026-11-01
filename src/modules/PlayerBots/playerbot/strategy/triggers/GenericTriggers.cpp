@@ -926,23 +926,39 @@ GameObject* InEnvironmentalHazardTrigger::FindDamagingTrap(Player* bot, float x,
         if (go->GetGoType() != GAMEOBJECT_TYPE_TRAP || go->GetOwnerGuid())
             continue;
 
-        SpellEntry const* spell = sServerFacade.LookupSpellInfo(go->GetGOInfo()->trap.spellId);
+        // A trap with a faction only hurts that faction's enemies; a wild one (no faction) hurts
+        // everyone. Alterac Valley's 175 landmines are Frostwolf and Stormpike traps, and
+        // counting them for their own side held bots in place for hours: one Horde bot stood
+        // beside a Frostwolf mine for seven hours of a 33 hour run, the hazard reaction
+        // refusing every way out.
+        if (!go->IsHostileTo(bot))
+            continue;
+
+        GameObjectInfo const* info = go->GetGOInfo();
+        SpellEntry const* spell = sServerFacade.LookupSpellInfo(info->trap.spellId);
         if (!spell)
             continue;
 
-        float trapReach = float(go->GetGOInfo()->trap.radius);
         bool damaging = false;
         for (int i = 0; i < MAX_EFFECT_INDEX; ++i)
-        {
-            if (spell->Effect[i] != SPELL_EFFECT_ENVIRONMENTAL_DAMAGE && spell->Effect[i] != SPELL_EFFECT_SCHOOL_DAMAGE)
-                continue;
-
-            damaging = true;
-            trapReach = std::max(trapReach, Spells::GetSpellRadius(sSpellRadiusStore.LookupEntry(spell->EffectRadiusIndex[i])));
-        }
+            damaging |= spell->Effect[i] == SPELL_EFFECT_ENVIRONMENTAL_DAMAGE || spell->Effect[i] == SPELL_EFFECT_SCHOOL_DAMAGE;
 
         if (!damaging)
             continue;
+
+        // What matters is the radius that springs the trap, the one GameObject::Update searches,
+        // not the radius of the spell it casts: the landmine's blast reaches 15 yards, but it
+        // only goes off for a player within 4. A trap without a radius springs at 3 yards when
+        // its cooldown field is 3 (battleground traps) and is never sprung by walking into it
+        // otherwise.
+        float trapReach = float(info->trap.radius);
+        if (!trapReach)
+        {
+            if (info->trap.cooldown != 3)
+                continue;
+
+            trapReach = 3.0f;
+        }
 
         // The core springs the trap on a player whose edge is within the radius of the trap's
         // edge (GameObject::Update, AnyPlayerInObjectRangeCheck), and GetDistance already takes
