@@ -40,6 +40,16 @@
 
 void WorldSession::HandleMoveWorldportAckOpcode(NullClientPacket const& /*packet*/)
 {
+    // The ack answers SMSG_NEW_WORLD. Going into a dungeon instance that does not
+    // exist yet, that packet is sent by MapManager::CreateNewInstancesForPlayers
+    // only once it has created the map, checked CanEnter and bound the player or
+    // group. An ack that arrives first would create the instance below with none
+    // of that, and the scheduled creation then finds the player already landed.
+    // The playerbots module acks a far teleport as soon as it sees one, so it
+    // wins that race whenever its update runs before the next map update.
+    if (_player && sMapMgr.IsInstanceCreationScheduledFor(_player))
+        return;
+
     HandleMoveWorldportAck();
 }
 

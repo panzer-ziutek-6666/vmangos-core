@@ -95,6 +95,7 @@ class MapManager : public MaNGOS::Singleton<MapManager, MaNGOS::ClassLevelLockab
         Map* FindMap(uint32 mapid, uint32 instanceId = 0) const;
         void ScheduleNewWorldOnFarTeleport(Player* pPlayer);
         void CancelInstanceCreationForPlayer(Player* pPlayer) { m_scheduledNewInstancesForPlayers.erase(pPlayer); }
+        bool IsInstanceCreationScheduledFor(Player* pPlayer) const { return m_scheduledNewInstancesForPlayers.count(pPlayer) != 0; }
 
         void UpdateGridState(grid_state_t state, Map& map, NGridType& ngrid, GridInfo& ginfo, uint32 const& x, uint32 const& y, uint32 const& t_diff);
 
