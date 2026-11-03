@@ -592,7 +592,6 @@ bool RpgUseTrigger::IsActive()
     case GAMEOBJECT_TYPE_CHAIR:                         // 7 Sitting: Wooden bench, chairs
     case GAMEOBJECT_TYPE_SPELL_FOCUS:                   // 8
     case GAMEOBJECT_TYPE_GOOBER:                        // 10
-    case GAMEOBJECT_TYPE_CAMERA:                        // 13
     case GAMEOBJECT_TYPE_FISHINGNODE:                   // 17 fishing bobber
     case GAMEOBJECT_TYPE_SUMMONING_RITUAL:              // 18
 #ifndef MANGOSBOT_TWO
