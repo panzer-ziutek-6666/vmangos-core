@@ -6238,7 +6238,12 @@ void Player::SendCinematicStart(uint32 CinematicSequenceId)
     packet->cinematicSequenceId = CinematicSequenceId;
     GetSession()->SendPacket(std::move(packet));
 
-    CinematicStart(CinematicSequenceId);
+    // Only a client ever ends a cinematic, and while one runs IsTargetable()
+    // refuses every hostile target. A bot that keeps triggering one - using a
+    // camera object such as the Eye of Azora every few seconds - never reaches
+    // the CINEMATIC_MAX_DURATION cutoff and stays immune to attack throughout.
+    if (!GetSession()->IsBotSession())
+        CinematicStart(CinematicSequenceId);
 }
 
 bool Player::IsOutdoorOnTransport() const
