@@ -25,6 +25,7 @@
 
 #include "Common.h"
 #include "Database/DatabaseEnv.h"
+#include "Database/SqlOutcome.h"
 #include "RealmList.h"
 #include "ClientPatchCache.h"
 
@@ -338,6 +339,7 @@ extern int main(int argc, char** argv)
     // Wait for termination signal
     while (!stopEvent)
     {
+        if (SqlOutcome::Failed()) { stopEvent = true; break; }
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
         constexpr uint32 kThrottleCleanupIntervalSecs = 60;
@@ -375,7 +377,7 @@ extern int main(int argc, char** argv)
     UnhookSignals();
 
     sLog.Out(LOG_BASIC, LOG_LVL_BASIC, "Halting process...");
-    return 0;
+    return SqlOutcome::CoreExit(0);
 }
 
 // Handle termination signals

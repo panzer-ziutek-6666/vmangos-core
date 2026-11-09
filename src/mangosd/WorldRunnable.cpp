@@ -34,6 +34,7 @@
 #include "TimePeriod.h"
 
 #include "Database/DatabaseEnv.h"
+#include "Database/SqlOutcome.h"
 
 // Target server framerate is 1000/WORLD_SLEEP_CONST
 #define WORLD_SLEEP_CONST 50
@@ -65,6 +66,7 @@ void WorldRunnable::operator()()
     // While we have not World::m_stopEvent, update the world
     while (!World::IsStopped())
     {
+        if (SqlOutcome::Failed()) { World::StopNow(ERROR_EXIT_CODE); break; }
         ++World::m_worldLoopCounter;
 
         currTime = WorldTimer::getMSTime();

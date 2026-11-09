@@ -27,9 +27,17 @@
 #include "Policies/SingletonImp.h"
 #include "Platform/Define.h"
 #include "DatabaseEnv.h"
+#include "Database/SqlOutcome.h"
 #include "Timer.h"
 
 size_t DatabaseMysql::db_count = 0;
+
+namespace {
+bool IsHandledStatementError(uint32 error)
+{
+    return error == ER_DUP_ENTRY || error == ER_LOCK_DEADLOCK || error == ER_WRONG_VALUE_COUNT;
+}
+}
 
 void DatabaseMysql::ThreadStart()
 {
@@ -154,10 +162,13 @@ bool MySQLConnection::Reconnect()
     return false; // Failed to reconnect
 }
 
-bool MySQLConnection::HandleMySQLError(uint32 errNo)
+bool MySQLConnection::HandleMySQLError(uint32 errNo, bool allowReconnect)
 {
     switch (errNo)
     {
+        case ER_SERVER_SHUTDOWN:
+            SqlOutcome::MarkFailure();
+            return false; // Never reconnect/replay an unconfirmed operation.
         case CR_SERVER_GONE_ERROR:
         case CR_SERVER_LOST:
             #if !(MARIADB_VERSION_ID >= 100200)
@@ -165,8 +176,14 @@ bool MySQLConnection::HandleMySQLError(uint32 errNo)
             #endif
         case CR_SERVER_LOST_EXTENDED:
         {
+            // Classification is required even on the last read attempt and on
+            // writes. A write may already have taken effect: never replay it.
+            if (!allowReconnect) { SqlOutcome::MarkFailure(); return false; }
             mysql_close(mMysql);
-            return Reconnect();
+            mMysql = nullptr;
+            bool const connected = Reconnect();
+            if (!connected) SqlOutcome::MarkFailure();
+            return connected;
         }
 
         case ER_LOCK_DEADLOCK:
@@ -193,7 +210,7 @@ bool MySQLConnection::HandleMySQLError(uint32 errNo)
     }
 }
 
-bool MySQLConnection::_Query(std::string const& sql, MYSQL_RES** pResult, MYSQL_FIELD** pFields, uint64* pRowCount, uint32* pFieldCount)
+bool MySQLConnection::_Query(std::string const& sql, MYSQL_RES** pResult, MYSQL_FIELD** pFields, uint64* pRowCount, uint32* pFieldCount, bool retried)
 {
     if (!mMysql && !Reconnect())
         return false;
@@ -207,8 +224,9 @@ bool MySQLConnection::_Query(std::string const& sql, MYSQL_RES** pResult, MYSQL_
         sLog.Out(LOG_DBERROR, LOG_LVL_MINIMAL, "SQL: %s", sql.c_str());
         sLog.Out(LOG_DBERROR, LOG_LVL_MINIMAL, "[%u] %s", lErrno, mysql_error(mMysql));
 
-        if (HandleMySQLError(lErrno)) // If error is handled, just try again
-            return _Query(sql, pResult, pFields, pRowCount, pFieldCount);
+        bool const reconnectSucceeded = HandleMySQLError(lErrno, !retried);
+        if (!retried && reconnectSucceeded) // Classification above is unconditional.
+            return _Query(sql, pResult, pFields, pRowCount, pFieldCount, true);
 
         return false;
     }
@@ -272,6 +290,7 @@ std::unique_ptr<QueryNamedResult> MySQLConnection::QueryNamed(std::string const&
 
 bool MySQLConnection::Execute(std::string const& sql)
 {
+    if (SqlOutcome::Failed()) return false;
     if (!mMysql)
         return false;
 
@@ -284,8 +303,8 @@ bool MySQLConnection::Execute(std::string const& sql)
         sLog.Out(LOG_DBERROR, LOG_LVL_MINIMAL, "SQL: %s", sql.c_str());
         sLog.Out(LOG_DBERROR, LOG_LVL_MINIMAL, "[%u] %s", lErrno, mysql_error(mMysql));
 
-        if (HandleMySQLError(lErrno)) // If error is handled, just try again
-            return Execute(sql);
+        HandleMySQLError(lErrno, false);
+        // A failed write is unconfirmed. No automatic reconnect or replay.
         return false;
     }
     else
@@ -298,9 +317,11 @@ bool MySQLConnection::Execute(std::string const& sql)
 
 bool MySQLConnection::_TransactionCmd(std::string const& sql)
 {
+    if (SqlOutcome::Failed() && sql != "ROLLBACK") return false;
     if (mysql_query(mMysql, sql.c_str()))
     {
         sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL: %s", sql.c_str());
+        if (!IsHandledStatementError(mysql_errno(mMysql))) SqlOutcome::MarkFailure();
         sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL ERROR: %s", mysql_error(mMysql));
         return false;
     }
@@ -492,6 +513,7 @@ bool MySqlPreparedStatement::execute()
 
     if(mysql_stmt_execute(m_stmt))
     {
+        if (!IsHandledStatementError(mysql_stmt_errno(m_stmt))) SqlOutcome::MarkFailure();
         sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL: cannot execute '%s'", m_szFmt.c_str());
         sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL ERROR: %s", mysql_stmt_error(m_stmt));
         return false;

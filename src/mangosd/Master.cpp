@@ -26,6 +26,7 @@
 #include <memory>
 
 #include "Common.h"
+#include "Database/SqlOutcome.h"
 #include "Master.h"
 #include "WorldSocket.h"
 #include "WorldRunnable.h"
@@ -409,7 +410,11 @@ int Master::Run()
     }
 
     // Exit the process with specified return value
-    return World::GetExitCode();
+    if (SqlOutcome::Failed())
+        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_OUTCOME_FAILED: failedOperations=%llu abandonedOperations=%llu; unconfirmed writes must not be replayed automatically.",
+            static_cast<unsigned long long>(SqlOutcome::Get().failedOperations.load()),
+            static_cast<unsigned long long>(SqlOutcome::Get().abandonedOperations.load()));
+    return SqlOutcome::CoreExit(World::GetExitCode());
 }
 
 bool StartDB(const std::string& name, DatabaseType& database, char const** migrations)

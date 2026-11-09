@@ -53,7 +53,7 @@ bool SqlTransaction::Execute(SqlConnection* conn)
 
     LOCK_DB_CONN(conn);
 
-    conn->BeginTransaction();
+    if (!conn->BeginTransaction()) return false;
 
     int const nItems = m_queue.size();
     for (int i = 0; i < nItems; ++i)
@@ -67,7 +67,9 @@ bool SqlTransaction::Execute(SqlConnection* conn)
         }
     }
 
-    return conn->CommitTransaction();
+    if (conn->CommitTransaction()) return true;
+    conn->RollbackTransaction(); // Best effort only: a failed COMMIT remains unconfirmed.
+    return false;
 }
 
 SqlPreparedRequest::SqlPreparedRequest(int nIndex, SqlStmtParameters* arg) : m_nIndex(nIndex), m_param(arg)

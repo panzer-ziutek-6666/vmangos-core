@@ -23,7 +23,10 @@
 
 #include "Common.h"
 #include "Log.h"
+#include "Database/SqlOutcome.h"
+#include <exception>
 #include <cstring>
+#include <mutex>
 #include <Windows.h>
 #include <winsvc.h>
 
@@ -37,6 +40,11 @@ extern volatile int m_ServiceStatus;
 SERVICE_STATUS serviceStatus;
 
 SERVICE_STATUS_HANDLE serviceStatusHandle = 0;
+
+// Serialize status reports and preserve an explicit SCM stop over a pending restart.
+static std::mutex serviceStatusMutex;
+static bool serviceStopRequested = false;
+static int serviceMainResult = 0;
 
 typedef BOOL (WINAPI *CSD_T)(SC_HANDLE, DWORD, LPCVOID);
 
@@ -162,6 +170,9 @@ bool WinServiceUninstall()
 
 void WINAPI ServiceControlHandler(DWORD controlCode)
 {
+    std::lock_guard<std::mutex> lock(serviceStatusMutex);
+    if (serviceStatus.dwCurrentState == SERVICE_STOPPED)
+        return;
     switch (controlCode)
     {
         case SERVICE_CONTROL_INTERROGATE:
@@ -169,6 +180,7 @@ void WINAPI ServiceControlHandler(DWORD controlCode)
 
         case SERVICE_CONTROL_SHUTDOWN:
         case SERVICE_CONTROL_STOP:
+            serviceStopRequested = true;
             serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
             SetServiceStatus(serviceStatusHandle, &serviceStatus);
 
@@ -204,7 +216,8 @@ void WINAPI ServiceMain(DWORD argc, char* argv[])
     // initialise service status
     serviceStatus.dwServiceType = SERVICE_WIN32;
     serviceStatus.dwCurrentState = SERVICE_START_PENDING;
-    serviceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_PAUSE_CONTINUE;
+    serviceStopRequested = false;
+    serviceStatus.dwControlsAccepted = 0;
     serviceStatus.dwWin32ExitCode = NO_ERROR;
     serviceStatus.dwServiceSpecificExitCode = NO_ERROR;
     serviceStatus.dwCheckPoint = 0;
@@ -233,28 +246,43 @@ void WINAPI ServiceMain(DWORD argc, char* argv[])
         // do initialisation here
         SetCurrentDirectory(path);
 
-        // running
-        serviceStatus.dwControlsAccepted |= (SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN);
-        serviceStatus.dwCurrentState = SERVICE_RUNNING;
-        SetServiceStatus(serviceStatusHandle, &serviceStatus);
+        // Publish running state only after initializing the control state.
+        {
+            std::lock_guard<std::mutex> lock(serviceStatusMutex);
+            m_ServiceStatus = 1;
+            serviceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN | SERVICE_ACCEPT_PAUSE_CONTINUE;
+            serviceStatus.dwCurrentState = SERVICE_RUNNING;
+            SetServiceStatus(serviceStatusHandle, &serviceStatus);
+        }
 
         ////////////////////////
         // service main cycle //
         ////////////////////////
 
-        m_ServiceStatus = 1;
         argc = 1;
-        main(argc , argv);
+        int exitCode = 1;
+        try { exitCode = main(argc, argv); }
+        catch (std::exception const&) { SqlOutcome::MarkFailure(); sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "CORE_MAIN_EXCEPTION: failed service result."); }
+        catch (...) { SqlOutcome::MarkFailure(); sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "CORE_MAIN_UNKNOWN_EXCEPTION: failed service result."); }
 
-        // service was stopped
-        serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
-        SetServiceStatus(serviceStatusHandle, &serviceStatus);
+        // main() returns the core result (mangosd: 0=stop, 1=error, 2=restart).
+        // SCM recovery is configured separately, only for the intended service.
+        // An explicit SCM STOP/SHUTDOWN remains a successful stop, even if a
+        // restart had already been requested inside the core before it returned.
+        {
+            std::lock_guard<std::mutex> lock(serviceStatusMutex);
+            serviceStatus.dwControlsAccepted = 0;
+            serviceStatus.dwCurrentState = SERVICE_STOP_PENDING;
+            SetServiceStatus(serviceStatusHandle, &serviceStatus);
 
-        // do cleanup here
-
-        // service is now stopped
-        serviceStatus.dwControlsAccepted &= ~(SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN);
-        serviceStatus.dwCurrentState = SERVICE_STOPPED;
+            exitCode = SqlOutcome::ServiceExit(exitCode, serviceStopRequested);
+            serviceMainResult = exitCode;
+            bool const failed = exitCode != 0;
+            serviceStatus.dwWin32ExitCode = failed ? ERROR_SERVICE_SPECIFIC_ERROR : NO_ERROR;
+            serviceStatus.dwServiceSpecificExitCode = failed ? static_cast<DWORD>(exitCode) : 0;
+            serviceStatus.dwCurrentState = SERVICE_STOPPED;
+        }
+        // Last status report: no further callbacks may publish a stopped status.
         SetServiceStatus(serviceStatusHandle, &serviceStatus);
     }
 }
@@ -272,6 +300,6 @@ bool WinServiceRun()
         sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "StartService Failed. Error [%u]", ::GetLastError());
         return false;
     }
-    return true;
+    return serviceMainResult == 0 || serviceMainResult == 2;
 }
 #endif

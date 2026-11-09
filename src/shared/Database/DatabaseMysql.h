@@ -81,7 +81,7 @@ class MySQLConnection : public SqlConnection
 
         bool OpenConnection(bool reconnect) override;
         bool Reconnect();
-        bool HandleMySQLError(uint32 errNo);
+        bool HandleMySQLError(uint32 errNo, bool allowReconnect = true);
 
         std::unique_ptr<QueryResult> Query(std::string const& sql) override;
         std::unique_ptr<QueryNamedResult> QueryNamed(std::string const& sql) override;
@@ -98,7 +98,7 @@ class MySQLConnection : public SqlConnection
 
     private:
         bool _TransactionCmd(std::string const& sql);
-        bool _Query(std::string const& sql, MYSQL_RES** pResult, MYSQL_FIELD** pFields, uint64* pRowCount, uint32* pFieldCount);
+        bool _Query(std::string const& sql, MYSQL_RES** pResult, MYSQL_FIELD** pFields, uint64* pRowCount, uint32* pFieldCount, bool retried = false);
 
         MYSQL* mMysql;
 };

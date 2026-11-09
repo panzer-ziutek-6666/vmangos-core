@@ -23,6 +23,23 @@
 #include "Database/SqlDelayThread.h"
 #include "Database/SqlOperations.h"
 #include "DatabaseEnv.h"
+#include "Database/SqlOutcome.h"
+#include <exception>
+#include <memory>
+#include <stdexcept>
+
+namespace {
+// Only this worker owns this context. Cleanup runs on the same thread even if
+// initialization/drain throws; a failed initialization never calls thread_end.
+class WorkerMySQLContext {
+public:
+    WorkerMySQLContext() : initialized(mysql_thread_init() == 0) {}
+    ~WorkerMySQLContext() { if (initialized) mysql_thread_end(); }
+    bool const initialized;
+    WorkerMySQLContext(WorkerMySQLContext const&) = delete;
+    WorkerMySQLContext& operator=(WorkerMySQLContext const&) = delete;
+};
+}
 
 SqlDelayThread::SqlDelayThread(Database* db, SqlConnection* conn)
     : m_dbEngine(db), m_dbConnection(conn), m_running(true)
@@ -31,8 +48,9 @@ SqlDelayThread::SqlDelayThread(Database* db, SqlConnection* conn)
 
 SqlDelayThread::~SqlDelayThread()
 {
-    //process all requests which might have been queued while thread was stopping
-    ProcessRequests();
+    // The worker's client context has ended. Never execute late SQL on the
+    // owner's thread or end a context owned by that caller. Report late work.
+    DiscardRequests();
     delete m_dbConnection;
 }
 
@@ -48,33 +66,43 @@ bool SqlDelayThread::HasAsyncQuery()
 
 void SqlDelayThread::run()
 {
-    mysql_thread_init();
-
-    auto loopSleepDelay = std::chrono::milliseconds(10);
-
-    auto lastAliveCheck = Clock::now();
-    auto aliveCheckInterval = std::chrono::milliseconds(m_dbEngine->GetPingIntervalMs());
-
-    while (m_running)
+    try
     {
-        // if the running state gets turned off while sleeping
-        // empty the queue before exiting
-        std::this_thread::sleep_for(loopSleepDelay);
-
-        ProcessRequests();
-
-        if ((lastAliveCheck + aliveCheckInterval) <= Clock::now())
+        WorkerMySQLContext context;
+        if (!context.initialized)
+            throw std::runtime_error("MYSQL_THREAD_INIT_FAILED");
+        auto lastAliveCheck = Clock::now();
+        auto interval = std::chrono::milliseconds(m_dbEngine->GetPingIntervalMs());
+        while (m_running)
         {
-            sLog.Out(LOG_BASIC, LOG_LVL_DEBUG, "Run database reachability check");
-            m_dbEngine->Ping();
-            /* ignore result */ m_dbConnection->Query("SELECT 1"); // TODO: Why is this here, when its already check in m_dbEngine->Ping(); ???
-            lastAliveCheck = Clock::now();
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+            ProcessRequests();
+            if (SqlOutcome::Failed()) { m_running = false; break; }
+            if ((lastAliveCheck + interval) <= Clock::now())
+            {
+                m_dbEngine->Ping();
+                m_dbConnection->Query("SELECT 1");
+                lastAliveCheck = Clock::now();
+            }
         }
+        // Includes STOP before loop entry and work published during the stop.
+        // Must finish before context destruction/mysql_thread_end on this thread.
+        ProcessRequests();
     }
-
-    mysql_thread_end();
+    catch (std::exception const&)
+    {
+        SqlOutcome::OperationFailed();
+        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_WORKER_EXCEPTION: shutdown required; no replay.");
+    }
+    catch (...)
+    {
+        SqlOutcome::OperationFailed();
+        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_WORKER_UNKNOWN_EXCEPTION: shutdown required; no replay.");
+    }
+    // Exceptional/init-failure paths and post-drain arrivals never execute SQL.
+    // The destructor repeats this discard-only check for still later arrivals.
+    DiscardRequests();
 }
-
 void SqlDelayThread::Stop()
 {
     m_running = false;
@@ -85,14 +113,51 @@ void SqlDelayThread::ProcessRequests()
     SqlOperation* s = nullptr;
     while (m_dbEngine->NextDelayedOperation(s))
     {
-        s->Execute(m_dbConnection);
-        delete s;
+        ExecuteOrDiscard(s);
     }
 
     // Process any serial operations for this worker
     while (m_serialDelayQueue.next(s))
     {
-        s->Execute(m_dbConnection);
-        delete s;
+        ExecuteOrDiscard(s);
+    }
+}
+
+void SqlDelayThread::ExecuteOrDiscard(SqlOperation* operation)
+{
+    std::unique_ptr<SqlOperation> owner(operation);
+    if (SqlOutcome::Failed()) { SqlOutcome::Abandon(); return; }
+    try
+    {
+        if (!operation->Execute(m_dbConnection))
+        {
+            SqlOutcome::OperationFailed(false);
+            sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_OPERATION_REJECTED: no replay; remaining queue continues unless a fatal SQL outcome was classified.");
+        }
+    }
+    catch (std::exception const&)
+    {
+        SqlOutcome::OperationFailed();
+        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_OPERATION_EXCEPTION: result unconfirmed; remaining queue abandoned, no replay.");
+    }
+    catch (...)
+    {
+        SqlOutcome::OperationFailed();
+        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "SQL_OPERATION_UNKNOWN_EXCEPTION: result unconfirmed; remaining queue abandoned, no replay.");
+    }
+}
+
+void SqlDelayThread::DiscardRequests()
+{
+    SqlOperation* operation = nullptr;
+    while (m_dbEngine->NextDelayedOperation(operation))
+    {
+        std::unique_ptr<SqlOperation> owner(operation);
+        SqlOutcome::Abandon();
+    }
+    while (m_serialDelayQueue.next(operation))
+    {
+        std::unique_ptr<SqlOperation> owner(operation);
+        SqlOutcome::Abandon();
     }
 }

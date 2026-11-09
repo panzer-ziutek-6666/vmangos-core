@@ -23,6 +23,7 @@
 #define __SQLDELAYTHREAD_H
 
 #include "LockedQueue.h"
+#include <atomic>
 
 
 class Database;
@@ -38,11 +39,13 @@ class SqlDelayThread
         Database *m_dbEngine;                               // Pointer to used Database engine
         SqlQueue m_serialDelayQueue;
         SqlConnection *m_dbConnection;                      // Pointer to DB connection
-        volatile bool m_running;
+        std::atomic<bool> m_running;
 
 
         //process all enqueued requests
         void ProcessRequests();
+        void ExecuteOrDiscard(SqlOperation* operation);
+        void DiscardRequests();
 
     public:
         SqlDelayThread(Database* db, SqlConnection* conn);
