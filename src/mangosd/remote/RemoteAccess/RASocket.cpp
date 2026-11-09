@@ -220,7 +220,7 @@ void RASocket::HandleInput_Authenticated(std::string const& line)
         return;
     }
 
-    sLog.Out(LOG_RA, LOG_LVL_MINIMAL, "[%s/%s] Received command: %s", m_socket.GetRemoteIpString().c_str(), m_username.c_str(), line.c_str());
+    sLog.Out(LOG_RA, LOG_LVL_MINIMAL, "[%s/%s] Received command [arguments redacted]", m_socket.GetRemoteIpString().c_str(), m_username.c_str());
 
     // handle quit, exit and logout commands to terminate connection
     if (line == "quit" || line == "exit" || line == "logout")

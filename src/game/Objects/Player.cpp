@@ -8399,7 +8399,8 @@ void Player::SendInitWorldStates(uint32 zoneid) const
     }
 
     for (auto const& itr : def_world_states)
-        packet->AddWorldState(itr.first, itr.second);
+        if (itr.first) // Skip the zero sentinel; append it after all additional states.
+            packet->AddWorldState(itr.first, itr.second);
 
     if (ZoneScript* zoneScript = GetZoneScript())
         zoneScript->FillInitialWorldStates(packet->states);
@@ -8417,6 +8418,7 @@ void Player::SendInitWorldStates(uint32 zoneid) const
     if (sGameEventMgr.IsActiveEvent(EVENT_WAR_EFFORT))
         BuildWarEffortWorldStates(packet->states);
 
+    packet->AddWorldState(0, 0); // Final terminator prevents repeating audio.
     GetSession()->SendPacket(std::move(packet));
 }
 

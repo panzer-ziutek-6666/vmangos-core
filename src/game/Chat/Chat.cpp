@@ -1899,12 +1899,11 @@ void ChatHandler::ExecuteCommand(char const* text)
                 return;
             }
 
-            std::string realCommandFull = command->FullName;
+            std::string loggedCommand = command->FullName;
 
             if (text[0])
             {
-                realCommandFull += " ";
-                realCommandFull += text;
+                loggedCommand += " [arguments redacted]";
             }
             if (m_session && command->Flags & COMMAND_FLAGS_ONLY_ON_SELF)
             {
@@ -1927,13 +1926,13 @@ void ChatHandler::ExecuteCommand(char const* text)
                     ObjectGuid sel_guid = p->GetSelectionGuid();
                     sLog.Player(m_session, LOG_GM, LOG_LVL_BASIC,
                         "Command: %s [Player: %s (Group Leader \"%s\", Account: %u) X: %f Y: %f Z: %f Map: %u Selected: %s]",
-                        realCommandFull.c_str(), p->GetName(), p->GetGroup() ? p->GetGroup()->GetLeaderGuid().GetString().c_str() : "NULL",
+                        loggedCommand.c_str(), p->GetName(), p->GetGroup() ? p->GetGroup()->GetLeaderGuid().GetString().c_str() : "NULL",
                         GetAccountId(), p->GetPositionX(), p->GetPositionY(), p->GetPositionZ(), p->GetMapId(), sel_guid.GetString().c_str());
                 }
                 else                                        // 0 account -> console
                 {
                     sLog.Player(GetAccountId(), LOG_GM, LOG_LVL_BASIC, "Command: %s [Account: %u from %s]",
-                        realCommandFull.c_str(), GetAccountId(), GetAccountId() ? "RA-connection" : "Console");
+                        loggedCommand.c_str(), GetAccountId(), GetAccountId() ? "RA-connection" : "Console");
                 }
             }
 
@@ -1943,10 +1942,10 @@ void ChatHandler::ExecuteCommand(char const* text)
                 {
                     if (Unit* target = GetSelectedUnit())
                         sLog.Player(m_session, LOG_GM_CRITICAL, LOG_LVL_BASIC,
-                            "%s: %s. Selected %s. Map %u", m_session->GetUsername().c_str(), realCommandFull.c_str(), target->GetObjectGuid().GetString().c_str(), target->GetMapId());
+                            "%s: %s. Selected %s. Map %u", m_session->GetUsername().c_str(), loggedCommand.c_str(), target->GetObjectGuid().GetString().c_str(), target->GetMapId());
                     else
                         sLog.Player(m_session, LOG_GM_CRITICAL, LOG_LVL_BASIC,
-                            "%s: %s.", m_session->GetUsername().c_str(), realCommandFull.c_str());
+                            "%s: %s.", m_session->GetUsername().c_str(), loggedCommand.c_str());
                 }
             }
             // some commands have custom error messages. Don't send the default one in these cases.
@@ -2078,7 +2077,7 @@ ParseCommandResult ChatHandler::ParseCommands(char const* text)
                     }
                     else
                     {
-                        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "Skipping command '%s' from account %u. Player is not in world.", txt.c_str(), accountId);
+                        sLog.Out(LOG_BASIC, LOG_LVL_ERROR, "Skipping command from account %u. Player is not in world.", accountId);
                     }
                 }
             }

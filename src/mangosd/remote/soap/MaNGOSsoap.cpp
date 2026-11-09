@@ -111,7 +111,7 @@ int ns1__executeCommand(soap* soap, char* command, char** result)
     if (!command || !*command)
         return soap_sender_fault(soap, "Parameter 'command' can not be empty", "The supplied command was an empty string");
 
-    sLog.Out(LOG_BASIC, LOG_LVL_DEBUG, "MaNGOSsoap: Received command '%s'", command);
+    sLog.Out(LOG_BASIC, LOG_LVL_DEBUG, "MaNGOSsoap: Received command for account %u", accountId);
 
     // Commands are executed in the world thread. We have to wait for them to be completed
     SOAPCommand commandHolder;
