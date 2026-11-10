@@ -1,0 +1,653 @@
+{
+  "Stage": "A139",
+  "PreparedWarsaw": "2026-10-21T00:13:13.766498+02:00",
+  "BaseStage": "A136 sources; A137 Windows build PASS",
+  "BaseArchiveSHA256": "97449003E35D44BCC1C30FF1768E2AD901379280B28D70CEAD1D1697F1F449FE",
+  "BasedOnAclDiagnosticLogSHA256": "C6B364B3282D20A748BDA694A482C6FA85EC3B6789A8325F114AABF09BD66519",
+  "ContractVersion": "A139-FIXTURE-1",
+  "FixedFutureRootPrefix": "C:\\VMANGOS-Accounts-Fixture-A139-",
+  "A130BaseFilesUnchanged": [
+    {
+      "RelativePath": "NuGet.Config",
+      "Length": 113,
+      "SHA256": "2142CFB2DFA2C7FEEFBE40FABCC68B0DFECADAFA99A1DB9B70239D977CF2A7EF"
+    },
+    {
+      "RelativePath": "README-A130.md",
+      "Length": 1319,
+      "SHA256": "29021F780A074F4EE808417880F73960053838368A510A755EB9C19BC65BB7AC"
+    },
+    {
+      "RelativePath": "SOURCE-PROVENANCE.json",
+      "Length": 3329,
+      "SHA256": "994A558BAB759676509980F6872C739E73D86CBFB1F55FB0DB35F3DD5C166EA8"
+    },
+    {
+      "RelativePath": "docs/ARCHITECTURE.md",
+      "Length": 802,
+      "SHA256": "6AA77D4A6E9DC56DA9CADA6F3784ACE2A1AD433033B5B5E3D454C783A56550BE"
+    },
+    {
+      "RelativePath": "docs/CONFIGURATION.md",
+      "Length": 326,
+      "SHA256": "5889304A244BF12A9E56B2A3EFF8971E901DB9244632A9722D156E7A232F4C18"
+    },
+    {
+      "RelativePath": "docs/CREATEACCOUNT-A130.md",
+      "Length": 5917,
+      "SHA256": "FE8952831CADD3D26F8EF40E31A8AAB001625FF5C223AB483A29123C244458C9"
+    },
+    {
+      "RelativePath": "docs/WINDOWS-BOUNDARY-A130.md",
+      "Length": 3073,
+      "SHA256": "659FCDE423D8F4D6FEA1A3F4629301123224162CB89A48F048754B9DC4762AFC"
+    },
+    {
+      "RelativePath": "evidence/QA-RESULT.json",
+      "Length": 3126,
+      "SHA256": "4135B074CB69215A96B973BFC60938724C388706A0E7B516423FD5887EF46A46"
+    },
+    {
+      "RelativePath": "evidence/browser-tests.log",
+      "Length": 362,
+      "SHA256": "5DF2DC43C0FD6CE1338985519AEA8934128B73A05B1815FD7A997FF55C0DE88A"
+    },
+    {
+      "RelativePath": "evidence/core-tests.log",
+      "Length": 4583,
+      "SHA256": "BEB1C1084CC1C4A28CF7FE6A390052A6390C161A6B083BCCAA157862FB176D78"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/AccountContract.cs",
+      "Length": 6715,
+      "SHA256": "BF6D2863303FE828E5B68178B49E8B6C1D15ADFCE7B23E7A7D40BD9248349049"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/DurableFiles.cs",
+      "Length": 5822,
+      "SHA256": "AC61BC03C17A14669ADA0197078ED5D8A0DF2D8CF7EF19CFE4DE8950D45D8BEF"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/OperationEngine.cs",
+      "Length": 12486,
+      "SHA256": "FDBFB1CE80E04A7D661170FC3C7E2383EF838759A20766BE1F9EBEB9E6B458F3"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/Protocol.cs",
+      "Length": 5972,
+      "SHA256": "D8454FEE9E1A82FD6EA10AFD3CBB059A94B56EB3C6A592A6CDF271CC365A37CC"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/Vmangos.Accounts.Core.csproj",
+      "Length": 261,
+      "SHA256": "E69683A96BEA2F059E0846B14B349D1B7D064241DCDC6BA0B3F0330E2D9D14FA"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Program.cs",
+      "Length": 5508,
+      "SHA256": "75759788DA8CE7E4EEE4D9DAAB60045EB78A9DED3F3560971E9F54E6F9BD6F95"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/AccountEndpoints.cs",
+      "Length": 6921,
+      "SHA256": "A9828E57F3B45B65DE5D9F79D85FD44224B73375A510A99D8EDE4DE466A81CE8"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/ControlAuditWriter.cs",
+      "Length": 2084,
+      "SHA256": "BA29AF1E56DA0BD57C2F76756FAA143D242440254389EE9A3E03AFC93F9837CB"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/RuntimeStatusService.cs",
+      "Length": 22676,
+      "SHA256": "0DE0DA93920BD92480E42AE6ABCA8F5172128F601DE1CFE91F8EC4DDA17DE617"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TaskControlService.cs",
+      "Length": 12619,
+      "SHA256": "C9C5C21CA7C2FB3E5D88482112D2205B5DF0301C79E9F58CECC732B8B9D4AA42"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TelemetryContract.cs",
+      "Length": 10046,
+      "SHA256": "931C72E70EE4A3852D1F13E84317BCC9C79A0360A5317311126EE2F96B6D9351"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TelemetryReader.cs",
+      "Length": 4646,
+      "SHA256": "33C9A0996925DBC8BB1A57E3A59D89F64998BBA5669FA138E69B417BAB24F50F"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Vmangos.AdminPanel.csproj",
+      "Length": 386,
+      "SHA256": "9D8D1792203394E99588E90F04D3B6C015A4BBAAEC91A7962A7E2D1FEAFF6DE8"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/accounts.css",
+      "Length": 1126,
+      "SHA256": "C87714BF4803341B60A9E88D07998014952CAE999C72785ED4FCD38D4273074D"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/accounts.js",
+      "Length": 7318,
+      "SHA256": "BDCDE10746B26D1D143F82F1318AFD9AF0533E6DCF6D72B75AD99B66C2D704FD"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/index.html",
+      "Length": 21459,
+      "SHA256": "2CA0227AE8E4B18974B4AE31A57728F3A19CFB29B028657827C45D7406EA75D6"
+    },
+    {
+      "RelativePath": "tests/BrowserTests.cjs",
+      "Length": 7948,
+      "SHA256": "D069F33C7E6F9B1A1DF164980335F04582634BB5ABEDE836A53862441F8DC217"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Fakes.cs",
+      "Length": 3986,
+      "SHA256": "5771EA4F59C4521E96C45A80CB7BC73BF5A8E40B293C4D2B4FF6D608A29F969E"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Program.cs",
+      "Length": 30760,
+      "SHA256": "9174AA6A2C760EE44F9396A2CD24C4068DCD4500B53778F8CD272A0B8A9274DC"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Vmangos.Accounts.Tests.csproj",
+      "Length": 571,
+      "SHA256": "04D32F9002009EC275FB043E44CFDF56B3323CCA73D1EC5C6457831F8B244581"
+    }
+  ],
+  "ChangedFromA136": [
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/FixtureSpec.cs",
+      "Length": 7796,
+      "SHA256": "0667D40978E775DDEE21E256C5C4040B3DB9647AE3F08F9D00A186FDF224C974",
+      "A136SHA256": "FABBAD77989B9E0D35164D76804A41B6D1464388FE8FD16336EB14334A7AD092"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Windows.Tests/ModelFakes.cs",
+      "Length": 7338,
+      "SHA256": "67B4CCCAC55F9C2D37B66863B5D7C10D221FA29011F0FB6B2560E56CA82EB5F2",
+      "A136SHA256": "A0C09F6A41AEB4AD4E023FBCC59E7EB47D2194B30DF3311F83615D4814F805C3"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Windows.Tests/Program.cs",
+      "Length": 19696,
+      "SHA256": "5B382122AEA2633D9761B94BB708FBB378FD5659A8E4C66B2C778B86AA3E3CE4",
+      "A136SHA256": "8E238F200D040E8FA88EEDDE580F55497E1487975B26A67DC5601D19012AA92D"
+    }
+  ],
+  "UnchangedFromA136": [
+    {
+      "RelativePath": "Directory.Build.props",
+      "Length": 11,
+      "SHA256": "400B35829B2A391F4048DA02E1108B98DB09431B2947E806A184743BD1B33C3A"
+    },
+    {
+      "RelativePath": "Directory.Build.targets",
+      "Length": 11,
+      "SHA256": "400B35829B2A391F4048DA02E1108B98DB09431B2947E806A184743BD1B33C3A"
+    },
+    {
+      "RelativePath": "NuGet.Config",
+      "Length": 113,
+      "SHA256": "2142CFB2DFA2C7FEEFBE40FABCC68B0DFECADAFA99A1DB9B70239D977CF2A7EF"
+    },
+    {
+      "RelativePath": "README-A130.md",
+      "Length": 1319,
+      "SHA256": "29021F780A074F4EE808417880F73960053838368A510A755EB9C19BC65BB7AC"
+    },
+    {
+      "RelativePath": "README-A132.md",
+      "Length": 6969,
+      "SHA256": "B6F050CDB53736816C8D997DA4666F8B8AF4EBB5A8947F4CB4C3DF9E0BD46DD5"
+    },
+    {
+      "RelativePath": "README-A136.md",
+      "Length": 3151,
+      "SHA256": "22123D013A1C8827732FFBCE115B34A46142B7DE24502CE6F93E507393EC0832"
+    },
+    {
+      "RelativePath": "SOURCE-PROVENANCE-A132.json",
+      "Length": 5794,
+      "SHA256": "1D2A74F06C20C48AAD587F00387B09C811EC531261231D949A9F54B8D5F2D184"
+    },
+    {
+      "RelativePath": "SOURCE-PROVENANCE-A136.json",
+      "Length": 22270,
+      "SHA256": "E2EFC53CB60AC42CB9BBEC5EBB3FAB5E6EDF3B56126C5F91EF478E414A22760C"
+    },
+    {
+      "RelativePath": "SOURCE-PROVENANCE.json",
+      "Length": 3329,
+      "SHA256": "994A558BAB759676509980F6872C739E73D86CBFB1F55FB0DB35F3DD5C166EA8"
+    },
+    {
+      "RelativePath": "docs/ARCHITECTURE.md",
+      "Length": 802,
+      "SHA256": "6AA77D4A6E9DC56DA9CADA6F3784ACE2A1AD433033B5B5E3D454C783A56550BE"
+    },
+    {
+      "RelativePath": "docs/CONFIGURATION.md",
+      "Length": 326,
+      "SHA256": "5889304A244BF12A9E56B2A3EFF8971E901DB9244632A9722D156E7A232F4C18"
+    },
+    {
+      "RelativePath": "docs/CREATEACCOUNT-A130.md",
+      "Length": 5917,
+      "SHA256": "FE8952831CADD3D26F8EF40E31A8AAB001625FF5C223AB483A29123C244458C9"
+    },
+    {
+      "RelativePath": "docs/WINDOWS-BOUNDARY-A130.md",
+      "Length": 3073,
+      "SHA256": "659FCDE423D8F4D6FEA1A3F4629301123224162CB89A48F048754B9DC4762AFC"
+    },
+    {
+      "RelativePath": "docs/WINDOWS-BOUNDARY-A132.md",
+      "Length": 8061,
+      "SHA256": "25C92C8F4CA95FD6EB32B92C5BC1DCCEFF3E1305D463E780E48821D794D02930"
+    },
+    {
+      "RelativePath": "docs/WINDOWS-LAUNCHER-A136.md",
+      "Length": 6558,
+      "SHA256": "313680314CD819F0F41D7166A7D8321A439AA86F916A9A907FEFDCC67D2B2F2E"
+    },
+    {
+      "RelativePath": "evidence/QA-A132.json",
+      "Length": 1728,
+      "SHA256": "1C112288F1C1D716D63E0AD85E976AFCA37810365BD330BD23BD552B767AAF73"
+    },
+    {
+      "RelativePath": "evidence/QA-A136.json",
+      "Length": 870,
+      "SHA256": "EB373B78B7C0BD1A25D9A2B4E289CB6F0C79155FE41860D5C655CC3223ECD451"
+    },
+    {
+      "RelativePath": "evidence/QA-RESULT.json",
+      "Length": 3126,
+      "SHA256": "4135B074CB69215A96B973BFC60938724C388706A0E7B516423FD5887EF46A46"
+    },
+    {
+      "RelativePath": "evidence/browser-tests.log",
+      "Length": 362,
+      "SHA256": "5DF2DC43C0FD6CE1338985519AEA8934128B73A05B1815FD7A997FF55C0DE88A"
+    },
+    {
+      "RelativePath": "evidence/build-Vmangos.Accounts.FixtureLauncher-A136.log",
+      "Length": 562,
+      "SHA256": "AA18EC3C1C5FC8E334466DA01734E20B2605B714B20E5C5142BB7C486B200B73"
+    },
+    {
+      "RelativePath": "evidence/build-Vmangos.Accounts.Tests-A136.log",
+      "Length": 516,
+      "SHA256": "70F84FD65AEDB019B411A5EB8B59BECA74DB0B40983A29362EA64EFCF800393F"
+    },
+    {
+      "RelativePath": "evidence/build-Vmangos.Accounts.Windows.Tests-A136.log",
+      "Length": 558,
+      "SHA256": "96AEC8742D6E1A4F097157D49DBD8C4C1290189E1408AEE7610A85A1B39B0553"
+    },
+    {
+      "RelativePath": "evidence/build-Vmangos.Accounts.Worker-A136.log",
+      "Length": 535,
+      "SHA256": "4C33CD19AE143A9DBDE0F9F1377333C74D0D8D2C01FB9B82F9BD490C405F3FD9"
+    },
+    {
+      "RelativePath": "evidence/build-Vmangos.AdminPanel-A136.log",
+      "Length": 443,
+      "SHA256": "B1AE44C62FAAD0859D28F1EF8F8082F1F6657F9F685E834647AFA667C652CB4D"
+    },
+    {
+      "RelativePath": "evidence/core-regression-A132.log",
+      "Length": 4583,
+      "SHA256": "B98AE88C973556BCA698140811C1C3888F0E644673923492A7715B4EF29F5C14"
+    },
+    {
+      "RelativePath": "evidence/core-regression-A136.log",
+      "Length": 4583,
+      "SHA256": "7961732C6B6227D0630ED19B93C28EB3AAF0C15506EEC05D47BB82241861F540"
+    },
+    {
+      "RelativePath": "evidence/core-tests.log",
+      "Length": 4583,
+      "SHA256": "BEB1C1084CC1C4A28CF7FE6A390052A6390C161A6B083BCCAA157862FB176D78"
+    },
+    {
+      "RelativePath": "evidence/linux-launcher-guard-A136.log",
+      "Length": 34,
+      "SHA256": "163D374508E6D45F8936BA53FC0539F47A28EEBA830D8FAA2F05AFD350AD16AB"
+    },
+    {
+      "RelativePath": "evidence/linux-worker-guard-A136.log",
+      "Length": 34,
+      "SHA256": "2F6E483B57BD74CA3022D4F19AEBF21086256060629710235CD135639CCD95C0"
+    },
+    {
+      "RelativePath": "evidence/model-tests-A132.log",
+      "Length": 3534,
+      "SHA256": "5277E5AC751D1282014A8FDF04B6C7BDCFD8623485F597B10A23C8AF91C2CF9A"
+    },
+    {
+      "RelativePath": "evidence/model-tests-A136.log",
+      "Length": 5238,
+      "SHA256": "C48F7C230297DAA1F0EDFFB13907AC62AFF1006BF80CC633E10EA6A03EB8DD1B"
+    },
+    {
+      "RelativePath": "global.json",
+      "Length": 78,
+      "SHA256": "7E91C5F1B604DFD1A7FDACBD01D9FD0A83E611E309799C070E3C903F6266E8C6"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/AccountContract.cs",
+      "Length": 6715,
+      "SHA256": "BF6D2863303FE828E5B68178B49E8B6C1D15ADFCE7B23E7A7D40BD9248349049"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/DurableFiles.cs",
+      "Length": 5822,
+      "SHA256": "AC61BC03C17A14669ADA0197078ED5D8A0DF2D8CF7EF19CFE4DE8950D45D8BEF"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/OperationEngine.cs",
+      "Length": 12486,
+      "SHA256": "FDBFB1CE80E04A7D661170FC3C7E2383EF838759A20766BE1F9EBEB9E6B458F3"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/Protocol.cs",
+      "Length": 5972,
+      "SHA256": "D8454FEE9E1A82FD6EA10AFD3CBB059A94B56EB3C6A592A6CDF271CC365A37CC"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Core/Vmangos.Accounts.Core.csproj",
+      "Length": 261,
+      "SHA256": "E69683A96BEA2F059E0846B14B349D1B7D064241DCDC6BA0B3F0330E2D9D14FA"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.FixtureLauncher/Program.cs",
+      "Length": 867,
+      "SHA256": "92DE82121AF1A53365AFE4663328B6E0E684A831747F857A0BE936DEA641F0FC"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.FixtureLauncher/Vmangos.Accounts.FixtureLauncher.csproj",
+      "Length": 542,
+      "SHA256": "CD4F0CB3529A0F331BD96F9F040BF999C584894BE2370D92757AF36959160DC3"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/BoundaryContract.cs",
+      "Length": 2269,
+      "SHA256": "707B2C4145B2F37D9DEE76DB8CEC2A97EF438BBF1B71B3EF2ACE56AD6E4A2915"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/BoundedFrames.cs",
+      "Length": 2431,
+      "SHA256": "74F82396937405D4ECC9D7B776D91CE2282414719869CA85DDA65A8E2EF79BB0"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/FixtureConversation.cs",
+      "Length": 3113,
+      "SHA256": "BECAE597CB67922330483FA521D3103236EAE8F05D1413A677F7821C75BB97C6"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/FixtureDirectoryLease.cs",
+      "Length": 1484,
+      "SHA256": "18190236832B182135568FEB299477DED3157B1A426AAA9F6B4217265CCAE8DD"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/FixtureLaunch.cs",
+      "Length": 9126,
+      "SHA256": "88F7377828C62D338DB6E10C9979A8BB22E928FA9B32DC7EA34A4A3970B17F0C"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/FixtureStorage.cs",
+      "Length": 5304,
+      "SHA256": "A1B62849658DE77CD06DFEA74DDC2F9350C3C6778B31883518ACBC1DCAB1784D"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/GenerationReceipt.cs",
+      "Length": 2478,
+      "SHA256": "EE175DBC55F264605825E1AC5AECB86D560504B8AC1A2CB4B4B3F4E00198D721"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/LaunchNative.cs",
+      "Length": 6720,
+      "SHA256": "46AECFCDC1B26A1F4DBDF8258A6C81094701CE459E1D4EEDA272A3EDEC1B0610"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/LaunchSecurity.cs",
+      "Length": 7715,
+      "SHA256": "1957004D0DC80DF8AB8657D8B493D2BF4CD0EE4CBF034EEEB7166402FB66DBEB"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/NativeMethods.cs",
+      "Length": 6750,
+      "SHA256": "9B42BC7D116FA79CB619BEF7F71F0FAC517C3935F23BDAFABD68DF013CF577CF"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/NativePipe.cs",
+      "Length": 3704,
+      "SHA256": "EF0BA2B342514314BA2CFEE63EBBF3B3B38FCE13367E11C16F8A9DB9F9A84DA5"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/OwnedFixtureChild.cs",
+      "Length": 9677,
+      "SHA256": "F082061C2F8284DB226351F15F80656A2F9F01E1A276A7780525934448C54B94"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/PeerProbe.cs",
+      "Length": 7575,
+      "SHA256": "46C7C57B852707B01B80684D11799068E9D59440E568EB84042FDE2A202EE8E1"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/PipeAccessPolicy.cs",
+      "Length": 4278,
+      "SHA256": "D1C6FE55EB47EEA0D7DA1158052B8B70D2BEBDB04A244C40416D86A8306CE94B"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/PrivateClientDesktop.cs",
+      "Length": 6960,
+      "SHA256": "1C02FA31CE1BE3DA2075C4B3BA74038ABBE4C1F101A3ADB77584A75F7BEC0226"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/ProcessAccessPolicy.cs",
+      "Length": 2106,
+      "SHA256": "BAFC4AB524BD536731B9C045246D8BCE3F8CB04378A8DDEDEBAB7B181815EAC7"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/ProtectedFiles.cs",
+      "Length": 5964,
+      "SHA256": "AC1115E9E2EFA1DF2454C7507D690417AC2B164020F20EBD8772BBE714146B69"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/RuntimeProcessPolicy.cs",
+      "Length": 1267,
+      "SHA256": "8A79CABFD2CFA02F76EFA8DC0B99BD7760056C633F2961F39445CCE084AD1CE6"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/RuntimeProfile.cs",
+      "Length": 7964,
+      "SHA256": "B763C625296B20A5C07BF1FE30D595E6707A6ACA34A3516202A0E3E16B7ECB0F"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/SyntheticBackend.cs",
+      "Length": 1532,
+      "SHA256": "16B548F9E38E3709C23C0AC0CD1BE9B34A075310186A710BC1F3D2D504834026"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/Vmangos.Accounts.Windows.csproj",
+      "Length": 434,
+      "SHA256": "21C5C5467DEFFCECA5605A50D429683849433EE7E1B47F4C9736ABAAB8304645"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Windows/WireCodec.cs",
+      "Length": 7833,
+      "SHA256": "73A11CEFC344FBE0E9A6A06B255300A0CB54FAE93DEEB2B8A4F4A37FA9C16A2C"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Worker/Program.cs",
+      "Length": 1191,
+      "SHA256": "1CC932DD4FF43D6332DD00E9171667974921B74C321E8CF3B17139EB8597D098"
+    },
+    {
+      "RelativePath": "src/Vmangos.Accounts.Worker/Vmangos.Accounts.Worker.csproj",
+      "Length": 575,
+      "SHA256": "68FD5BF20877315446DFC03D21629C601485682672015A9D85E37B55568DAC5D"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Program.cs",
+      "Length": 5508,
+      "SHA256": "75759788DA8CE7E4EEE4D9DAAB60045EB78A9DED3F3560971E9F54E6F9BD6F95"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/AccountEndpoints.cs",
+      "Length": 6921,
+      "SHA256": "A9828E57F3B45B65DE5D9F79D85FD44224B73375A510A99D8EDE4DE466A81CE8"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/ControlAuditWriter.cs",
+      "Length": 2084,
+      "SHA256": "BA29AF1E56DA0BD57C2F76756FAA143D242440254389EE9A3E03AFC93F9837CB"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/RuntimeStatusService.cs",
+      "Length": 22676,
+      "SHA256": "0DE0DA93920BD92480E42AE6ABCA8F5172128F601DE1CFE91F8EC4DDA17DE617"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TaskControlService.cs",
+      "Length": 12619,
+      "SHA256": "C9C5C21CA7C2FB3E5D88482112D2205B5DF0301C79E9F58CECC732B8B9D4AA42"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TelemetryContract.cs",
+      "Length": 10046,
+      "SHA256": "931C72E70EE4A3852D1F13E84317BCC9C79A0360A5317311126EE2F96B6D9351"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Services/TelemetryReader.cs",
+      "Length": 4646,
+      "SHA256": "33C9A0996925DBC8BB1A57E3A59D89F64998BBA5669FA138E69B417BAB24F50F"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/Vmangos.AdminPanel.csproj",
+      "Length": 386,
+      "SHA256": "9D8D1792203394E99588E90F04D3B6C015A4BBAAEC91A7962A7E2D1FEAFF6DE8"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/accounts.css",
+      "Length": 1126,
+      "SHA256": "C87714BF4803341B60A9E88D07998014952CAE999C72785ED4FCD38D4273074D"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/accounts.js",
+      "Length": 7318,
+      "SHA256": "BDCDE10746B26D1D143F82F1318AFD9AF0533E6DCF6D72B75AD99B66C2D704FD"
+    },
+    {
+      "RelativePath": "src/Vmangos.AdminPanel/wwwroot/index.html",
+      "Length": 21459,
+      "SHA256": "2CA0227AE8E4B18974B4AE31A57728F3A19CFB29B028657827C45D7406EA75D6"
+    },
+    {
+      "RelativePath": "tests/BrowserTests.cjs",
+      "Length": 7948,
+      "SHA256": "D069F33C7E6F9B1A1DF164980335F04582634BB5ABEDE836A53862441F8DC217"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Fakes.cs",
+      "Length": 3986,
+      "SHA256": "5771EA4F59C4521E96C45A80CB7BC73BF5A8E40B293C4D2B4FF6D608A29F969E"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Program.cs",
+      "Length": 30760,
+      "SHA256": "9174AA6A2C760EE44F9396A2CD24C4068DCD4500B53778F8CD272A0B8A9274DC"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Tests/Vmangos.Accounts.Tests.csproj",
+      "Length": 571,
+      "SHA256": "04D32F9002009EC275FB043E44CFDF56B3323CCA73D1EC5C6457831F8B244581"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Windows.Tests/LauncherModelTests.cs",
+      "Length": 6310,
+      "SHA256": "612A041CF420B36A04EC6CDB97E410859C51A3AA47B9252363C7712176A79FC2"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Windows.Tests/Vmangos.Accounts.Windows.Tests.csproj",
+      "Length": 582,
+      "SHA256": "ADC0FC996B8A79DEA2CE16D085E12A1A2FAD920F64A64076A2D7FD6D3AF109DB"
+    }
+  ],
+  "AddedInA139": [
+    {
+      "RelativePath": "README-A139.md",
+      "Length": 1308,
+      "SHA256": "334E03CB963B0DEF82E7FDD3C51D1C90A6E150BACAF15F43DF2AA74ACF129767"
+    },
+    {
+      "RelativePath": "docs/WINDOWS-LOCATION-A139.md",
+      "Length": 4606,
+      "SHA256": "1DA3A07BB1573C6EB223BE142A87043C22575ECF9E433EED05AAB3B8CAD778EA"
+    },
+    {
+      "RelativePath": "evidence/QA-A139.json",
+      "Length": 870,
+      "SHA256": "BCE3F3A86F214079537FC88CBD576E855813DA1A08AC7C54D607C54DDF139896"
+    },
+    {
+      "RelativePath": "evidence/build-Core.Tests-A139.log",
+      "Length": 853,
+      "SHA256": "951725DD4EDFE934C720A8FCB06732A3D767A939DF63C149D64E68EF6B40EBC5"
+    },
+    {
+      "RelativePath": "evidence/build-FixtureLauncher-A139.log",
+      "Length": 795,
+      "SHA256": "0506590C7E85C0A96DB590DB064926DE66EBAB00DF05BF865145AF4CB0B20176"
+    },
+    {
+      "RelativePath": "evidence/build-Windows.Tests-A139.log",
+      "Length": 1675,
+      "SHA256": "ADE20E6F20D5AAFB046996A9683E6DEB6C4BFE7FC2A48EBF3D377761AC450A87"
+    },
+    {
+      "RelativePath": "evidence/build-Worker-A139.log",
+      "Length": 750,
+      "SHA256": "6C135076BFEE9C4DFEBD1D52EEB6C447D414D92AA31D910D88B5F224A7FB0A61"
+    },
+    {
+      "RelativePath": "evidence/core-A139.log",
+      "Length": 4583,
+      "SHA256": "F06BB3604D382C33ACFDD655C1043C3F4EBBF5EF920DB057BA677AD9A823231E"
+    },
+    {
+      "RelativePath": "evidence/launcher-guard-A139.log",
+      "Length": 34,
+      "SHA256": "163D374508E6D45F8936BA53FC0539F47A28EEBA830D8FAA2F05AFD350AD16AB"
+    },
+    {
+      "RelativePath": "evidence/models-A139.log",
+      "Length": 6752,
+      "SHA256": "7DE68924F525F315CE9885C27C990D7393F5669854E380959B33F20D6336BD9C"
+    },
+    {
+      "RelativePath": "evidence/worker-guard-A139.log",
+      "Length": 34,
+      "SHA256": "2F6E483B57BD74CA3022D4F19AEBF21086256060629710235CD135639CCD95C0"
+    },
+    {
+      "RelativePath": "tests/Vmangos.Accounts.Windows.Tests/LocationModelTests.cs",
+      "Length": 4084,
+      "SHA256": "A523862FC34979C4CA9FB6547A9EB2BDA84BF23BA991E9A36F934DF5B41FA448"
+    }
+  ],
+  "ProvenanceExcludesItself": true,
+  "SourceOnlyOnHost": true,
+  "NoLiveAdapters": true,
+  "NewWindowsBuild": "NOT_RUN",
+  "BootstrapImplemented": false,
+  "FinalFixtureCreated": false,
+  "RealWindowsBoundaryTested": false,
+  "All15LiveGapsRemainOpen": true
+}

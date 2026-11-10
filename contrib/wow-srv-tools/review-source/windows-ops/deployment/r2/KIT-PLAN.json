@@ -1,0 +1,840 @@
+﻿{
+    "Schema":  1,
+    "Stage":  "CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225",
+    "AcceptedR3":  "C:\\Scripts\\SHUTDOWN1053-ISOLATED-PREP-R3-WOW-SRV-20261104-1908.zip",
+    "Runtime":  "C:\\GRY\\wow\\serwer-dev",
+    "Maintenance":  "C:\\ProgramData\\VMANGOS\\AdminControlMaintenance\\v1",
+    "VersionRoot":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2",
+    "VersionPins":  [
+                        {
+                            "Name":  "VMANGOS-Control.ps1",
+                            "SHA256":  "84735EF2F2095232221C61BA27C41603CACAB866519697972EF7F6FCB873E398",
+                            "OriginalSHA256":  "0DBE3E3D64C05E5D75A0FF6E766BADBCEE539677BBA339A4754B6239C6C4981A",
+                            "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\VMANGOS-Control.ps1",
+                            "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\VMANGOS-Control.ps1"
+                        },
+                        {
+                            "Name":  "Maintenance.psm1",
+                            "SHA256":  "0616F42D2F5257D7A4662353F2080EAABBB01E4595CD9FEB44F432A58452A0E7",
+                            "OriginalSHA256":  "AA89658AB5DC3394EE48B168A1474164BF072B2C3553454BD7DDD4CC0899B6F0",
+                            "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\Maintenance.psm1",
+                            "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\Maintenance.psm1"
+                        },
+                        {
+                            "Name":  "Production.Driver.ps1",
+                            "SHA256":  "91DDF977DEBC3B6CBCCD756E68E302100360D4074ACBD3A25529FA2D0B5157EC",
+                            "OriginalSHA256":  "44BD1248500A5FA761325B35D4656D86B3931798BA47F88A3A3F50E1D75A2C9E",
+                            "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\Production.Driver.ps1",
+                            "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\Production.Driver.ps1"
+                        },
+                        {
+                            "Name":  "World.Markers.ps1",
+                            "SHA256":  "602AD85E0F7E390A0C1D5B21E705BCD36B13F706695A25841A742F99D4898ECE",
+                            "OriginalSHA256":  "602AD85E0F7E390A0C1D5B21E705BCD36B13F706695A25841A742F99D4898ECE",
+                            "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\World.Markers.ps1",
+                            "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\World.Markers.ps1"
+                        }
+                    ],
+    "Dispatcher":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-R3Bundle.ps1",
+    "BundlePointer":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\r3-bundle-current.json",
+    "CollectorPointer":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\collector-current.json",
+    "CollectorVersion":  "COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348",
+    "CollectorCodeSHA256":  "D92D2F7984757C98EB32A3908ECCAF688E42007BF69EDB829CDD1E0225FFACA7",
+    "CollectorRoot":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348",
+    "Registry":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\release-registry",
+    "BeforeRelease":  {
+                          "id":  "core-b1c0e16e-shutdown1053-r3",
+                          "sha256":  "F286FA2A6355752B3FB421D53C2DE6EDAE43483C172AC1D2B2028A713B6783A2"
+                      },
+    "CandidateReference":  {
+                               "id":  "core-e8160a07-full-local-r1",
+                               "sha256":  "4225AEF75FAE50905DAF1BABE258C35C1C3663E53870AB03F621E7E45F0084A1"
+                           },
+    "Artifacts":  [
+                      {
+                          "Role":  "mangosd.exe",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\mangosd.exe",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\bin\\Release\\mangosd.exe",
+                          "Bytes":  23099904,
+                          "SHA256":  "30E0D6D437DE3CB422544444F9793605BFC3B2A08AB642D57DDC34272345C16B",
+                          "ZIPPath":  "payload/candidate-runtime/mangosd.exe"
+                      },
+                      {
+                          "Role":  "mangosd.pdb",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-symbols\\mangosd.pdb",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\build\\symbols\\Release\\mangosd.pdb",
+                          "Bytes":  195964928,
+                          "SHA256":  "186BCB7384183CC6182FED6B6BC94AD7B40604BF132F950634295F23667F42E5",
+                          "ZIPPath":  "payload/candidate-symbols/mangosd.pdb"
+                      },
+                      {
+                          "Role":  "realmd.exe",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\realmd.exe",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\bin\\Release\\realmd.exe",
+                          "Bytes":  876032,
+                          "SHA256":  "EA22B39DF7539A180FD3CC7FB919CEB987632D479E4AF8E0A6199DD8BE093CB2",
+                          "ZIPPath":  "payload/candidate-runtime/realmd.exe"
+                      },
+                      {
+                          "Role":  "realmd.pdb",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-symbols\\realmd.pdb",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\build\\symbols\\Release\\realmd.pdb",
+                          "Bytes":  10440704,
+                          "SHA256":  "F914E24F8471A05AC7F396E38DAC5DDBD384041BBAE71D8A84CF9983E2182458",
+                          "ZIPPath":  "payload/candidate-symbols/realmd.pdb"
+                      },
+                      {
+                          "Role":  "APPLOCAL_DLL",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\libmysql.dll",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\dep\\windows\\lib\\x64_release\\libmysql.dll",
+                          "Bytes":  7198336,
+                          "SHA256":  "63D15A7E3AD15BB3128DD42A94C2A0EBD782668FF7F2FCC2BE767090A6DAC4E7",
+                          "ZIPPath":  "payload/candidate-runtime/libmysql.dll"
+                      },
+                      {
+                          "Role":  "APPLOCAL_DLL",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\libcrypto-3-x64.dll",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\dep\\windows\\lib\\x64_release\\libcrypto-3-x64.dll",
+                          "Bytes":  7410080,
+                          "SHA256":  "055DCC0B4DB954614EAA98DE6B9FA4D1A9557C5F72F0EB41C39BB10A803EF7F2",
+                          "ZIPPath":  "payload/candidate-runtime/libcrypto-3-x64.dll"
+                      },
+                      {
+                          "Role":  "APPLOCAL_DLL",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\libssl-3-x64.dll",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\dep\\windows\\lib\\x64_release\\libssl-3-x64.dll",
+                          "Bytes":  1519520,
+                          "SHA256":  "D2875EB62EABA4A47633B8BEC1AA4C606E4841FAB3DB3EB7FFB8EB382A4E6D00",
+                          "ZIPPath":  "payload/candidate-runtime/libssl-3-x64.dll"
+                      },
+                      {
+                          "Role":  "APPLOCAL_DLL",
+                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\legacy.dll",
+                          "Original":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\dep\\windows\\lib\\x64_release\\legacy.dll",
+                          "Bytes":  376736,
+                          "SHA256":  "91BF4C92C11ED98B157DB45C5840F4862A03DD3A83629D7B0DAF73E9E1770246",
+                          "ZIPPath":  "payload/candidate-runtime/legacy.dll"
+                      }
+                  ],
+    "FixedInputs":  [
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\bin\\mysql.exe",
+                            "SHA256":  "90FBB6541841B20C3278BAFE62D2B3E593E34DE8C29929D1A658B25AB4F0687A",
+                            "Bytes":  7349368,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\bin\\mysqld.exe",
+                            "SHA256":  "74891BC02A45FDD4B901DB637FDDE469C34F9723BEF41636E62C522BC4404CF5",
+                            "Bytes":  53719168,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\bin\\mysqldump.exe",
+                            "SHA256":  "E058BA8B7A21948905D55B38D53BFB00DE2233B9C5CAEAE4CA309990AAA19286",
+                            "Bytes":  7329408,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\my-vmangos-service.ini",
+                            "SHA256":  "95C618F9DFC69C244B7C7F2E16214347BEBA44161CD0CA959D93CC20A7495E06",
+                            "Bytes":  15501,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\mangosd.conf",
+                            "SHA256":  "058BBBD1CE99AAEA92DD570E46A89A35BF682B8F66AA17283224F60DD47E9107",
+                            "Bytes":  122352,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\mangosd.exe",
+                            "SHA256":  "1F50D315EA1B5159B956CAA1D17CF3CB515D78FEF77AD92C5C730B0323B9ECC6",
+                            "Bytes":  22991360,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\realmd.conf",
+                            "SHA256":  "B4787781306777A17CC48EF56E654F7575FBAE826C9EBF3B90866B4DBE213B70",
+                            "Bytes":  7786,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\realmd.exe",
+                            "SHA256":  "CD5E49479BC1FBA1B10012C3F651D685C3068D067DB571157A9DE713D57F6661",
+                            "Bytes":  877568,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\Start-WoWEnvironment.ps1",
+                            "SHA256":  "E5EAF12C42778FA10C213A32470EE4D261F5EAAC9E9070EB7E7A4EED27E78920",
+                            "Bytes":  1475,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\ACTIVATION-RECEIPT.example.json",
+                            "SHA256":  "9447AE5BFBE82CD1159F0DA9EB8048364AB72AB273E0176FEBE0997DAD5A1D4C",
+                            "Bytes":  629,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\ACTIVATION-RECEIPT.json",
+                            "SHA256":  "EA0D248EB4EFB351782DEDA051717D14D3D878C91E8E4FEED5E7DBE421C7D4EF",
+                            "Bytes":  1298,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Boot-Start.ps1",
+                            "SHA256":  "0AAE56DE4C4F6783CA7FBE049C2D91DE92F29070339024FCE5ACC0D28E4EAE0D",
+                            "Bytes":  215,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Invoke-VMANGOS-Control.ps1",
+                            "SHA256":  "6FE6D8FE0ACF9FD174819C431CC5E424F331A338933604FB0D1751ABB4ED8116",
+                            "Bytes":  3558,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Legacy-Auto-Start.ps1",
+                            "SHA256":  "8CD7A2780A45BA0698DC68DB5D84EFFCBA3D79689031EB0DCF748822DD82AAE4",
+                            "Bytes":  515,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Legacy-Launcher.ps1",
+                            "SHA256":  "AA92B7B0F933608FEAE508F72FCE4C5DDA09CA55F81BBFB5359F9540536C6C39",
+                            "Bytes":  291,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Local-VMANGOS-Control.ps1",
+                            "SHA256":  "D85659A1658BF72182540BF064FD3BFC10FAD9F1441EC065D8EDF7F4D3B07BED",
+                            "Bytes":  781,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Maintenance.psm1",
+                            "SHA256":  "554EBFE2D620DAF63EDEDB35E7CC3EB4F0EB77F92BD39500C256052BF2DE5B2A",
+                            "Bytes":  13306,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Production.Driver.ps1",
+                            "SHA256":  "C6770CAB704814A4C091BCE8419DEDF092B6C92F435A0BD5D5F8A4E19C4CDDE0",
+                            "Bytes":  8122,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\REVIEWED-CODE-PINS.tsv",
+                            "SHA256":  "9AE24ED57EFA5A14EA0C94CE362242FA742999A2A10F5E69B191F07B4BD549F6",
+                            "Bytes":  374,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\Start DEV.bat",
+                            "SHA256":  "DE0C7C6DD95B601B341DEF8089BFC56B611A60B7C069341D597DEB4BCB26CD74",
+                            "Bytes":  166,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\TASK-CHANGE-MANIFEST.tsv",
+                            "SHA256":  "6E625F2B4105245BE5E34C4E1E117591E38ACB1FB90A1C17404885778A962854",
+                            "Bytes":  744,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\VMANGOS-Control.ps1",
+                            "SHA256":  "3553ACDFDE175BB7366F21055D6645A4A5D3D87D39F905A343C7C98FECD4927B",
+                            "Bytes":  23792,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\autohonor-v3\\World.Markers.ps1",
+                            "SHA256":  "602AD85E0F7E390A0C1D5B21E705BCD36B13F706695A25841A742F99D4898ECE",
+                            "Bytes":  1522,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-VMANGOS-Control.ps1",
+                            "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61",
+                            "Bytes":  1472,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\VMANGOS-Control.ps1",
+                            "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61",
+                            "Bytes":  1472,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:PAI(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\collector-current.json",
+                            "SHA256":  "7D9A6D30C2D0C15CA7D288A88CA036B8855D7197D099CC357A164AF1BF97A805",
+                            "Bytes":  204,
+                            "SDDL":  "O:BAG:BAD:PAI(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\release-registry\\approvals\\core-b1c0e16e-logger4-f1-autohonor-r1.json",
+                            "SHA256":  "2D0066346A40EFB548AD03FDFFF5EF9A4B21029BBC125FD17ED266486BC39329",
+                            "Bytes":  356,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\release-registry\\manifests\\core-b1c0e16e-logger4-f1-autohonor-r1.json",
+                            "SHA256":  "6B81E9E0E58B224EC750FC1777C0F2FF95DA6A744108A26EA1E051AAC6704401",
+                            "Bytes":  2483,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\release-registry\\proofs\\core-b1c0e16e-logger4-f1-autohonor-r1.json",
+                            "SHA256":  "EDAC05B75DE6705CBF25DD8316D9C860796CAF88332F676DC57C52D3CA73D982",
+                            "Bytes":  2643,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\collector-code.json",
+                            "SHA256":  "D92D2F7984757C98EB32A3908ECCAF688E42007BF69EDB829CDD1E0225FFACA7",
+                            "Bytes":  862,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\collector-policy.json",
+                            "SHA256":  "40A11EDE56FB05C737582C41489522DB194F2AEC09DC95FA0D2ABE763EB5EAF0",
+                            "Bytes":  539,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Collect-Telemetry.Core.ps1",
+                            "SHA256":  "EEE06FA39C6913254A8F72015C9069CFAF029E5F8C6F52639159BF9D4ED16C3C",
+                            "Bytes":  68091,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Release.Contract.psm1",
+                            "SHA256":  "EC0864AB81229E06E0EE1E51B1AA6194EDECEB0CA5A01418002A425B127334D4",
+                            "Bytes":  25357,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Release.Native.cs",
+                            "SHA256":  "5E40302BCA8BA954DD046F0645E5F7C457A7725F51494DBF7A9194B48B7B026F",
+                            "Bytes":  7530,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Run-TelemetryWorker.ps1",
+                            "SHA256":  "24B620C3349BA6730207BBA961F1FDD56A182621578FA30986E4316D8E70D4AA",
+                            "Bytes":  7158,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Transport.Helpers.cs",
+                            "SHA256":  "782D20A306FE38A5833972915DFD5F75A9DE5A557E0C7D5A6BE0F4A244A01DA3",
+                            "Bytes":  46896,
+                            "SDDL":  "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)"
+                        },
+                        {
+                            "Path":  "C:\\Scripts\\VMANGOS-Control.ps1",
+                            "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61",
+                            "Bytes":  1472,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1891657585-268028028-3877660095-2007570432)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\Scripts\\VMANGOS-WOW-SRV-AUTO-START.ps1",
+                            "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61",
+                            "Bytes":  1472,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1891657585-268028028-3877660095-2007570432)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\libmysql.dll",
+                            "SHA256":  "63D15A7E3AD15BB3128DD42A94C2A0EBD782668FF7F2FCC2BE767090A6DAC4E7",
+                            "Bytes":  7198336,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\libcrypto-3-x64.dll",
+                            "SHA256":  "055DCC0B4DB954614EAA98DE6B9FA4D1A9557C5F72F0EB41C39BB10A803EF7F2",
+                            "Bytes":  7410080,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\libssl-3-x64.dll",
+                            "SHA256":  "D2875EB62EABA4A47633B8BEC1AA4C606E4841FAB3DB3EB7FFB8EB382A4E6D00",
+                            "Bytes":  1519520,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\legacy.dll",
+                            "SHA256":  "91BF4C92C11ED98B157DB45C5840F4862A03DD3A83629D7B0DAF73E9E1770246",
+                            "Bytes":  376736,
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                        },
+                        {
+                            "Path":  "C:\\GRY\\wow\\serwer-dev\\aiplayerbot.conf",
+                            "SHA256":  "821572B1FD8A2FAD3B0E1073A4A39B68BB2177533349CF377203142FA58F9440",
+                            "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)",
+                            "Bytes":  280844
+                        }
+                    ],
+    "Configs":  [
+                    "C:\\GRY\\wow\\serwer-dev\\mangosd.conf",
+                    "C:\\GRY\\wow\\serwer-dev\\realmd.conf",
+                    "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\my-vmangos-service.ini"
+                ],
+    "BackupRoot":  "C:\\GRY\\wow\\diagnostics\\CORE-FULL-RECOVERY-PREP-R2-WOW-SRV-20261109-2225\\future-production-backups",
+    "DatabaseNames":  [
+                          "realmd_dev",
+                          "mangos_dev",
+                          "characters_dev",
+                          "logs_dev"
+                      ],
+    "MySQLBin":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\bin",
+    "ActiveMySQLDefaults":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\my-vmangos-service.ini",
+    "Tasks":  [
+                  {
+                      "Name":  "VMANGOS-ADMIN-PANEL-RESTART-WORLD",
+                      "Path":  "\\",
+                      "State":  "Ready",
+                      "Enabled":  true,
+                      "Principal":  "SYSTEM",
+                      "Actions":  [
+                                      {
+                                          "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                          "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-VMANGOS-Control.ps1\" -Action Restart-World",
+                                          "Cwd":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge"
+                                      }
+                                  ]
+                  },
+                  {
+                      "Name":  "VMANGOS-ADMIN-PANEL-START-ALL",
+                      "Path":  "\\",
+                      "State":  "Ready",
+                      "Enabled":  true,
+                      "Principal":  "SYSTEM",
+                      "Actions":  [
+                                      {
+                                          "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                          "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-VMANGOS-Control.ps1\" -Action Start-All",
+                                          "Cwd":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge"
+                                      }
+                                  ]
+                  },
+                  {
+                      "Name":  "VMANGOS-ADMIN-PANEL-STOP-ALL",
+                      "Path":  "\\",
+                      "State":  "Ready",
+                      "Enabled":  true,
+                      "Principal":  "SYSTEM",
+                      "Actions":  [
+                                      {
+                                          "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                          "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-VMANGOS-Control.ps1\" -Action Stop-All",
+                                          "Cwd":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge"
+                                      }
+                                  ]
+                  },
+                  {
+                      "Name":  "VMANGOS-SERVICE-STACK-AUTO-START",
+                      "Path":  "\\",
+                      "State":  "Ready",
+                      "Enabled":  true,
+                      "Principal":  "SYSTEM",
+                      "Actions":  [
+                                      {
+                                          "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                          "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\scripts\\VMANGOS-Control.ps1\" -Action Start-All -Boot -Execute",
+                                          "Cwd":  "C:\\scripts"
+                                      }
+                                  ]
+                  },
+                  {
+                      "Name":  "VMANGOS-WOW-SRV-AUTO-START",
+                      "Path":  "\\",
+                      "State":  "Disabled",
+                      "Enabled":  false,
+                      "Principal":  "SYSTEM",
+                      "Actions":  [
+                                      {
+                                          "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                          "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\scripts\\VMANGOS-WOW-SRV-AUTO-START.ps1\" -Run -Execute",
+                                          "Cwd":  "C:\\GRY\\wow"
+                                      }
+                                  ]
+                  }
+              ],
+    "TelemetryTask":  {
+                          "Name":  "VMANGOS-ADMIN-PANEL-TELEMETRY",
+                          "Path":  "\\",
+                          "State":  "Running",
+                          "Enabled":  true,
+                          "Principal":  "SYSTEM",
+                          "Actions":  [
+                                          {
+                                              "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                                              "Args":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348\\Run-TelemetryWorker.ps1\"",
+                                              "Cwd":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\versions\\A106-20261014-mangos-187E0510"
+                                          }
+                                      ]
+                      },
+    "Dev":  {
+                "Root":  "C:\\Scripts\\WOW-R3-DEV-R1",
+                "Runtime":  "C:\\Scripts\\WOW-R3-DEV-R1\\runtime",
+                "Data":  "C:\\Scripts\\WOW-R3-DEV-R1\\mysql-data",
+                "Config":  "C:\\Scripts\\WOW-R3-DEV-R1\\runtime",
+                "GameData":  "C:\\Scripts\\WOW-R3-DEV-R1\\game-data",
+                "Logs":  "C:\\GRY\\wow\\diagnostics\\SHUTDOWN1053-DEV-MIGRATION-PREP-R2-FIX1-WOW-SRV-20261105-1905\\DEV-LOGS",
+                "MySQLPort":  13306,
+                "RealmPort":  13724,
+                "WorldPort":  18085,
+                "SOAPPort":  17878,
+                "Bind":  "127.0.0.1",
+                "MySQL":  "VMANGOS-R3DEV-MySQL",
+                "Realm":  "VMANGOS-R3DEV-realmd",
+                "World":  "VMANGOS-R3DEV-mangosd",
+                "Defaults":  "C:\\Scripts\\WOW-R3-DEV-R1\\private\\client.ini",
+                "MySQLIni":  "C:\\Scripts\\WOW-R3-DEV-R1\\my.ini",
+                "SourceGameData":  "C:\\GRY\\wow\\serwer-dev\\data"
+            },
+    "Files":  [
+                  {
+                      "Id":  "route-1",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\routes\\wrapper-1.ps1",
+                      "Target":  "C:\\Scripts\\VMANGOS-Control.ps1",
+                      "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61"
+                  },
+                  {
+                      "Id":  "route-2",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\routes\\wrapper-2.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\VMANGOS-Control.ps1",
+                      "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61"
+                  },
+                  {
+                      "Id":  "route-3",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\routes\\wrapper-3.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-VMANGOS-Control.ps1",
+                      "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61"
+                  },
+                  {
+                      "Id":  "route-4",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\routes\\wrapper-4.ps1",
+                      "Target":  "C:\\GRY\\wow\\Start-WoWEnvironment.ps1",
+                      "SHA256":  "E5EAF12C42778FA10C213A32470EE4D261F5EAAC9E9070EB7E7A4EED27E78920"
+                  },
+                  {
+                      "Id":  "route-5",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\routes\\wrapper-5.ps1",
+                      "Target":  "C:\\Scripts\\VMANGOS-WOW-SRV-AUTO-START.ps1",
+                      "SHA256":  "98F4DF615FB4227DC07E875E77B652631D5726EEA19C941DF8AAC144C8216E61"
+                  },
+                  {
+                      "Id":  "dispatcher",
+                      "Group":  "Routes",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\Dispatcher.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\Invoke-R3Bundle.ps1",
+                      "SHA256":  "6B904E7F3310216D4B3A0C07A9EBAF909FC78660C96A63A78D8305A933611540"
+                  },
+                  {
+                      "Id":  "mangosd.exe",
+                      "Group":  "Binaries",
+                      "Source":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\mangosd.exe",
+                      "Target":  "C:\\GRY\\wow\\serwer-dev\\mangosd.exe",
+                      "SHA256":  "30E0D6D437DE3CB422544444F9793605BFC3B2A08AB642D57DDC34272345C16B"
+                  },
+                  {
+                      "Id":  "realmd.exe",
+                      "Group":  "Binaries",
+                      "Source":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\realmd.exe",
+                      "Target":  "C:\\GRY\\wow\\serwer-dev\\realmd.exe",
+                      "SHA256":  "EA22B39DF7539A180FD3CC7FB919CEB987632D479E4AF8E0A6199DD8BE093CB2"
+                  },
+                  {
+                      "Id":  "bundle-pointer",
+                      "Group":  "Pointer",
+                      "Source":  null,
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\r3-bundle-current.json",
+                      "SHA256":  null
+                  },
+                  {
+                      "Id":  "version-VMANGOS-Control.ps1",
+                      "Group":  "Version",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\VMANGOS-Control.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\VMANGOS-Control.ps1",
+                      "SHA256":  "84735EF2F2095232221C61BA27C41603CACAB866519697972EF7F6FCB873E398"
+                  },
+                  {
+                      "Id":  "version-Maintenance.psm1",
+                      "Group":  "Version",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\Maintenance.psm1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\Maintenance.psm1",
+                      "SHA256":  "0616F42D2F5257D7A4662353F2080EAABBB01E4595CD9FEB44F432A58452A0E7"
+                  },
+                  {
+                      "Id":  "version-Production.Driver.ps1",
+                      "Group":  "Version",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\Production.Driver.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\Production.Driver.ps1",
+                      "SHA256":  "91DDF977DEBC3B6CBCCD756E68E302100360D4074ACBD3A25529FA2D0B5157EC"
+                  },
+                  {
+                      "Id":  "version-World.Markers.ps1",
+                      "Group":  "Version",
+                      "Source":  "C:\\Scripts\\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\\controller\\World.Markers.ps1",
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\World.Markers.ps1",
+                      "SHA256":  "602AD85E0F7E390A0C1D5B21E705BCD36B13F706695A25841A742F99D4898ECE"
+                  },
+                  {
+                      "Id":  "version-ACTIVATION-RECEIPT.json",
+                      "Group":  "GeneratedApproval",
+                      "Source":  null,
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\ACTIVATION-RECEIPT.json",
+                      "SHA256":  null
+                  },
+                  {
+                      "Id":  "version-REBOOT-CAPABILITY.json",
+                      "Group":  "GeneratedApproval",
+                      "Source":  null,
+                      "Target":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2\\REBOOT-CAPABILITY.json",
+                      "SHA256":  null
+                  },
+                  {
+                      "Id":  "symbol-mangosd.pdb",
+                      "Group":  "Symbols",
+                      "Source":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-symbols\\mangosd.pdb",
+                      "Target":  "C:\\Scripts\\Symbols\\core-e8160a07-full-local-r1\\mangosd.pdb",
+                      "SHA256":  "186BCB7384183CC6182FED6B6BC94AD7B40604BF132F950634295F23667F42E5"
+                  },
+                  {
+                      "Id":  "symbol-realmd.pdb",
+                      "Group":  "Symbols",
+                      "Source":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-symbols\\realmd.pdb",
+                      "Target":  "C:\\Scripts\\Symbols\\core-e8160a07-full-local-r1\\realmd.pdb",
+                      "SHA256":  "F914E24F8471A05AC7F396E38DAC5DDBD384041BBAE71D8A84CF9983E2182458"
+                  }
+              ],
+    "Required":  {
+                     "SourceDefaults":  "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-candidate.ini",
+                     "SourceMigrationDefaults":  "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-candidate.ini",
+                     "ApprovalScope":  "MigrateFull",
+                     "NoDDLWindow":  "Fresh explicit approval required",
+                     "Approved":  false,
+                     "NoDDLWindowApproved":  false,
+                     "DatabaseRestore":  "NEVER_AUTOMATIC"
+                 },
+    "TaskSDDL":  {
+                     "VMANGOS-ADMIN-PANEL-RESTART-WORLD":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;;FR;;;SY)(A;;0x1200a9;;;S-1-5-82-2192834305-681035450-1731772730-1791053079-2169464979)(A;ID;0x1f019f;;;BA)(A;ID;0x1f019f;;;SY)(A;ID;FA;;;BA)",
+                     "VMANGOS-ADMIN-PANEL-START-ALL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;;FR;;;SY)(A;;0x1200a9;;;S-1-5-82-2192834305-681035450-1731772730-1791053079-2169464979)(A;ID;0x1f019f;;;BA)(A;ID;0x1f019f;;;SY)(A;ID;FA;;;BA)",
+                     "VMANGOS-ADMIN-PANEL-STOP-ALL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;;FR;;;SY)(A;;0x1200a9;;;S-1-5-82-2192834305-681035450-1731772730-1791053079-2169464979)(A;ID;0x1f019f;;;BA)(A;ID;0x1f019f;;;SY)(A;ID;FA;;;BA)",
+                     "VMANGOS-SERVICE-STACK-AUTO-START":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:(A;ID;0x1f019f;;;BA)(A;ID;0x1f019f;;;SY)(A;ID;FA;;;BA)(A;;FR;;;SY)",
+                     "VMANGOS-WOW-SRV-AUTO-START":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:(A;ID;0x1f019f;;;BA)(A;ID;0x1f019f;;;SY)(A;ID;FA;;;BA)(A;;FR;;;SY)"
+                 },
+    "ServiceBaseline":  [
+                            {
+                                "Account":  "LocalSystem",
+                                "Name":  "mangosd",
+                                "FailureActionsSHA256":  "8DF013B51856FC9735B9CB2831C1FD5164C3F77284445CC194AA2DFB199C1E0D",
+                                "Dependencies":  [
+                                                     "VMANGOS-MySQL",
+                                                     "realmd"
+                                                 ],
+                                "StartMode":  "Manual",
+                                "ImagePath":  "C:\\GRY\\wow\\serwer-dev\\mangosd.exe -s run -c C:\\GRY\\wow\\serwer-dev\\mangosd.conf"
+                            },
+                            {
+                                "Account":  "LocalSystem",
+                                "Name":  "realmd",
+                                "FailureActionsSHA256":  null,
+                                "Dependencies":  [
+                                                     "VMANGOS-MySQL"
+                                                 ],
+                                "StartMode":  "Manual",
+                                "ImagePath":  "C:\\GRY\\wow\\serwer-dev\\realmd.exe -s run -c C:\\GRY\\wow\\serwer-dev\\realmd.conf"
+                            },
+                            {
+                                "Account":  "LocalSystem",
+                                "Name":  "VMANGOS-MySQL",
+                                "FailureActionsSHA256":  null,
+                                "Dependencies":  [
+
+                                                 ],
+                                "StartMode":  "Manual",
+                                "ImagePath":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\bin\\mysqld.exe --defaults-file=C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\my-vmangos-service.ini VMANGOS-MySQL"
+                            }
+                        ],
+    "PreviousPlanSHA256":  "0FBA4FD6D55B7618B6BB2306E56CB50C2B66BF114EFB78261F9AB512B222DDB0",
+    "PreviousKitZIP":  "C:\\Scripts\\SHUTDOWN1053-DEV-MIGRATION-PREP-R2-FIX4-R2-WOW-SRV-20261107-1454.zip",
+    "PreviousKitSHA256":  "FBF046D9860D216C6A6D1A262531936AF4D510AA8970520F1B0FF677C070C3F3",
+    "BaseToolkitPlanSHA256":  "0FBA4FD6D55B7618B6BB2306E56CB50C2B66BF114EFB78261F9AB512B222DDB0",
+    "FullCandidate":  {
+                          "DevAccept":  {
+                                            "Operation":  "e56bd2d4340e412a82b9a5c4b65abb3e",
+                                            "Receipt":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevAccept-e56bd2d4340e412a82b9a5c4b65abb3e\\RECEIPT.json",
+                                            "ReceiptSHA256":  "A751F8AFA490A68095E7D6ED93D1B8CEE644FBB4DDD73261DD9CA968AE935156",
+                                            "Verifier":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevAccept-e56bd2d4340e412a82b9a5c4b65abb3e\\INDEPENDENT-VERIFIER.json",
+                                            "VerifierSHA256":  "5A81E15733A486F58B253A309E6959E7FF607969AC067ED3B3874CB08C79EE9C",
+                                            "NativeExit":  0,
+                                            "VerifierNativeExit":  0
+                                        },
+                          "Manifest":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\CANDIDATE-MANIFEST.json",
+                          "SourceDatadir":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\Data\\",
+                          "DevLedgerSHA256":  "C1291A4DE6C56FC5F9668C1B5D02AD5F0E1347457B2B3AD8B39BC5F1D16EAC0D",
+                          "AuditSchemaPrefix":  "vmangos_migration_audit_",
+                          "PublicationCommit":  "bb71dfc8c5b7e19664d8633801e362aa234aa51c",
+                          "SQL":  [
+                                      {
+                                          "Id":  "20261025125310",
+                                          "Database":  "mangos_dev",
+                                          "Order":  1,
+                                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\migration-source\\20261025125310_world.sql",
+                                          "SHA256":  "2C6E753AB488ABCCA1FB3B651466B66B0D0E024BDAB38BFE7CD4374FD4E834A9",
+                                          "Bytes":  2185,
+                                          "Use":  "PUBLIC_SOURCE_ONLY_NOT_EXECUTED"
+                                      },
+                                      {
+                                          "Id":  "20261025125408",
+                                          "Database":  "characters_dev",
+                                          "Order":  2,
+                                          "Path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\migration-source\\20261025125408_characters.sql",
+                                          "SHA256":  "8F9F649F5573388E9BD6962EE57776DEC466F4D7540574366635B2C914A235A9",
+                                          "Bytes":  1751,
+                                          "Use":  "PUBLIC_SOURCE_ONLY_NOT_EXECUTED"
+                                      }
+                                  ],
+                          "RuntimePrefix":  "e8160a07e67708f75597",
+                          "SourceUUID":  "53995f53-ba88-11f1-91f5-b0227ad7e1e2",
+                          "BuildRecord":  "C:\\GRY\\wow\\diagnostics\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210\\BUILD-VERIFY-RESULT.json",
+                          "DevLedger":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\PHASE-LEDGER.json",
+                          "SymbolRoot":  "C:\\Scripts\\Symbols\\core-e8160a07-full-local-r1",
+                          "DevMigrations":  {
+                                                "Operation":  "7ddeb3c13abd4ca48f8b4e795e80bcc6",
+                                                "Receipt":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevMigrations-7ddeb3c13abd4ca48f8b4e795e80bcc6\\RECEIPT.json",
+                                                "ReceiptSHA256":  "CCB13E008EC41193A7E5E30816F971EF4354DFFCA86F8F4FEDB0FCB9ED80FAA3",
+                                                "Verifier":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevMigrations-7ddeb3c13abd4ca48f8b4e795e80bcc6\\INDEPENDENT-VERIFIER.json",
+                                                "VerifierSHA256":  "303676A84B9B24B20E4199D224E404B32429337D2488699E1D5BE46AA027D572",
+                                                "NativeExit":  0,
+                                                "VerifierNativeExit":  0
+                                            },
+                          "SHA256":  "D3FD840BFDC65D5852612DA64005F2945689D3A66308525CD8B7B059878A4DBB",
+                          "SourceDefaults":  "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-candidate.ini",
+                          "ExpectedSetsSHA256":  "E2AC9285DBEC3302AE5F7A15FC1384BC446A4197B5871A667B7C76A1BE6166B7",
+                          "SourceHeaderSHA256":  "74D3D259C1956CD29C81FB17C86E2679C6E74D1DD320B471AC7BEFBFDB060EAE",
+                          "SourceHeader":  "C:\\Scripts\\CORE-CAND-20261109-0210\\source\\src\\shared\\migrations_list.h",
+                          "Protection":  [
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer\\mysql-26.7.0-winx64\\my-vmangos-service.ini",
+                                                 "SHA256":  "95C618F9DFC69C244B7C7F2E16214347BEBA44161CD0CA959D93CC20A7495E06",
+                                                 "Bytes":  15501,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\mangosd.conf",
+                                                 "SHA256":  "058BBBD1CE99AAEA92DD570E46A89A35BF682B8F66AA17283224F60DD47E9107",
+                                                 "Bytes":  122352,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\realmd.conf",
+                                                 "SHA256":  "B4787781306777A17CC48EF56E654F7575FBAE826C9EBF3B90866B4DBE213B70",
+                                                 "Bytes":  7786,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\libmysql.dll",
+                                                 "SHA256":  "63D15A7E3AD15BB3128DD42A94C2A0EBD782668FF7F2FCC2BE767090A6DAC4E7",
+                                                 "Bytes":  7198336,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\libcrypto-3-x64.dll",
+                                                 "SHA256":  "055DCC0B4DB954614EAA98DE6B9FA4D1A9557C5F72F0EB41C39BB10A803EF7F2",
+                                                 "Bytes":  7410080,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\libssl-3-x64.dll",
+                                                 "SHA256":  "D2875EB62EABA4A47633B8BEC1AA4C606E4841FAB3DB3EB7FFB8EB382A4E6D00",
+                                                 "Bytes":  1519520,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\legacy.dll",
+                                                 "SHA256":  "91BF4C92C11ED98B157DB45C5840F4862A03DD3A83629D7B0DAF73E9E1770246",
+                                                 "Bytes":  376736,
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)"
+                                             },
+                                             {
+                                                 "Path":  "C:\\GRY\\wow\\serwer-dev\\aiplayerbot.conf",
+                                                 "SHA256":  "821572B1FD8A2FAD3B0E1073A4A39B68BB2177533349CF377203142FA58F9440",
+                                                 "SDDL":  "O:BAG:S-1-5-21-2732572592-1090672914-1735843732-513D:AI(A;ID;0x1301bf;;;S-1-5-21-1770101967-298902093-3855051324-338379445)(A;ID;0x1301bf;;;S-1-5-21-2732572592-1090672914-1735843732-1001)(A;ID;0x1301bf;;;S-1-5-21-1369847349-4185897597-3477705435-3448060574)(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;BU)",
+                                                 "Bytes":  280844
+                                             }
+                                         ]
+                      },
+    "HistoricalR3_AcceptedDevAcceptance":  {
+                                               "Receipt":  "C:\\GRY\\wow\\diagnostics\\SHUTDOWN1053-DEV-MIGRATION-PREP-R2-FIX3-R2-WOW-SRV-20261106-1326\\runs\\DevAccept-656c730f9a1b4269a5ab9cf7bac2f0ab\\RECEIPT.json",
+                                               "ReceiptSHA256":  "866897CC4BADEF549E9818E4AD3A755D869790A774DB7F07B1720E95A89EF1B7",
+                                               "Operation":  "656c730f9a1b4269a5ab9cf7bac2f0ab",
+                                               "OriginPlanSHA256":  "550154039F5D9EB1EDEB0B0CD4B57390CA9DDFEE7362434F4B38ACDD1F09AD0B",
+                                               "CandidateReference":  {
+                                                                          "id":  "core-b1c0e16e-shutdown1053-r3",
+                                                                          "sha256":  "F286FA2A6355752B3FB421D53C2DE6EDAE43483C172AC1D2B2028A713B6783A2"
+                                                                      },
+                                               "R3SHA256":  "3138BF6110F256714984608257876AD935938996AEC7B517B3C5FFA9499C2AF6",
+                                               "Artifacts":  [
+                                                                 {
+                                                                     "Role":  "mangosd.exe",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\mangosd.exe",
+                                                                     "SHA256":  "1F50D315EA1B5159B956CAA1D17CF3CB515D78FEF77AD92C5C730B0323B9ECC6"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "mangosd.pdb",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\build\\symbols\\Release\\mangosd.pdb",
+                                                                     "SHA256":  "9D0D95A8C8FABEF60176A891E289998E99D0A45FA4043597583BAFD79678C7C2"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "realmd.exe",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\realmd.exe",
+                                                                     "SHA256":  "CD5E49479BC1FBA1B10012C3F651D685C3068D067DB571157A9DE713D57F6661"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "realmd.pdb",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\build\\symbols\\Release\\realmd.pdb",
+                                                                     "SHA256":  "9F30949652DD824C0CA169BCB9C1BA2D2BC353D68107A39EC3EDC69DA233FF07"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "APPLOCAL_DLL",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\libmysql.dll",
+                                                                     "SHA256":  "63D15A7E3AD15BB3128DD42A94C2A0EBD782668FF7F2FCC2BE767090A6DAC4E7"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "APPLOCAL_DLL",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\libcrypto-3-x64.dll",
+                                                                     "SHA256":  "055DCC0B4DB954614EAA98DE6B9FA4D1A9557C5F72F0EB41C39BB10A803EF7F2"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "APPLOCAL_DLL",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\libssl-3-x64.dll",
+                                                                     "SHA256":  "D2875EB62EABA4A47633B8BEC1AA4C606E4841FAB3DB3EB7FFB8EB382A4E6D00"
+                                                                 },
+                                                                 {
+                                                                     "Role":  "APPLOCAL_DLL",
+                                                                     "Path":  "C:\\Scripts\\S1053-R3-20261104-1921\\source\\bin\\Release\\legacy.dll",
+                                                                     "SHA256":  "91BF4C92C11ED98B157DB45C5840F4862A03DD3A83629D7B0DAF73E9E1770246"
+                                                                 }
+                                                             ]
+                                           },
+    "HistoricalR3_AcceptedDevSetup":  {
+                                          "Receipt":  "C:\\GRY\\wow\\diagnostics\\SHUTDOWN1053-DEV-MIGRATION-PREP-R2-FIX1-WOW-SRV-20261105-1905\\runs\\DevSetup-d56042c59dba4e7497bbcc1b92f3f410\\RECEIPT.json",
+                                          "ReceiptSHA256":  "6DD3384561CE85D7359F11C121E7ED45F7D45E4D2715D846A910E2F98263105B",
+                                          "OriginPlanSHA256":  "525BFF8C5DEC810AFA2000675398B8B61CE1A71CDB22373B082396B00F65BF7D",
+                                          "Operation":  "d56042c59dba4e7497bbcc1b92f3f410",
+                                          "DevRoot":  "C:\\Scripts\\WOW-R3-DEV-R1",
+                                          "DevData":  "C:\\Scripts\\WOW-R3-DEV-R1\\mysql-data",
+                                          "DevLogs":  "C:\\GRY\\wow\\diagnostics\\SHUTDOWN1053-DEV-MIGRATION-PREP-R2-FIX1-WOW-SRV-20261105-1905\\DEV-LOGS"
+                                      },
+    "HistoricalR3_R3SHA256":  "3138BF6110F256714984608257876AD935938996AEC7B517B3C5FFA9499C2AF6"
+}

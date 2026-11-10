@@ -1,0 +1,68 @@
+{
+    "panel":  {
+                  "port":  8420,
+                  "host":  "127.0.0.1"
+              },
+    "soap":  {
+                 "host":  "127.0.0.1",
+                 "port":  0,
+                 "user":  "CHANGEME",
+                 "pass":  "CHANGEME"
+             },
+    "mysql":  {
+                  "logon":  {
+                                "host":  "127.0.0.1",
+                                "port":  0,
+                                "user":  "CHANGEME",
+                                "password":  "CHANGEME",
+                                "database":  "\u003cLOGON_DATABASE\u003e"
+                            },
+                  "characters":  {
+                                     "host":  "127.0.0.1",
+                                     "port":  0,
+                                     "user":  "CHANGEME",
+                                     "password":  "CHANGEME",
+                                     "database":  "\u003cCHARACTERS_DATABASE\u003e"
+                                 },
+                  "world":  {
+                                "host":  "127.0.0.1",
+                                "port":  0,
+                                "user":  "CHANGEME",
+                                "password":  "CHANGEME",
+                                "database":  "\u003cWORLD_DATABASE\u003e"
+                            },
+                  "logs":  {
+                               "host":  "127.0.0.1",
+                               "port":  0,
+                               "user":  "CHANGEME",
+                               "password":  "CHANGEME",
+                               "database":  "\u003cLOGS_DATABASE\u003e"
+                           },
+                  "dbcSchema":  "dbc"
+              },
+    "bots":  {
+                 "accountPrefix":  "RNDBOT",
+                 "playerSaveIntervalMs":  900000
+             },
+    "realm":  {
+                  "id":  1,
+                  "wowPatch":  10,
+                  "clientBuild":  5875,
+                  "talentRate":  1
+              },
+    "client":  {
+                   "dataDir":  "PATH TO THE CLIENT\u0027S Data DIRECTORY",
+                   "dbcDir":  "PATH TO THE SERVER\u0027S EXTRACTED dbc DIRECTORY"
+               },
+    "assets":  {
+                   "root":  "PATH TO WRITE EXTRACTED PNGs INTO",
+                   "port":  8421
+               },
+    "terrain":  {
+                    "mapsDir":  "PATH TO THE SERVER\u0027S EXTRACTED maps DIRECTORY"
+                },
+    "characters":  {
+                       "charDeleteMethod":  0
+                   },
+    "readOnly":  true
+}

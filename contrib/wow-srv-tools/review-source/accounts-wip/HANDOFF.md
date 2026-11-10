@@ -1,0 +1,11 @@
+﻿# Konta — WIP wyłącznie do review
+
+Pełne źródła formularza/backendu/worker/IPC/launcher: managed A140 na A139-R5, nie aktywny IIS. Kod zawiera wyłączony produkcyjny gateway i syntetyczny backendfixture. Nie deklarujemy gotowego realnego transportu kont. Zatwierdzone źródła managed odpowiadają pinom A140;121testówdomain i153modeli granicyPASS z istniejących dowodów. UI browser suite wymaga Playwright/Chromium i pozostaje NOT_RUN; nie instalowano go tutaj.
+
+Native A154: dziewięć wejść źródłowych, CMake/MSVCx64, policy/diagnostics/Win32bootstrap i tester/protokółPS. Źródła zgodne z odebranym buildem;961policy i kontraktC++→PowerShellPASS. Nie przebudowywano i nie uruchamiano bootstrapu. `sealed_a141.hpp` jest źródłowym, niesekretnym kontraktem własnej instalacjiWOW-SRV (ścieżki/SID/piny), nie przenośną konfiguracją. Nie można użyć go do aktywacji innej instalacji bez nowego projektu seala i review.
+
+Ostatnia niezaliczona bramka: NativeVerifyR3, REGISTER_NEW_DISABLED_TASK, STATUS_INVALID_OWNER (0xD000005A/NT0xC000005A). R4 zmienia wyłącznie legalnego ownera zadania naBA przy sprawdzonym tokenie i wspólnymTaskSecurity. Historyczne rzeczywisteQA utworzyło i zablokowało jedno zadanie, cały czasDisabled, zeroRun;74izolowane regresjePASS. To nie jest wykonany NativeVerify SYSTEM/session0. Nie uruchomiono NativeVerifyR4, AppPoolFixture, realnego endpointu kont, operacjiCreate/Reset lub całego IISpipeline. StareFAIL/claims pozostają na hoście; nie są kopiowane do dostawy.
+
+CREATEACCOUNT_LIVE_READY=False; RESET_PASSWORD_LIVE_READY=False; NativeVerifyR4=NOT_RUN; FixtureLive=NOT_RUN; IIS_PIPELINE_TESTED=False. Brakujące dowody: rzeczywisty tokenSYSTEM/session0 i protokółnative, granicaAppPool→launcher→worker, odmowyACL/DPAPI/IPC na realnych tokenach, pełna secrecy/audit/UNKNOWN oraz osobno zatwierdzony pilot bez automatycznych powtórek lub kasowania konta. Piętnaście luk live zachowane. Ta dostawa nie znosi wstrzymań.
+
+Nie uruchamiać `SYSTEM-BOUNDARY.ps1`, `Test-TaskSecurity.RealAPI.ps1`, workerów lub `--fixture-client`. Do ewentualnego późniejszego offline modeltestu służy wyłącznie jawny `--model-tests`; livefixture ma odrębną zgodę. Brak nowych buildów/testów kont przy zgodnych źródłach jest świadomym wykorzystaniem odebranych dowodów.

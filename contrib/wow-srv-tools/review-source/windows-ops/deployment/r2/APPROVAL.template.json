@@ -1,0 +1,18 @@
+﻿{
+    "AllowPrivateAuditSchema":  false,
+    "ExpiresUtc":  null,
+    "SnapshotStrategy":  "AllInnoDB",
+    "ExecutionPinsSHA256":  "READ_SHA256_OF_EXECUTION-PINS.tsv_AT_ISSUE_TIME",
+    "Schema":  1,
+    "Host":  "WOW-SRV",
+    "AllowGlobalReadLock":  false,
+    "PlanSHA256":  "FD1C405883A520F03EB10FAB8A822D2791E2689CDCD9A1A3A3B9E869C2759AF2",
+    "NoDDLWindow":  false,
+    "Scope":  "MigrateFull",
+    "AllowSQL":  [
+                     "20261025125310",
+                     "20261025125408"
+                 ],
+    "IssuedUtc":  null,
+    "Approved":  false
+}

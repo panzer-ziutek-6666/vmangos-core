@@ -1,0 +1,514 @@
+﻿{
+    "Versions":  [
+                     {
+                         "InstalledVersion":  "2.1.0",
+                         "ExpectedVersion":  "2.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/accept-negotiator"
+                     },
+                     {
+                         "InstalledVersion":  "4.0.6",
+                         "ExpectedVersion":  "4.0.6",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/ajv-compiler"
+                     },
+                     {
+                         "InstalledVersion":  "4.2.0",
+                         "ExpectedVersion":  "4.2.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/error"
+                     },
+                     {
+                         "InstalledVersion":  "5.1.0",
+                         "ExpectedVersion":  "5.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/fast-json-stringify-compiler"
+                     },
+                     {
+                         "InstalledVersion":  "9.0.0",
+                         "ExpectedVersion":  "9.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/formbody"
+                     },
+                     {
+                         "InstalledVersion":  "3.0.2",
+                         "ExpectedVersion":  "3.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/forwarded"
+                     },
+                     {
+                         "InstalledVersion":  "0.2.1",
+                         "ExpectedVersion":  "0.2.1",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/merge-json-schemas"
+                     },
+                     {
+                         "InstalledVersion":  "5.1.0",
+                         "ExpectedVersion":  "5.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/proxy-addr"
+                     },
+                     {
+                         "InstalledVersion":  "4.1.1",
+                         "ExpectedVersion":  "4.1.1",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/send"
+                     },
+                     {
+                         "InstalledVersion":  "10.1.3",
+                         "ExpectedVersion":  "10.1.3",
+                         "Match":  true,
+                         "Package":  "node_modules/@fastify/static"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.2",
+                         "ExpectedVersion":  "2.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/@lukeed/ms"
+                     },
+                     {
+                         "InstalledVersion":  "0.4.0",
+                         "ExpectedVersion":  "0.4.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@pinojs/redact"
+                     },
+                     {
+                         "InstalledVersion":  "26.4.0",
+                         "ExpectedVersion":  "26.4.0",
+                         "Match":  true,
+                         "Package":  "node_modules/@types/node"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.1",
+                         "ExpectedVersion":  "2.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/abstract-logging"
+                     },
+                     {
+                         "InstalledVersion":  "8.20.0",
+                         "ExpectedVersion":  "8.20.0",
+                         "Match":  true,
+                         "Package":  "node_modules/ajv"
+                     },
+                     {
+                         "InstalledVersion":  "3.0.1",
+                         "ExpectedVersion":  "3.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/ajv-formats"
+                     },
+                     {
+                         "InstalledVersion":  "3.1.6",
+                         "ExpectedVersion":  "3.1.6",
+                         "Match":  true,
+                         "Package":  "node_modules/ajv/node_modules/fast-uri"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.0",
+                         "ExpectedVersion":  "1.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/atomic-sleep"
+                     },
+                     {
+                         "InstalledVersion":  "9.3.0",
+                         "ExpectedVersion":  "9.3.0",
+                         "Match":  true,
+                         "Package":  "node_modules/avvio"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.2",
+                         "ExpectedVersion":  "1.1.2",
+                         "Match":  true,
+                         "Package":  "node_modules/aws-ssl-profiles"
+                     },
+                     {
+                         "InstalledVersion":  "4.0.4",
+                         "ExpectedVersion":  "4.0.4",
+                         "Match":  true,
+                         "Package":  "node_modules/balanced-match"
+                     },
+                     {
+                         "InstalledVersion":  "5.0.9",
+                         "ExpectedVersion":  "5.0.9",
+                         "Match":  true,
+                         "Package":  "node_modules/brace-expansion"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.1",
+                         "ExpectedVersion":  "2.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/content-disposition"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.1",
+                         "ExpectedVersion":  "1.1.1",
+                         "Match":  true,
+                         "Package":  "node_modules/cookie"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.0",
+                         "ExpectedVersion":  "2.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/depd"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.3",
+                         "ExpectedVersion":  "2.0.3",
+                         "Match":  true,
+                         "Package":  "node_modules/dequal"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.3",
+                         "ExpectedVersion":  "1.0.3",
+                         "Match":  true,
+                         "Package":  "node_modules/escape-html"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.1",
+                         "ExpectedVersion":  "1.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/fast-decode-uri-component"
+                     },
+                     {
+                         "InstalledVersion":  "3.1.3",
+                         "ExpectedVersion":  "3.1.3",
+                         "Match":  true,
+                         "Package":  "node_modules/fast-deep-equal"
+                     },
+                     {
+                         "InstalledVersion":  "7.0.1",
+                         "ExpectedVersion":  "7.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/fast-json-stringify"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.2",
+                         "ExpectedVersion":  "1.1.2",
+                         "Match":  true,
+                         "Package":  "node_modules/fast-querystring"
+                     },
+                     {
+                         "InstalledVersion":  "4.1.3",
+                         "ExpectedVersion":  "4.1.3",
+                         "Match":  true,
+                         "Package":  "node_modules/fast-uri"
+                     },
+                     {
+                         "InstalledVersion":  "5.12.1",
+                         "ExpectedVersion":  "5.12.1",
+                         "Match":  true,
+                         "Package":  "node_modules/fastify"
+                     },
+                     {
+                         "InstalledVersion":  "6.0.0",
+                         "ExpectedVersion":  "6.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/fastify-plugin"
+                     },
+                     {
+                         "InstalledVersion":  "1.20.3",
+                         "ExpectedVersion":  "1.20.3",
+                         "Match":  true,
+                         "Package":  "node_modules/fastq"
+                     },
+                     {
+                         "InstalledVersion":  "9.9.0",
+                         "ExpectedVersion":  "9.9.0",
+                         "Match":  true,
+                         "Package":  "node_modules/find-my-way"
+                     },
+                     {
+                         "InstalledVersion":  "2.3.1",
+                         "ExpectedVersion":  "2.3.1",
+                         "Match":  true,
+                         "Package":  "node_modules/generate-function"
+                     },
+                     {
+                         "InstalledVersion":  "13.0.6",
+                         "ExpectedVersion":  "13.0.6",
+                         "Match":  true,
+                         "Package":  "node_modules/glob"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.1",
+                         "ExpectedVersion":  "2.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/http-errors"
+                     },
+                     {
+                         "InstalledVersion":  "0.7.3",
+                         "ExpectedVersion":  "0.7.3",
+                         "Match":  true,
+                         "Package":  "node_modules/iconv-lite"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.4",
+                         "ExpectedVersion":  "2.0.4",
+                         "Match":  true,
+                         "Package":  "node_modules/inherits"
+                     },
+                     {
+                         "InstalledVersion":  "2.5.0",
+                         "ExpectedVersion":  "2.5.0",
+                         "Match":  true,
+                         "Package":  "node_modules/ipaddr.js"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.2",
+                         "ExpectedVersion":  "1.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/is-property"
+                     },
+                     {
+                         "InstalledVersion":  "3.0.0",
+                         "ExpectedVersion":  "3.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/json-schema-ref-resolver"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.0",
+                         "ExpectedVersion":  "1.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/json-schema-traverse"
+                     },
+                     {
+                         "InstalledVersion":  "6.6.0",
+                         "ExpectedVersion":  "6.6.0",
+                         "Match":  true,
+                         "Package":  "node_modules/light-my-request"
+                     },
+                     {
+                         "InstalledVersion":  "4.0.1",
+                         "ExpectedVersion":  "4.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/light-my-request/node_modules/process-warning"
+                     },
+                     {
+                         "InstalledVersion":  "5.3.2",
+                         "ExpectedVersion":  "5.3.2",
+                         "Match":  true,
+                         "Package":  "node_modules/long"
+                     },
+                     {
+                         "InstalledVersion":  "11.5.2",
+                         "ExpectedVersion":  "11.5.2",
+                         "Match":  true,
+                         "Package":  "node_modules/lru-cache"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.4",
+                         "ExpectedVersion":  "1.1.4",
+                         "Match":  true,
+                         "Package":  "node_modules/lru.min"
+                     },
+                     {
+                         "InstalledVersion":  "3.0.0",
+                         "ExpectedVersion":  "3.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/mime"
+                     },
+                     {
+                         "InstalledVersion":  "10.2.6",
+                         "ExpectedVersion":  "10.2.6",
+                         "Match":  true,
+                         "Package":  "node_modules/minimatch"
+                     },
+                     {
+                         "InstalledVersion":  "7.1.3",
+                         "ExpectedVersion":  "7.1.3",
+                         "Match":  true,
+                         "Package":  "node_modules/minipass"
+                     },
+                     {
+                         "InstalledVersion":  "3.24.2",
+                         "ExpectedVersion":  "3.24.2",
+                         "Match":  true,
+                         "Package":  "node_modules/mysql2"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.6",
+                         "ExpectedVersion":  "1.1.6",
+                         "Match":  true,
+                         "Package":  "node_modules/named-placeholders"
+                     },
+                     {
+                         "InstalledVersion":  "2.1.2",
+                         "ExpectedVersion":  "2.1.2",
+                         "Match":  true,
+                         "Package":  "node_modules/on-exit-leak-free"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.2",
+                         "ExpectedVersion":  "2.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/path-scurry"
+                     },
+                     {
+                         "InstalledVersion":  "10.3.1",
+                         "ExpectedVersion":  "10.3.1",
+                         "Match":  true,
+                         "Package":  "node_modules/pino"
+                     },
+                     {
+                         "InstalledVersion":  "3.0.0",
+                         "ExpectedVersion":  "3.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/pino-abstract-transport"
+                     },
+                     {
+                         "InstalledVersion":  "7.1.0",
+                         "ExpectedVersion":  "7.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/pino-std-serializers"
+                     },
+                     {
+                         "InstalledVersion":  "5.1.0",
+                         "ExpectedVersion":  "5.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/process-warning"
+                     },
+                     {
+                         "InstalledVersion":  "4.0.4",
+                         "ExpectedVersion":  "4.0.4",
+                         "Match":  true,
+                         "Package":  "node_modules/quick-format-unescaped"
+                     },
+                     {
+                         "InstalledVersion":  "0.2.0",
+                         "ExpectedVersion":  "0.2.0",
+                         "Match":  true,
+                         "Package":  "node_modules/real-require"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.2",
+                         "ExpectedVersion":  "2.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/require-from-string"
+                     },
+                     {
+                         "InstalledVersion":  "0.5.0",
+                         "ExpectedVersion":  "0.5.0",
+                         "Match":  true,
+                         "Package":  "node_modules/ret"
+                     },
+                     {
+                         "InstalledVersion":  "1.1.0",
+                         "ExpectedVersion":  "1.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/reusify"
+                     },
+                     {
+                         "InstalledVersion":  "1.4.1",
+                         "ExpectedVersion":  "1.4.1",
+                         "Match":  true,
+                         "Package":  "node_modules/rfdc"
+                     },
+                     {
+                         "InstalledVersion":  "5.1.1",
+                         "ExpectedVersion":  "5.1.1",
+                         "Match":  true,
+                         "Package":  "node_modules/safe-regex2"
+                     },
+                     {
+                         "InstalledVersion":  "2.5.0",
+                         "ExpectedVersion":  "2.5.0",
+                         "Match":  true,
+                         "Package":  "node_modules/safe-stable-stringify"
+                     },
+                     {
+                         "InstalledVersion":  "2.1.2",
+                         "ExpectedVersion":  "2.1.2",
+                         "Match":  true,
+                         "Package":  "node_modules/safer-buffer"
+                     },
+                     {
+                         "InstalledVersion":  "4.1.0",
+                         "ExpectedVersion":  "4.1.0",
+                         "Match":  true,
+                         "Package":  "node_modules/secure-json-parse"
+                     },
+                     {
+                         "InstalledVersion":  "7.8.5",
+                         "ExpectedVersion":  "7.8.5",
+                         "Match":  true,
+                         "Package":  "node_modules/semver"
+                     },
+                     {
+                         "InstalledVersion":  "2.7.2",
+                         "ExpectedVersion":  "2.7.2",
+                         "Match":  true,
+                         "Package":  "node_modules/set-cookie-parser"
+                     },
+                     {
+                         "InstalledVersion":  "1.2.0",
+                         "ExpectedVersion":  "1.2.0",
+                         "Match":  true,
+                         "Package":  "node_modules/setprototypeof"
+                     },
+                     {
+                         "InstalledVersion":  "4.2.1",
+                         "ExpectedVersion":  "4.2.1",
+                         "Match":  true,
+                         "Package":  "node_modules/sonic-boom"
+                     },
+                     {
+                         "InstalledVersion":  "4.2.0",
+                         "ExpectedVersion":  "4.2.0",
+                         "Match":  true,
+                         "Package":  "node_modules/split2"
+                     },
+                     {
+                         "InstalledVersion":  "1.5.1",
+                         "ExpectedVersion":  "1.5.1",
+                         "Match":  true,
+                         "Package":  "node_modules/sql-escaper"
+                     },
+                     {
+                         "InstalledVersion":  "2.0.2",
+                         "ExpectedVersion":  "2.0.2",
+                         "Match":  true,
+                         "Package":  "node_modules/statuses"
+                     },
+                     {
+                         "InstalledVersion":  "4.2.0",
+                         "ExpectedVersion":  "4.2.0",
+                         "Match":  true,
+                         "Package":  "node_modules/thread-stream"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.0",
+                         "ExpectedVersion":  "1.0.0",
+                         "Match":  true,
+                         "Package":  "node_modules/thread-stream/node_modules/real-require"
+                     },
+                     {
+                         "InstalledVersion":  "3.7.4",
+                         "ExpectedVersion":  "3.7.4",
+                         "Match":  true,
+                         "Package":  "node_modules/toad-cache"
+                     },
+                     {
+                         "InstalledVersion":  "1.0.1",
+                         "ExpectedVersion":  "1.0.1",
+                         "Match":  true,
+                         "Package":  "node_modules/toidentifier"
+                     },
+                     {
+                         "InstalledVersion":  "8.3.0",
+                         "ExpectedVersion":  "8.3.0",
+                         "Match":  true,
+                         "Package":  "node_modules/undici-types"
+                     }
+                 ],
+    "Node":  "24.21.0",
+    "Result":  "PASS",
+    "PackageLockSHA256":  "D433BB722A66BFC2808A8DEBF5A84009B8B43F4A0F19DC1DDBF4BAEC2EA550F1",
+    "DependencyFiles":  2899,
+    "DependencyByteManifestSHA256":  "8FD10DFF527EA42734468BEFE6A4C74BBE21964CD8D02BDF84A56D519A1CCA77",
+    "MaxReadWorkers":  3,
+    "SDK":  "10.0.401",
+    "RegistryTarballIntegrity":  "No network fetch performed; actual local dependency bytes pinned separately",
+    "NodeSHA256":  "BA4E6D110E8C1592A1ECD390F6B05F3DA124B13871A5BE62B341A07A853C6C32",
+    "DotnetHostSHA256":  "21A46F1E5235CF4E844B9DE5429F0E198B9C97A41F0503A66442F1D639CA3EE6",
+    "CompilerSHA256":  "89C788F615634094CC441593D167D9FBA9A9F049A5D1DDEA87D4FDE222D6F42C",
+    "MSBuildSHA256":  "22F7B95C5CC1E7287A9D561A0E88719C4D545C5F3892E3E6501051F5ABCBE147"
+}

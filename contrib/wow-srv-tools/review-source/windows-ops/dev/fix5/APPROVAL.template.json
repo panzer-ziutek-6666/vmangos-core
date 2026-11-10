@@ -1,0 +1,15 @@
+﻿{
+  "TransactionalTablesVerified": false,
+  "NoDDLWindow": false,
+  "NoProductionACLChanges": true,
+  "ExpiresUtc": null,
+  "Host": "WOW-SRV",
+  "PlanSHA256": null,
+  "Schema": 1,
+  "Scope": "DevSetup|DevAccept|Migrate|Rollback|Lifecycle|RebootRequest|CloseRebootClaim",
+  "ExecutionPinsSHA256": null,
+  "Approved": false,
+  "SchemaCompatibilityVerified": false,
+  "SnapshotStrategy": "AllInnoDB",
+  "AllowGlobalReadLock": false
+}

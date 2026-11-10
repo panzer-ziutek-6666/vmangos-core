@@ -1,0 +1,14 @@
+[
+    {
+        "id":  "core-04c3d950-logger4-a95r2",
+        "revision":  "04c3d9503e48489c4c50 / isolated fixture"
+    },
+    {
+        "id":  "core-b1c0e16e-logger4-f1-r2",
+        "revision":  "b1c0e16e228738dd16f0 / isolated fixture"
+    },
+    {
+        "id":  "synthetic-third-release",
+        "revision":  "cccccccccccccccccccc / isolated fixture"
+    }
+]

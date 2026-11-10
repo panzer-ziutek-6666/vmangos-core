@@ -1,0 +1,14 @@
+node_modules/
+
+# Holds the SOAP account password and four database DSNs. Never commit.
+config.json
+
+# Append-only action log, local runtime state.
+audit.sqlite
+audit.sqlite-journal
+
+# Local design notes, specs and plans. Not shipped with the app.
+docs/
+
+# Instructions for the AI coding assistant used on this checkout. Local only.
+CLAUDE.md

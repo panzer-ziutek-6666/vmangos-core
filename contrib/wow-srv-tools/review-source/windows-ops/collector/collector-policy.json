@@ -1,0 +1,10 @@
+{
+    "schemaVersion":  1,
+    "contractVersion":  1,
+    "registryRoot":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\release-registry",
+    "runtimeRoot":  "C:\\GRY\\wow\\serwer-dev",
+    "snapshotPath":  "C:\\ProgramData\\VMANGOS\\AdminPanelTelemetry\\snapshot.json",
+    "stateRoot":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\state",
+    "secretPath":  "C:\\ProgramData\\VMANGOS\\AdminPanelCollector\\secrets\\soap.bin",
+    "mysqlClientSHA256":  "90FBB6541841B20C3278BAFE62D2B3E593E34DE8C29929D1A658B25AB4F0687A"
+}

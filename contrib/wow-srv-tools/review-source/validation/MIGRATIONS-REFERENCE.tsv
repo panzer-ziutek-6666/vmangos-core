@@ -1,0 +1,3 @@
+﻿"Database"	"Migration"	"SHA256"	"Classification"	"Ownership"	"Effect"	"DataExported"
+"mangos_dev"	"20261025125310"	"2C6E753AB488ABCCA1FB3B651466B66B0D0E024BDAB38BFE7CD4374FD4E834A9"	"HISTORICAL_REFERENCE"	"Colleague/upstream SQL"	"Quest race masks"	"False"
+"characters_dev"	"20261025125408"	"8F9F649F5573388E9BD6962EE57776DEC466F4D7540574366635B2C914A235A9"	"HISTORICAL_REFERENCE"	"Colleague/upstream SQL"	"Matching queststatus rewarded0 deletions"	"False"

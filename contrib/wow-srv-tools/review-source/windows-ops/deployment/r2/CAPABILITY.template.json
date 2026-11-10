@@ -1,0 +1,13 @@
+﻿{
+    "SqlOutcomeVersion":  2,
+    "Approved":  false,
+    "mangosd":  {
+                    "SHA256":  "30E0D6D437DE3CB422544444F9793605BFC3B2A08AB642D57DDC34272345C16B",
+                    "Path":  "C:\\GRY\\wow\\serwer-dev\\mangosd.exe"
+                },
+    "Schema":  1,
+    "realmd":  {
+                   "SHA256":  "EA22B39DF7539A180FD3CC7FB919CEB987632D479E4AF8E0A6199DD8BE093CB2",
+                   "Path":  "C:\\GRY\\wow\\serwer-dev\\realmd.exe"
+               }
+}

@@ -1,0 +1,26 @@
+﻿{
+    "schemaVersion":  1,
+    "collectedAtUtc":  "2020-01-01T00:01:00Z",
+    "world":  {
+                  "processId":  4242,
+                  "createdUtc":  "2020-01-01T00:00:00Z"
+              },
+    "server":  {
+                   "status":  "error",
+                   "errorCode":  "RELEASE_TRANSITION",
+                   "observedAtUtc":  "2020-01-01T00:01:00Z",
+                   "data":  null
+               },
+    "legacyBots":  {
+                       "status":  "error",
+                       "errorCode":  "RELEASE_TRANSITION",
+                       "observedAtUtc":  "2020-01-01T00:01:00Z",
+                       "data":  null
+                   },
+    "aiBots":  {
+                   "status":  "error",
+                   "errorCode":  "RELEASE_TRANSITION",
+                   "observedAtUtc":  "2020-01-01T00:01:00Z",
+                   "data":  null
+               }
+}

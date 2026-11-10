@@ -1,0 +1,81 @@
+﻿{
+    "Operation":  "d8717624cfd84914a66580e2c002e207",
+    "InterruptedReceiptSHA256":  "03AE46BCCDDEAB5AF72E008F6B39834927F7EFDA7907E976A5B069032A54EBD6",
+    "OldRoot":  "C:\\Scripts\\COREUPDATE-DEV-CONTINUE-R2-WOW-SRV-20261109-0815-PAYLOAD",
+    "UUID":  "650601ed-dc07-11f1-b12b-b0227ad7e1e2",
+    "OriginalBindingSHA256":  "8E754CB64C46AA945339142EEE3E1D6A5175AFBDC64E60D28254042793334526",
+    "OriginalBinding":  {
+                            "DevSetup":  {
+                                             "OriginalVerifier":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712\\runs\\DevSetup-5159397b4eeb42e0babb8724c4b64a9c\\INDEPENDENT-VERIFIER.json",
+                                             "ProcessRecord":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712\\DevSetup-EXECUTE.process.json",
+                                             "ReceiptSHA256":  "935AA0EF2437ECDA37C258E6C2DB7DC03C056BC783251CBCB2BB7EB2B7D7281A",
+                                             "ProcessRecordSHA256":  "9BD54AF95752F312F8A28C7B89B8C5864D18C7BED6DB3F98324753BA1679C495",
+                                             "OriginalVerifierSHA256":  "665A3F0FFD9ACF06E837E7EB3CD67CF3D8C061CEC68401FF9D4AA7FFDA8FD690",
+                                             "PlanSHA256":  "85C102CEC0201DB5990BD68D4147198C3BCC0591C712F9B232862E699CAFDDE7",
+                                             "CandidateManifestSHA256":  "D3FD840BFDC65D5852612DA64005F2945689D3A66308525CD8B7B059878A4DBB",
+                                             "UUID":  "650601ed-dc07-11f1-b12b-b0227ad7e1e2",
+                                             "Receipt":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712\\runs\\DevSetup-5159397b4eeb42e0babb8724c4b64a9c\\RECEIPT.json",
+                                             "Operation":  "5159397b4eeb42e0babb8724c4b64a9c"
+                                         },
+                            "NoRepeat":  [
+                                             "Backup",
+                                             "DevSetup",
+                                             "Initialize",
+                                             "Import"
+                                         ],
+                            "OriginalOut":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712",
+                            "Backup":  {
+                                           "ReceiptSHA256":  "F9C75A34122837849D75EB4A20949F245A3A450054A82D472CEEBD8C2AFFE735",
+                                           "Operation":  "e6d380332694454898c9a85c0fadd6da",
+                                           "Receipt":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712\\runs\\Backup-e6d380332694454898c9a85c0fadd6da\\RECEIPT.json"
+                                       },
+                            "OriginalRoot":  "C:\\Scripts\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712-PAYLOAD",
+                            "AllowedRemainingPhases":  [
+                                                           "DevMigrations",
+                                                           "DevAccept"
+                                                       ],
+                            "NewPlanSHA256":  "85C102CEC0201DB5990BD68D4147198C3BCC0591C712F9B232862E699CAFDDE7",
+                            "Schema":  1
+                        },
+    "OriginalBindingPath":  "C:\\Scripts\\COREUPDATE-DEV-CONTINUE-R2-WOW-SRV-20261109-0815-PAYLOAD\\CONTINUATION-BINDING.json",
+    "CloneBackup":  {
+                        "Path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-EXECUTE-R1-WOW-SRV-20261109-0712\\private-backups\\d8717624cfd84914a66580e2c002e207-pre-migration\\four-databases.sql",
+                        "SHA256":  "4B0D68E2D27668EA530A9BA42DF3451F354786BF2EDB430F3DFE1BF3E9C64880",
+                        "Bytes":  1586199334,
+                        "NativeExit":  0,
+                        "Port":  23306,
+                        "UUID":  "650601ed-dc07-11f1-b12b-b0227ad7e1e2"
+                    },
+    "OldOut":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R2-WOW-SRV-20261109-0815",
+    "Schema":  1,
+    "InterruptedReceipt":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R2-WOW-SRV-20261109-0815\\runs\\DevMigrations-d8717624cfd84914a66580e2c002e207\\RECEIPT.json",
+    "Forbidden":  [
+                      "Backup",
+                      "DevSetup",
+                      "Initialize",
+                      "Import",
+                      "ApplyWorld",
+                      "CapturePreimages"
+                  ],
+    "PlanSHA256":  "85C102CEC0201DB5990BD68D4147198C3BCC0591C712F9B232862E699CAFDDE7",
+    "SetupVerifierSHA256":  "234467D8DB248737F68EC481E5B9166E9B9C2DE51384C6C79B1D543849B6FA27",
+    "SetupVerifier":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R2-WOW-SRV-20261109-0815\\verified\\DevSetup-5159397b4eeb42e0babb8724c4b64a9c\\VERIFIER-R2.json",
+    "StepsBefore":  [
+                        "Guard",
+                        "ValidateInputs",
+                        "Gate",
+                        "AttestDevEndpoint",
+                        "DevPreMigrationBackup",
+                        "CapturePreimages",
+                        "ApplyWorld"
+                    ],
+    "AllowedNow":  [
+                       "VerifyRetainedWorld",
+                       "VerifyCharactersUnchanged",
+                       "ApplyCharacters",
+                       "VerifyCharacters",
+                       "VerifyMigrations",
+                       "DevAccept"
+                   ],
+    "CandidateManifestSHA256":  "D3FD840BFDC65D5852612DA64005F2945689D3A66308525CD8B7B059878A4DBB"
+}

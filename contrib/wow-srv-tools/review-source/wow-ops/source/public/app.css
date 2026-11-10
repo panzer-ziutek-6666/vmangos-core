@@ -1,0 +1,117 @@
+:root { color-scheme: light dark; --bg: #f7f7f8; --fg: #1a1a1a; --line: #d8d8dc; --accent: #2f5fa0; --bad: #a02f2f; }
+@media (prefers-color-scheme: dark) { :root { --bg: #16161a; --fg: #e8e8ea; --line: #33333a; --accent: #7aa7e0; --bad: #e07a7a; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 system-ui, sans-serif; }
+header { display: flex; gap: 1rem; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; letter-spacing: 0.02em; }
+.nav-item { color: inherit; text-decoration: none; padding: 0.2rem 0.5rem; border-radius: 4px; }
+.nav-item.active { background: var(--accent); color: #fff; }
+.strip { display: flex; gap: 1.5rem; padding: 0.5rem 1rem; border-bottom: 1px solid var(--line); font-size: 13px; }
+.strip-offline { background: var(--bad); color: #fff; gap: 0.75rem; }
+.panel { padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+.figures { display: flex; gap: 1.5rem; font-size: 13px; }
+.cell { display: flex; gap: 0.4rem; }
+.cell .label { opacity: 0.65; }
+.cell .value { font-variant-numeric: tabular-nums; font-weight: 600; }
+.detail { opacity: 0.65; font-size: 0.85em; font-weight: normal; }
+main { padding: 1rem; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; opacity: 0.75; }
+tr.banned td { color: var(--bad); }
+pre.output { background: #0000000d; padding: 0.75rem; overflow-x: auto; white-space: pre-wrap; border-left: 3px solid var(--accent); }
+pre.output.failed { border-left-color: var(--bad); }
+code.command { font-family: ui-monospace, monospace; background: #0000000d; padding: 0.1rem 0.3rem; border-radius: 3px; }
+form.action { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: end; margin: 0.5rem 0 1rem; }
+label { display: flex; flex-direction: column; gap: 0.2rem; font-size: 12px; opacity: 0.8; }
+input, select, button { font: inherit; padding: 0.3rem 0.5rem; }
+button { cursor: pointer; }
+.error { color: var(--bad); font-weight: 600; }
+
+/* The realm registry: one collapsible block per realm, and checkbox labels,
+   which must not inherit the column layout the text inputs above use - that
+   would stack the box on top of its own caption. */
+details.realm { border: 1px solid var(--line); border-radius: 4px; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+details.realm > summary { cursor: pointer; font-weight: 600; }
+details.realm[open] > summary { margin-bottom: 0.5rem; }
+fieldset { display: flex; flex-direction: column; gap: 0.25rem; border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.6rem; }
+label.check { flex-direction: row; align-items: baseline; gap: 0.4rem; }
+p.output { background: #0000000d; padding: 0.5rem 0.75rem; border-left: 3px solid var(--accent); }
+
+/* The reference browser. Scoped to .db-browser so the operator sections
+   cannot be restyled by a change made for a listview. */
+.db-browser { --bg: #14141a; --fg: #ddd9d0; --line: #2c2c36; --accent: #7aa7e0; }
+.db-browser header { background: #0f0f14; }
+.db-browser .nav-back { margin-left: auto; opacity: 0.6; }
+.db-browser main { max-width: 1200px; margin: 0 auto; }
+.db-browser table.listview td { vertical-align: middle; }
+.db-browser .icon { display: inline-block; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 3px; vertical-align: middle; margin-right: 0.4rem; background: #0f0f14; }
+.db-browser .icon img { width: 100%; height: 100%; display: block; }
+.db-browser .pager { display: flex; gap: 0.75rem; align-items: baseline; margin: 0.75rem 0; }
+.db-browser form { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: end; margin: 0.5rem 0 1rem; }
+/* Links in the page body take the accent, not the browser default: an item
+   link with no quality class (loot, vendor) would otherwise be #0000EE on
+   this dark background under a light OS scheme. Header links keep their own. */
+.db-browser main a { color: var(--accent); }
+.db-browser main th a { color: inherit; text-decoration: none; }
+.db-browser .brand { color: inherit; text-decoration: none; }
+.db-browser th a::after { content: ""; }
+.db-browser th.sorted-asc a::after { content: " ▲"; }
+.db-browser th.sorted-desc a::after { content: " ▼"; }
+.db-browser .tooltip-host { position: relative; }
+.db-browser .tooltip { display: none; position: absolute; top: 100%; left: 0; margin-top: 0.25rem; z-index: 10; width: max-content; min-width: 220px; max-width: 320px; padding: 0.5rem 0.75rem; background: #0b0b0f; border: 1px solid var(--line); border-radius: 4px; white-space: normal; }
+.db-browser .tooltip-host:hover .tooltip { display: block; }
+.db-browser .q0 { color: #9d9d9d; } .db-browser .q1 { color: #ffffff; } .db-browser .q2 { color: #1eff00; }
+.db-browser .q3 { color: #0070dd; } .db-browser .q4 { color: #a335ee; } .db-browser .q5 { color: #ff8000; }
+.db-browser .q6 { color: #e6cc80; }
+.db-browser .reward { white-space: nowrap; margin-right: 0.5rem; }
+
+/* The zone map: a 1002x668 frame over a 1024x768 grid of twelve tiles, the
+   client's own world-map crop (server/views/db/zone.js). */
+.db-browser .zone-map { position: relative; width: 100%; max-width: 1002px; aspect-ratio: 1002 / 668; overflow: hidden; border: 1px solid var(--line); margin: 0.5rem 0 1rem; }
+.db-browser .zone-map-tiles { position: absolute; top: 0; left: 0; width: calc(100% * 1024 / 1002); display: grid; grid-template-columns: repeat(4, 1fr); }
+.db-browser .zone-map-tiles img { width: 100%; display: block; }
+.db-browser .zone-map .dot { position: absolute; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; border: 1px solid #000; }
+.db-browser .zone-map .dot.creature { background: #ffd200; }
+.db-browser .zone-map .dot.gameobject { background: #4fc3ff; }
+
+/* The talent calculator (server/views/db/talents.js): three 300x331 trees,
+   each over the client's four background tiles at their native (power-of-two
+   padded) size, buttons at the client's column spacing. The tiles are
+   256/64/256/64 px wide and 256/256/128/128 px tall, but only 300x331 of that
+   is real art (measured from MageArcane, WarriorArms and DruidBalance:
+   TopRight's content is 44 px wide, BottomLeft/BottomRight's is 75 px tall) -
+   overflow:hidden on .talent-art, the tiles' own layer, clips the rest
+   rather than the tiles being resized. .talent-grid itself stays
+   overflow:visible so a hover card (appended inside it) is never clipped at
+   the tree's edge (Walk C) - only the art is cropped. */
+.db-browser .talent-trees { display: flex; gap: 1rem; flex-wrap: wrap; }
+.db-browser .talent-grid { position: relative; width: 300px; height: 331px; background: #0f0f14; border: 1px solid var(--line); }
+.db-browser .talent-art { position: absolute; top: 0; left: 0; width: 300px; height: 331px; overflow: hidden; }
+.db-browser .talent-bg { position: absolute; }
+.db-browser .talent-bg.TopLeft { left: 0; top: 0; width: 256px; height: 256px; }
+.db-browser .talent-bg.TopRight { left: 256px; top: 0; width: 64px; height: 256px; }
+.db-browser .talent-bg.BottomLeft { left: 0; top: 256px; width: 256px; height: 128px; }
+.db-browser .talent-bg.BottomRight { left: 256px; top: 256px; width: 64px; height: 128px; }
+.db-browser .talent { position: absolute; width: 32px; height: 32px; }
+.db-browser .talent .icon { width: 32px; height: 32px; margin: 0; }
+/* The client greys a locked talent but keeps it recognisable - grayscale
+   alone, dimmed, rather than grayscale+brightness(0.6), which read as a
+   near-black square (Walk D). */
+.db-browser .talent.locked .icon { filter: grayscale(1); opacity: 0.7; }
+.db-browser .talent.available .icon { border-color: #1eff00; }
+.db-browser .talent.maxed .icon { border-color: #ffd100; }
+.db-browser .talent.marked .icon { outline: 2px solid var(--accent); }
+/* A hovered talent stacks above its neighbours and the adjacent trees (Walk
+   C) - .talent-grid has no z-index of its own, so this reaches past its
+   sibling trees too, not just this one's other talents. */
+.db-browser .talent:hover { z-index: 20; }
+.db-browser .talent-grid .tooltip { z-index: 21; }
+.db-browser .talent-rank { position: absolute; right: -8px; bottom: -6px; font-size: 0.7rem; background: #000; padding: 0 2px; border-radius: 2px; }
+.db-browser .talent-arrow { position: absolute; background: #ffd100; opacity: 0.8; }
+.db-browser .talent-arrow.h { height: 3px; }
+.db-browser .talent-arrow.v { width: 3px; }
+/* A world map overlay tile: a box of the pixels the client shows, clipping a
+   power-of-two texture file (server/views/db/zone.js, renderOverlays). */
+.db-browser .zone-overlay { position: absolute; overflow: hidden; }
+.db-browser .zone-overlay img { position: absolute; left: 0; top: 0; display: block; }

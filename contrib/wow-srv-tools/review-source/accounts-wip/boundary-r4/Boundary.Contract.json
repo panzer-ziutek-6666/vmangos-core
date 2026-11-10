@@ -1,0 +1,185 @@
+﻿{
+  "Schema": "ACCOUNTS-BOUNDARY-CONTRACT-1",
+  "Stage": "ACCOUNTS-BOUNDARY-PREP-R4-WOW-SRV-20261027-2355",
+  "Host": "WOW-SRV",
+  "FixtureRoot": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d",
+  "InstalledExe": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\bootstrap\\Vmangos.Accounts.Bootstrap.exe",
+  "BootstrapSHA256": "280D22B56A54962221AFBDB4039D53C1BB25E29EBA0BCB529A90FF08716EA621",
+  "CandidateSource": "C:\\GRY\\wow\\dev\\build-accounts-native-A154-20261023-205615-344271-fe3e1df924e9416eba9cce055910e91e\\b\\Release\\Vmangos.Accounts.Bootstrap.exe",
+  "InstallPins": [
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\bootstrap\\Vmangos.Accounts.Bootstrap.exe",
+      "Length": 299008,
+      "SHA256": "280D22B56A54962221AFBDB4039D53C1BB25E29EBA0BCB529A90FF08716EA621"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Worker.exe",
+      "Length": 162304,
+      "SHA256": "DEE15767497639C736BCAE0105091EDB5206617AD9942113F88E953CA2C7AE62"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Worker.dll",
+      "Length": 7680,
+      "SHA256": "6D9158DFEDF1AF43C422315E40352CF8B12B5835940432E2B15334B1F891E965"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Worker.deps.json",
+      "Length": 1321,
+      "SHA256": "56858EB433F42B36B3BDDE7B15604469FC66F0BFC56CED82CD7B3BFF4390A95C"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Worker.runtimeconfig.json",
+      "Length": 374,
+      "SHA256": "64F6E92559A3FF326652A277BCEEE9745D0FE35CDE800954BEC2D5E16AAE7FDD"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Core.dll",
+      "Length": 52736,
+      "SHA256": "A53C8745D417C1F9DF40A714BF94C11F481FFD557CC99F47DA359B7043F08E90"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\worker\\Vmangos.Accounts.Windows.dll",
+      "Length": 94208,
+      "SHA256": "825639191FDDE06960EA7872948945CD8F7A344E3CAF08C001497615C38C80EA"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Windows.Tests.exe",
+      "Length": 162816,
+      "SHA256": "8CA27EF184C8AA1A24C774A0781E563B62CE2C555726748C5D54473DDB1AB243"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Windows.Tests.dll",
+      "Length": 77312,
+      "SHA256": "1C0B79AE69F44AC9DD947E5B95CED590737C2BECB9D1501D83AE804C5775D674"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Windows.Tests.deps.json",
+      "Length": 1342,
+      "SHA256": "F29B38343D7CE05CEAF1786B44221795292FBC84AA4D554455EF296DE4977652"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Windows.Tests.runtimeconfig.json",
+      "Length": 374,
+      "SHA256": "64F6E92559A3FF326652A277BCEEE9745D0FE35CDE800954BEC2D5E16AAE7FDD"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Core.dll",
+      "Length": 52736,
+      "SHA256": "A53C8745D417C1F9DF40A714BF94C11F481FFD557CC99F47DA359B7043F08E90"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\client\\Vmangos.Accounts.Windows.dll",
+      "Length": 94208,
+      "SHA256": "825639191FDDE06960EA7872948945CD8F7A344E3CAF08C001497615C38C80EA"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.FixtureLauncher.exe",
+      "Length": 162816,
+      "SHA256": "125B9630DB7DEEF6B2F053D150A018E24C36B82400CC56F561E8B9B66A7CEBA3"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.FixtureLauncher.dll",
+      "Length": 6656,
+      "SHA256": "2477D3413B8E8E3432EC7E652F758568496FCE2F147C32426630FE8AA2F7D929"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.FixtureLauncher.deps.json",
+      "Length": 1348,
+      "SHA256": "17CA214F7A4619420D7ACA48D13E16EE466E7F607F7EC6BBD8282CDA693144B6"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.FixtureLauncher.runtimeconfig.json",
+      "Length": 374,
+      "SHA256": "64F6E92559A3FF326652A277BCEEE9745D0FE35CDE800954BEC2D5E16AAE7FDD"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.Core.dll",
+      "Length": 52736,
+      "SHA256": "A53C8745D417C1F9DF40A714BF94C11F481FFD557CC99F47DA359B7043F08E90"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\launcher\\Vmangos.Accounts.Windows.dll",
+      "Length": 94208,
+      "SHA256": "825639191FDDE06960EA7872948945CD8F7A344E3CAF08C001497615C38C80EA"
+    },
+    {
+      "Path": "C:\\VMANGOS-Accounts-Fixture-A139-1f07880aecf4453d8e77d99dc8fa3f7d\\run-spec.json",
+      "Length": 77092,
+      "SHA256": "9FFD6AEC34BE2BC464C6CA848B09F792705944BAF9D8856FB37B418DE38BF311"
+    }
+  ],
+  "PayloadPins": [
+    {
+      "Name": "Boundary.Common.ps1",
+      "Length": 18303,
+      "SHA256": "0908A884FE45CA63AEF5D594AC82D34E1D3C994B9E9B90C026A95C839927DA7C"
+    },
+    {
+      "Name": "NativeVerifyProtocol.ps1",
+      "Length": 2847,
+      "SHA256": "76782784E9C7D762EB03533E38E0EAAD5DAF91C5CDBBC88F270B87E6984C89BE"
+    },
+    {
+      "Name": "OwnedCapture.cs",
+      "Length": 67649,
+      "SHA256": "5D5F02A4476171F371FC461F982F9826C1B0293CA4FF75CDBE04E22AA6C8F2A2"
+    },
+    {
+      "Name": "SYSTEM-BOUNDARY.ps1",
+      "Length": 5134,
+      "SHA256": "3D8439989D7E3CD5FFA482D314F3986071D731563E2879D4DB8D118C20BB3AFC"
+    },
+    {
+      "Name": "DotnetPins.json",
+      "Length": 53030,
+      "SHA256": "9763262C88CF87E88F1A40C1569F88280A118D4C9F5E13E339F6ABE63CDEB94C"
+    },
+    {
+      "Name": "Invoke-AccountsBoundary.ps1",
+      "Length": 11497,
+      "SHA256": "38DFB2F9784D23E324354E74329AEE0C2365E3362900741308771F49180839EC"
+    },
+    {
+      "Name": "Verify-AccountsBoundaryResult.ps1",
+      "Length": 2893,
+      "SHA256": "41599AA09B2905D58F0E9A9F02132588414E52F1BAB755FDC8AF2B8E84A094E9"
+    },
+    {
+      "Name": "Registry.Pins.ps1",
+      "Length": 456,
+      "SHA256": "8BEABACC9E94437E41C3386D3BD31BD2167D0A209C8C80B9C1AE3952BA7391D1"
+    },
+    {
+      "Name": "Release.Native.cs",
+      "Length": 7530,
+      "SHA256": "5E40302BCA8BA954DD046F0645E5F7C457A7725F51494DBF7A9194B48B7B026F"
+    },
+    {
+      "Name": "Attempt.Journal.ps1",
+      "Length": 4534,
+      "SHA256": "281568E7E33C0526079E79318691C05217225918C84B66D85B2F25BA90D4FA0C"
+    },
+    {
+      "Name": "Task.Security.ps1",
+      "Length": 5911,
+      "SHA256": "1FCD0955335C3A035B3C3EB62D0483531823EE5179D09ACDC567F8633827DB2F"
+    },
+    {
+      "Name": "Task.Token.cs",
+      "Length": 3320,
+      "SHA256": "F7121D2612EFFFEAA01B5903F353930FB40DEE71F5DE1CC737B9A08175EBEB10"
+    }
+  ],
+  "IisPipelineTested": false,
+  "LiveConnections": 0,
+  "TaskSecurity": {
+    "Schema": "BOUNDARY-TASK-SECURITY-4",
+    "OwnerSid": "S-1-5-32-544",
+    "GroupSid": "S-1-5-32-544",
+    "SDDL": "O:BAG:BAD:P(A;;FA;;;SY)(A;;FA;;;BA)",
+    "PrincipalSid": "S-1-5-18",
+    "LogonType": 5,
+    "CreateFlags": 58,
+    "LockFlags": 60
+  }
+}

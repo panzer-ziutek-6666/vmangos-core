@@ -1,0 +1,62 @@
+﻿{
+    "Fixture":  "NOT_RUN",
+    "NativeProtocolContract":  true,
+    "ManagedCodeSource":  "All A140 candidate source pins matched",
+    "RealTaskSecurityQA":  "Historical PASS: disabled task only, no Run",
+    "NativeVerifyR4":  "NOT_RUN",
+    "ProductionGateway":  "DISABLED",
+    "NativePolicyPass":  961,
+    "R4PrepRegression":  "74/74 historical PASS",
+    "WindowsModelsPass":  153,
+    "Status":  "WIP",
+    "NativeVerifyR3":  "FAIL_STATUS_INVALID_OWNER",
+    "CoreModelPass":  121,
+    "NativeSourcePins":  [
+                             {
+                                 "Path":  "accounts-wip/native/bootstrap_diagnostics.hpp",
+                                 "SHA256":  "5F5D8C1C6045198DE15AAECF0682B5FEA7D5C9540A92CD858A9D2CB1CD4E4CB1",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/bootstrap_policy.hpp",
+                                 "SHA256":  "1865644849F54DD39E04729476E7A95F3A1FE40F4AD4373C4CEC21E98C87DC13",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/bootstrap_tests.cpp",
+                                 "SHA256":  "E26E2E14756DA93D082E86BB40EF116E6EBF3BBFB18CD90B7FB6EED2E7184C1C",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/bootstrap_win32.cpp",
+                                 "SHA256":  "09B08457B4F59EEACE79059E26B7CD52F3C2494D73EF2881C0A746F78BB70E6F",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/CMakeLists.txt",
+                                 "SHA256":  "9D6E6AABDD4C485EED98793C0AB5C159CA61FEEB233B2617AF7036858156D073",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/NativeVerifyProtocol.ps1",
+                                 "SHA256":  "76782784E9C7D762EB03533E38E0EAAD5DAF91C5CDBBC88F270B87E6984C89BE",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/README-A142.md",
+                                 "SHA256":  "6ACA758092359823B7B72716853F95B8D637195DFC6F8640C602E312812FB441",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/sealed_a141.hpp",
+                                 "SHA256":  "306317027FCE851D3A6FDE9759FC6C375327A6CA54F335834BF9AD1B7F6A6C84",
+                                 "AcceptedInputPin":  true
+                             },
+                             {
+                                 "Path":  "accounts-wip/native/GUARD-SITES.tsv",
+                                 "SHA256":  "D32D05AAF43C8660D430E6F3EC154910AD0FFB95B1012D44C4A6A49832BDB52D",
+                                 "AcceptedInputPin":  true
+                             }
+                         ],
+    "LiveReady":  false
+}

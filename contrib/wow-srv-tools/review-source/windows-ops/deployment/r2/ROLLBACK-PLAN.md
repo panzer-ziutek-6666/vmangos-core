@@ -1,0 +1,18 @@
+﻿R2: minimalna poprawka CREATE DATABASE → USE w tym samym programie preimages. Cały program wykonano na odizolowanym MySQL DEV, od DATABASE()=NULL, także na sesyjnych TEMPORARY fixtures z niezerowymi efektami7UPDATE/2DELETE. Dane i wcześniejsze preimages DEV zachowane, MySQL DEV graceful stopped/native0 obu procesów. Produkcja odzyskana na starym R3; nowego deploymentu NIE wykonywano. Historyczny nieaktywny staging v1 i częściowy audit zachowano. Nowe wejścia/approval r2 nie są wystawione; Approved=false/NoDDLWindow=false.
+
+# Rollback pełnego kandydata
+
+Domyślny Plan w Rollback-FullCandidate.ps1. Wymaga dokładnego własnego receipt bieżącego planu i hasha przy osobnej zgodzie Rollback. Nie uruchamia się automatycznie po FAIL.
+
+PRZED próbą któregokolwiek SQL: SQLAttempted musi jawnie istnieć i być puste. Zweryfikować FileBackup, beforeRegistry, komplet planowanych plików, hashe aktualnych i kopii, własny proof zakończenia świata oraz ewentualną trwałą binding swojej bariery awarii. Obca operacja/ręczna zmiana intencji/generacji odmawia adopcji. Potrzebny świeży logical backup, więc MySQL musi nadal działać. Gdy jest Stopped/UNKNOWN, odmowa przed Gate: osobna decyzja o MySQL-only starcie i świeżym backupie, bez automatycznego startu. Brak FileBackup/pełnego proof oznacza osobny plan odzyskania zamiast obchodzenia guardów.
+
+Zatwierdzony Execute tylko przedSQL: blokady, Gate, backup bieżących plików, cofnięcie capability wyłącznie własnej instalacji, kontrolowany registry rollback do beforeActive (bez edycji state.json/sequence), STOP world→realm, świeży backup, STOPMySQL, restore dokładnych EXE i tras/pointer z kopii. Brak automatycznego restoreDB. Wynik kończy się jako ROLLED_BACK_STOPPED_COMMIT_PENDING_EXPLICIT_START: zadania utrzymane Disabled, usługi Stopped. To nie deklaracja przywrócenia dostępności. Osobno oceniana kontynuacja jawnego startu starego zestawu i readiness/commit musi rozliczyć konkretną pozostawioną transakcję, następnie naturalny collector i dokładne Enabled. Nie wykonywać kolejnego BeginRollback po przerwaniu.
+
+PO rozpoczęciu SQL, także native nieznanym lub błędzie przed DML: ten skrypt odmawia Execute przed mutacją. Stare EXE nie cofają wpisów migrations, masek ani usuniętych queststatus. Są dwa osobno rozpatrywane warianty: (a) zachowanie nowych danych i runtime-only powrót po jawnym sprawdzeniu zgodności starego core z markerami/danymi; (b) ręcznie zatwierdzony restore/preimage repair po określeniu zakresu, zależności i utraty późniejszych zapisów. Żaden wariant nie jest tutaj automatycznie wykonywany lub domyślnie dozwolony.
+
+Przywracanie pełnych baz z backupu usuwa późniejsze zapisy. Jeśli kandydat przyjął graczy, preimages z czasu migracji nie są bieżącym stanem graczy. Przed decyzją: kontrolowane wyciszenie i stop właściwych generacji, nowy backup bieżącego stanu, ocena zdarzeń od snapshotu, zachowanie spójności czterech baz i świadoma decyzja o stratach. Nie usuwać markerów dla pozornego umożliwienia startu i nie odtwarzać automatycznie pojedynczych tabel w żywym świecie.
+
+Exact command po osobnym odbiorze wariantu przedSQL:
+& 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe' -NoProfile -File 'C:\Scripts\CORE-FULL-PRODUCTION-PREP-R2-WOW-SRV-20261109-2225-PAYLOAD\Invoke-Rollback.ps1' -Mode Execute -DeploymentReceipt '<dokładny nowy RECEIPT.json>' -Inputs '<nowe prywatne wejścia rollbacku>' -ApprovalReceipt '<nowa zgoda Rollback związana z SHA256 tego receipt>'
+
+Zgoda i NoDDL teraz false. Reboot Windows nigdy nie jest elementem tego rollbacku.

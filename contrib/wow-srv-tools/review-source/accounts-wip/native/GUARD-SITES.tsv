@@ -1,0 +1,112 @@
+SOURCE_LINE	EXPRESSION
+45	require(ConvertStringSecurityDescriptorToSecurityDescriptorW(sddl.c_str(), SDDL_REVISION_1, &sd, nullptr) != FALSE);
+53	require(out && out != INVALID_HANDLE_VALUE && WriteFile(out, text, length, &written, nullptr) && written == length);
+57	require(a142::relative_name(relative)); std::replace(relative.begin(), relative.end(), L'/', L'\\'); return root + L"\\" + relative;
+60	const auto at = path.find_last_of(L'\\'); require(at != std::wstring::npos);
+64	require(sid && IsValidSid(sid)); LPWSTR text = nullptr;
+65	require(ConvertSidToStringSidW(sid, &text) != FALSE); LocalMemory memory; memory.value = text; return text;
+69	require(!GetKernelObjectSecurity(handle, OWNER_SECURITY_INFORMATION | GROUP_SECURITY_INFORMATION | DACL_SECURITY_INFORMATION, nullptr, 0, &count) && GetLastError() == ERROR_INSUFFICIENT_BUFFER);
+70	require(count >= SECURITY_DESCRIPTOR_MIN_LENGTH && count <= 65536);
+72	require(GetKernelObjectSecurity(handle, 7, bytes.data(), count, &actual) && actual == count && IsValidSecurityDescriptor(bytes.data()));
+80	require(IsValidSecurityDescriptor(sd) && GetSecurityDescriptorOwner(sd, &ownerSid, &defaulted)); owner = sid_text(ownerSid);
+81	DWORD revision = 0; require(GetSecurityDescriptorControl(sd, &control, &revision));
+82	BOOL present = FALSE; PACL acl = nullptr; require(GetSecurityDescriptorDacl(sd, &present, &acl, &defaulted) && present && acl && IsValidAcl(acl) && acl->AceCount <= 64);
+84	LPVOID raw = nullptr; require(GetAce(acl, i, &raw)); auto h = static_cast<ACE_HEADER*>(raw);
+85	require(h->AceType == ACCESS_ALLOWED_ACE_TYPE || h->AceType == ACCESS_DENIED_ACE_TYPE);
+87	require(h->AceSize >= offsetof(ACCESS_ALLOWED_ACE, SidStart) + 8);
+88	auto sid = reinterpret_cast<PSID>(&ace->SidStart); require(IsValidSid(sid));
+89	require(offsetof(ACCESS_ALLOWED_ACE, SidStart) + GetLengthSid(sid) <= h->AceSize);
+95	Security sd(bytes); a151::AceScope diagnosticOwner(sd.owner.c_str(), 0, 0); require(a142::trusted(sd.owner));
+97	{ a151::AceScope diagnosticAce(ace.sid.c_str(), ace.mask, ace.flags); require(a142::write_allowed(ace.sid, ace.mask, (ace.flags & INHERIT_ONLY_ACE) != 0, runtime)); }
+101	Security sd(descriptor(handle)); a151::AceScope diagnosticOwner(sd.owner.c_str(), 0, 0); require(sd.owner == L"S-1-5-18" && (sd.control & SE_DACL_PROTECTED));
+103	require(sd.entries.size() == (poolMask ? 3U : 2U));
+106	require(ace.type == ACCESS_ALLOWED_ACE_TYPE &&
+108	require((ace.sid == L"S-1-5-18" || ace.sid == L"S-1-5-32-544") ? ace.mask == full : (poolMask && ace.sid == sealed::pool_sid && ace.mask == poolMask));
+113	Security sd(descriptor(handle)); a151::AceScope diagnosticOwner(sd.owner.c_str(), 0, 0); require(a142::private_kernel_owner_allowed(sd.owner));
+115	{ a151::AceScope diagnosticAce(ace.sid.c_str(), ace.mask, ace.flags); require(a142::private_kernel_allow_ace(ace.sid, ace.mask, ace.flags)); }
+121	require(BCryptOpenAlgorithmProvider(&algorithm, BCRYPT_SHA256_ALGORITHM, nullptr, 0) >= 0);
+123	require(BCryptGetProperty(algorithm, BCRYPT_OBJECT_LENGTH, reinterpret_cast<PUCHAR>(&size), sizeof(size), &actual, 0) >= 0 && actual == sizeof(size) && size <= 65536);
+124	object.resize(size); require(BCryptCreateHash(algorithm, &hash, object.data(), size, nullptr, 0, 0) >= 0);
+128	void update(BYTE* bytes, DWORD count) { require(BCryptHashData(hash, bytes, count, 0) >= 0); }
+130	BYTE bytes[32]{}; require(BCryptFinishHash(hash, bytes, sizeof(bytes), 0) >= 0);
+140	require(length > 4 && length < 1024); std::wstring result(buffer, length); require(result.substr(0, 4) == L"\\\\?\\"); return result.substr(4);
+146	require(path.size() < 240 && path.substr(0, 3) == L"C:\\" && path.find(L':', 2) == std::wstring::npos);
+149	require(handle.valid() && GetFileType(handle.value) == FILE_TYPE_DISK && GetFileInformationByHandle(handle.value, &identity));
+150	require(!(identity.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT) && !!(identity.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == dir && equal(final_path(handle.value), path));
+155	BY_HANDLE_FILE_INFORMATION now{}; require(GetFileInformationByHandle(handle.value, &now));
+156	require(now.dwVolumeSerialNumber == identity.dwVolumeSerialNumber && now.nFileIndexHigh == identity.nFileIndexHigh && now.nFileIndexLow == identity.nFileIndexLow &&
+158	if (!directory) require(file_size(now) == file_size(identity) && filetime(now.ftLastWriteTime) == filetime(identity.ftLastWriteTime));
+162	require(!directory && file_size(identity) == value.length && a142::hash_text(value.sha256));
+163	if (value.modified) require(filetime(identity.ftLastWriteTime) == value.modified);
+164	LARGE_INTEGER zero{}; require(SetFilePointerEx(handle.value, zero, nullptr, FILE_BEGIN));
+166	for (;;) { DWORD count = 0; require(ReadFile(handle.value, buffer.data(), static_cast<DWORD>(buffer.size()), &count, nullptr)); if (!count) break;
+167	total += count; require(total <= value.length); hash.update(buffer.data(), count); }
+168	require(total == value.length && hash.finish() == value.sha256); unchanged();
+172	DWORD size = 0; require(!GetTokenInformation(token, kind, nullptr, 0, &size) && GetLastError() == ERROR_INSUFFICIENT_BUFFER && size > 0 && size <= 65536);
+173	std::vector<BYTE> result(size); DWORD actual = 0; require(GetTokenInformation(token, kind, result.data(), size, &actual) && actual <= size); result.resize(actual); return result;
+176	TOKEN_STATISTICS statistics(HANDLE token) { auto v = token_info(token, TokenStatistics); require(v.size() == sizeof(TOKEN_STATISTICS)); return *reinterpret_cast<TOKEN_STATISTICS*>(v.data()); }
+180	if (!acl) return {}; require(IsValidAcl(acl)); const auto bytes = reinterpret_cast<BYTE*>(acl); return {bytes, bytes + acl->AclSize};
+185	require(groups->GroupCount <= 1024 && offsetof(TOKEN_GROUPS, Groups) + sizeof(SID_AND_ATTRIBUTES) * groups->GroupCount <= groupsBytes.size());
+190	require(priv->PrivilegeCount <= 1024 && offsetof(TOKEN_PRIVILEGES, Privileges) + sizeof(LUID_AND_ATTRIBUTES) * priv->PrivilegeCount <= privBytes.size());
+197	require(!exists && error == ERROR_NO_TOKEN);
+212	require(seen.insert(path).second); directory(parent(path)); auto held = std::make_unique<Held>(path, false);
+219	find.value = FindFirstFileW((base + L"\\*").c_str(), &item); require(find.value != INVALID_HANDLE_VALUE);
+222	require(++count <= 4096 && !(item.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT));
+225	else require(found.insert(path).second);
+226	} while (FindNextFileW(find.value, &item)); require(GetLastError() == ERROR_NO_MORE_FILES);
+230	if (!registration.value) require(RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\dotnet\\Setup\\InstalledVersions\\x64", 0, KEY_READ | KEY_WOW64_32KEY, &registration.value) == ERROR_SUCCESS);
+232	require(RegQueryValueExW(registration.value, L"InstallLocation", nullptr, &kind, reinterpret_cast<BYTE*>(location), &bytes) == ERROR_SUCCESS &&
+234	std::wstring value(location); require((value.size() + 1) * sizeof(wchar_t) == bytes && (equal(value, sealed::runtime_root) || equal(value, std::wstring(sealed::runtime_root) + L"\\")));
+236	require(GetSecurityInfo(reinterpret_cast<HANDLE>(registration.value), SE_REGISTRY_KEY, 7, nullptr, nullptr, nullptr, nullptr, &raw) == ERROR_SUCCESS);
+238	Security security(sd); a151::AceScope diagnosticOwner(security.owner.c_str(), 0, 0); require(a142::trusted(security.owner));
+239	for (const auto& ace : security.entries) if (ace.type == ACCESS_ALLOWED_ACE_TYPE && !(ace.flags & INHERIT_ONLY_ACE) && (ace.mask & 0x500D0006U)) { a151::AceScope diagnosticAce(ace.sid.c_str(), ace.mask, ace.flags); require(a142::trusted(ace.sid)); }
+246	WIN32_FIND_DATAW data{}; Find find; find.value = FindFirstFileW((base + L"\\*").c_str(), &data); require(find.value != INVALID_HANDLE_VALUE);
+249	require(!(data.dwFileAttributes & FILE_ATTRIBUTE_REPARSE_POINT));
+250	if (data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) { require(name == L"10.0.12"); ++versions; }
+251	} while (FindNextFileW(find.value, &data)); require(GetLastError() == ERROR_NO_MORE_FILES && versions == 1);
+254	require(found == expected);
+261	find.value = FindFirstFileW((base + L"\\*").c_str(), &item); require(find.value != INVALID_HANDLE_VALUE);
+263	require(!(item.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT)) && found.insert(base + L"\\" + name).second && found.size() <= 6);
+264	} while (FindNextFileW(find.value, &item)); require(GetLastError() == ERROR_NO_MORE_FILES && expected.size() == 6 && found == expected);
+268	require(a142::root_contract(sealed::fixture_root));
+275	WIN32_FIND_DATAW item{}; Find find; find.value = FindFirstFileW((bootstrap + L"\\*").c_str(), &item); require(find.value != INVALID_HANDLE_VALUE);
+278	require(name == L"Vmangos.Accounts.Bootstrap.exe" && !(item.dwFileAttributes & (FILE_ATTRIBUTE_DIRECTORY | FILE_ATTRIBUTE_REPARSE_POINT))); ++ownCount;
+279	} while (FindNextFileW(find.value, &item)); require(GetLastError() == ERROR_NO_MORE_FILES && ownCount == 1);
+282	exact_descriptor(own->handle.value, 0x1F01FF, 0, false); require(file_size(own->identity) > 0 && file_size(own->identity) <= 8388608);
+302	std::wstring process_image(HANDLE process) { wchar_t buffer[1024]{}; DWORD size = 1024; require(QueryFullProcessImageNameW(process, 0, buffer, &size) && size > 0 && size < 1024); return {buffer, size}; }
+317	HANDLE raw = nullptr; require(OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY | TOKEN_DUPLICATE | TOKEN_ASSIGN_PRIMARY | READ_CONTROL, &raw)); source = Handle(raw);
+318	private_kernel(source.value); require(token_sid(source.value) == L"S-1-5-18"); sourceState = token_state(source.value); sourceStats = statistics(source.value);
+320	require(DuplicateTokenEx(source.value, 0x2000B, &attributes.value, SecurityImpersonation, TokenPrimary, &raw)); token = Handle(raw);
+321	copiedStats = statistics(token.value); require(copiedStats.TokenType == TokenPrimary && !same_luid(copiedStats.TokenId, sourceStats.TokenId) && same_luid(copiedStats.AuthenticationId, sourceStats.AuthenticationId));
+322	require(token_sid(token.value) == L"S-1-5-18" && default_dacl(token.value) == default_dacl(source.value)); exact_descriptor(token.value, 0xF01FF, 8, false);
+323	Attributes jobAttributes(private_sddl(0x1F003F)); job = Handle(CreateJobObjectW(&jobAttributes.value, nullptr)); require(job.valid());
+325	limits.BasicLimitInformation.ActiveProcessLimit = 4; require(SetInformationJobObject(job.value, JobObjectExtendedLimitInformation, &limits, sizeof(limits)));
+329	require(CreatePipe(&r, &w, &attributes.value, 4096)); read = Handle(r); write = Handle(w);
+330	if (clearRead) require(SetHandleInformation(read.value, HANDLE_FLAG_INHERIT, 0));
+334	SIZE_T size = 0; InitializeProcThreadAttributeList(nullptr, 1, 0, &size); require(size > 0 && size <= 65536);
+336	require(InitializeProcThreadAttributeList(list, 1, 0, &size));
+339	require(UpdateProcThreadAttribute(list, 0, PROC_THREAD_ATTRIBUTE_HANDLE_LIST, handles, sizeof(handles), nullptr, nullptr));
+350	require(CreateProcessAsUserW(token.value, image.c_str(), commandLine.data(), &processAttributes.value, &threadAttributes.value, TRUE,
+355	void assign_job() { require(child.valid() && AssignProcessToJobObject(job.value, child.value)); assigned = true; }
+357	require(assigned && GetProcessId(child.value) == pid && WaitForSingleObject(child.value, 0) == WAIT_TIMEOUT && equal(process_image(child.value), joined(sealed::fixture_root, L"launcher/Vmangos.Accounts.FixtureLauncher.exe")));
+358	FILETIME exit{}, kernel{}, user{}; require(GetProcessTimes(child.value, &created, &exit, &kernel, &user)); exact_descriptor(child.value, 0x1FFFFF, 0x101000, false);
+360	HANDLE raw = nullptr; require(OpenProcessToken(child.value, TOKEN_QUERY | READ_CONTROL, &raw)); Handle held(raw);
+361	auto stats = statistics(held.value); require(stats.TokenType == TokenPrimary && same_luid(stats.TokenId, copiedStats.TokenId) && token_sid(held.value) == L"S-1-5-18");
+362	exact_descriptor(held.value, 0xF01FF, 8, false); require(default_dacl(held.value) == default_dacl(token.value));
+366	require(token_state(source.value) == sourceState && same_luid(statistics(source.value).TokenId, sourceStats.TokenId));
+368	void resume() { require(!resumed && ResumeThread(thread.value) == 1); resumed = true; thread.reset(); }
+371	if (!PeekNamedPipe(pipeHandle, nullptr, 0, nullptr, &available, nullptr)) { require(GetLastError() == ERROR_BROKEN_PIPE); return; }
+372	if (!available) return; require(!errors && output.size() + available <= 65536);
+374	require(ReadFile(pipeHandle, buffer, (std::min)(available, static_cast<DWORD>(sizeof(buffer))), &count, nullptr) && count > 0);
+378	DWORD active() const { JOBOBJECT_BASIC_ACCOUNTING_INFORMATION value{}; require(QueryInformationJobObject(job.value, JobObjectBasicAccountingInformation, &value, sizeof(value), nullptr)); return value.ActiveProcesses; }
+384	if (wait == WAIT_OBJECT_0) break; require(wait == WAIT_TIMEOUT && GetTickCount64() - start <= 330000);
+386	DWORD code = 1; require(GetExitCodeProcess(child.value, &code) && code == 0);
+387	for (unsigned i = 0; i < 200 && active(); ++i) Sleep(10); require(active() == 0);
+390	require(output == expected + "\r\n" || output == expected + "\n");
+392	void finish() { require(active() == 0 && token_state(source.value) == sourceState); no_thread_token(); finished = true; }
+416	wchar_t machine[256]{}; DWORD size = 256; require(GetComputerNameW(machine, &size) && equal(machine, L"WOW-SRV"));
+417	no_thread_token(); require(SetDefaultDllDirectories(LOAD_LIBRARY_SEARCH_SYSTEM32)); require(SetDllDirectoryW(L""));
+418	require(equal(process_image(GetCurrentProcess()), joined(sealed::fixture_root, L"bootstrap/Vmangos.Accounts.Bootstrap.exe"))); private_kernel(GetCurrentProcess());
+419	HANDLE raw = nullptr; require(OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY | READ_CONTROL, &raw)); Handle token(raw);
+420	require(token_sid(token.value) == L"S-1-5-18"); private_kernel(token.value);
+421	const auto session = token_info(token.value, TokenSessionId); require(session.size() == sizeof(DWORD) && *reinterpret_cast<const DWORD*>(session.data()) == 0);

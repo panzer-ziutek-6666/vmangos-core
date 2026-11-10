@@ -1,0 +1,7 @@
+﻿{
+  "DeploymentReceipt": "REPLACE_WITH_ACTUAL_MIGRATION_RECEIPT_PATH",
+  "DevAcceptanceReceipt": "REPLACE_WITH_ACTUAL_DEVACCEPT_RECEIPT_PATH",
+  "DevEnvironmentReceipt": "REPLACE_WITH_ACTUAL_DEVSETUP_RECEIPT_PATH",
+  "DevSecrets": "C:\\ProgramData\\VMANGOS\\R3Approvals\\dev-secrets.json",
+  "SourceDefaults": "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-client.ini"
+}

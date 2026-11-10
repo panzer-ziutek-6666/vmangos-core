@@ -1,0 +1,22 @@
+﻿{
+    "Scope":  "ADMIN_CONTROL_ONLY",
+    "Approved":  false,
+    "CodePins":  [
+                     {
+                         "SHA256":  "84735EF2F2095232221C61BA27C41603CACAB866519697972EF7F6FCB873E398",
+                         "Name":  "VMANGOS-Control.ps1"
+                     },
+                     {
+                         "SHA256":  "0616F42D2F5257D7A4662353F2080EAABBB01E4595CD9FEB44F432A58452A0E7",
+                         "Name":  "Maintenance.psm1"
+                     },
+                     {
+                         "SHA256":  "91DDF977DEBC3B6CBCCD756E68E302100360D4074ACBD3A25529FA2D0B5157EC",
+                         "Name":  "Production.Driver.ps1"
+                     },
+                     {
+                         "SHA256":  "602AD85E0F7E390A0C1D5B21E705BCD36B13F706695A25841A742F99D4898ECE",
+                         "Name":  "World.Markers.ps1"
+                     }
+                 ]
+}

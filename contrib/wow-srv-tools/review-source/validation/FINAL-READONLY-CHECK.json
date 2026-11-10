@@ -1,0 +1,18 @@
+﻿{
+    "Publication":  false,
+    "ProtectedCoreFiles":  "Unchanged",
+    "Result":  "PASS",
+    "ActivePanelPublish":  "10/10 unchanged",
+    "ServiceControlExecuted":  false,
+    "Checkouts":  "Same HEAD and complete porcelain status",
+    "Host":  "WOW-SRV",
+    "Identity":  "WOW-SRV\\Administrator",
+    "Administrator":  true,
+    "NewToolsScope":  "Copies and offline builds only",
+    "SQLExecuted":  false,
+    "DEV":  "Both environments remain stopped",
+    "RuntimeServices":  "Same PID, UTC creation time, executable path and state before/after",
+    "OriginalSources":  "All 615 selected source hashes still match",
+    "Listeners":  "Unchanged address/port/owner",
+    "PS":  "5.1 Desktop x64"
+}

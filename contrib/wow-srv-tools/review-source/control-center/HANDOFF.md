@@ -1,0 +1,11 @@
+﻿# Bieżący panel IIS
+
+Źródła: PANEL-CORE-MANIFEST-BUILD-R1-WOW-SRV-20261025-1845-PAYLOAD/source. A129 eksportował10plików źródłowych i2stare pliki bridge z A73/A71; obecna kopia zawiera także dokumenty i późniejszą jedno-liniową korektę formatu rewizji w TelemetryContract.cs. Kontrola bieżącego IIS/pool potwierdziła release `20261025-1845-PANEL-CORE-MANIFEST-R1`;10/10plików publish zgodnych, w tym DLL SHA256 7C6E5A52252543F0BDB490CA40063A155CA1A22C44BDEECB560E0E2A04C34F83. To pochodzenie źródło→historyczny build→aktualne artefakty; nie obiecujemy deterministycznie identycznego nowego DLL/PDB przy innych ścieżkach buildu.
+
+Panel nie jest w całości read-only. Status/telemetria są odczytowe; są również trzy fixed POST: Start-All, Stop-All i Restart-World. Wymagają WindowsAuth/operatora, anty-CSRF i trwałego audytu przed wywołaniem zadań SYSTEM. Nie ma dowolnego textboxa SOAP/shell. Sterowanie przez bridge i wersjonowany bundle jest osobnym komponentemWindowsops. Środowy AutoHonor nie uruchamia restartuWindows.
+
+`src/Vmangos.AdminPanel/appsettings.json` w tej kopii ma `localhost` i celowo nieoperacyjne placeholdery ścieżek. Nie jest kopią prywatnego configu live ani zatwierdzonym ustawieniem uruchomieniowym. Nie wykonywano hostowania nowej kopii, HTTP/IISAuth/TLS lub akcji POST. WIP formularzy kont jest tylko w accounts-wip; nie scalono go z tym aktywnym źródłem.
+
+Nowy test harness wykonuje34kontrole rzeczywistej nowej DLL i portablePDB oraz parsera, z syntetycznymi kontraktami telemetrii. Historyczny transition-frame zastąpiono czysto syntetycznym error-only fixture; etykietę jednego testu dostosowano. Nie testuje to żywej granicy IIS/AppPool ani SYSTEM.
+
+Przykład offline po zainstalowaniu przypiętych zależności: `dotnet restore src/Vmangos.AdminPanel/Vmangos.AdminPanel.csproj --configfile NuGet.Config`, następnie izolowany publish i build `tests/Panel.Manifest.Tests.csproj` z `/p:PanelAssembly=<IZOLOWANA_DLL>`. Uruchamiać wyłącznie tester z czterema argumentami: osobna kopia fixtures, plik wyniku, DLL i PDB z tego samego buildu. Wyjścia obj/bin należy przekierować poza źródła. Nie używać `dotnet run` do uruchomienia panelu w ramach review.

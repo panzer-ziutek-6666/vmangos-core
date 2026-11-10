@@ -1,0 +1,127 @@
+﻿{
+    "Result":  "PASS",
+    "Interpretation":  "Actual measured native codes, not deductions from result JSON; raw logs remain on host",
+    "Steps":  [
+                  {
+                      "Step":  "DOTNET-VERSION",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:03.1668634+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:03.3919221+00:00",
+                      "ProcessRecordSHA256":  "F148FB8D98EB86D8858A82ED660256D016731931C83C0AC24A9DD81B4614B407",
+                      "StdoutSHA256":  "69B3E1540B73BEDEB9A330438AD9AB1265D07DFBBF68732E18C4AF163C38BF5A",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "PANEL-RESTORE-OFFLINE",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:03.4099359+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:04.7762830+00:00",
+                      "ProcessRecordSHA256":  "32BC1A4DE3180E44B5DF630D1FE842D9AE17D3B2E903E5F2DE4A9FB77146EB12",
+                      "StdoutSHA256":  "A526E25E3781A3D798146D25B7689322D0D5A0F69BF43BBF1F71DE6DEB410E8B",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "PANEL-PUBLISH-OFFLINE",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:04.7892880+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:09.7680903+00:00",
+                      "ProcessRecordSHA256":  "E4FCFF34E586EFAF12BF567A70A6D98A1B18B1AF1B5876AAA625CAE9C7F14535",
+                      "StdoutSHA256":  "5F9DEC9EF8158F9B26F27DA5A0467CBB6C6D095130EB5C5BB32A80DFA4417B15",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "PANEL-TESTER-RESTORE-OFFLINE",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:09.7710908+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:10.7653586+00:00",
+                      "ProcessRecordSHA256":  "94A62829E8C6F5942D967D899C44ACD91348E1B4AC834C57872630C58A789B37",
+                      "StdoutSHA256":  "659DC98E289DC5BE51C4E740F52E1CF5246871EDB1D058A061540C50F32BD2EE",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "PANEL-TESTER-BUILD-OFFLINE",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:10.7693593+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:13.9641815+00:00",
+                      "ProcessRecordSHA256":  "5E53E9FA52FBB9C4C59085FE724250C98C27BA08A05D54FCE132D086969295CD",
+                      "StdoutSHA256":  "A752FB0063349F7794BFDD4BECED8FA6BA6E9AF90BFBCB9B4F17BFE444C9F2B7",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "PANEL-OFFLINE-TESTS",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:13.9841867+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:14.3332745+00:00",
+                      "ProcessRecordSHA256":  "9D685AAD57243FD18154E6B522EDC5F74F5E4908B7E46E8C5B137B2C551BB219",
+                      "StdoutSHA256":  "54E920066BDDC89E1B72AE30247A273A510043DFC69B18E5488CF759782AFA2F",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "NODE-VERSION",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:49.3519156+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:50.0671017+00:00",
+                      "ProcessRecordSHA256":  "B638AB9C11AE7482EDD698F61A843CDBB2086DBC75E688DBE714C0A99E807B60",
+                      "StdoutSHA256":  "36F54CA712504304801B7254E3C2C0C5740D9B355F97B82E21E9C69F9757C2C6",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "WOWOPS-READONLY-OFFLINE-TESTS",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:52:50.0701001+00:00",
+                      "CompletedUtc":  "2026-11-10T10:52:55.0123771+00:00",
+                      "ProcessRecordSHA256":  "97DB961EFE95CAB65187588F559C9FE4279C8174C5327A5EE9F7255591AAF631",
+                      "StdoutSHA256":  "D2B1D872595DAC6EF98DF47537BAE7AE304F8EE33C70B28F97C6716169F6895E",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "WOW-PATCH-CHECK-R3",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:49:50.9757952+00:00",
+                      "CompletedUtc":  "2026-11-10T10:49:51.0198055+00:00",
+                      "ProcessRecordSHA256":  "2EE0321F2B1B52A2AEB3C0AC97A806F5B6EC24DE2A94F0F065DE96D55A5D9693",
+                      "StdoutSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "WOW-PATCH-APPLY-ISOLATED-R3",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T10:49:51.0238076+00:00",
+                      "CompletedUtc":  "2026-11-10T10:49:51.0718187+00:00",
+                      "ProcessRecordSHA256":  "855B0182FF1BAD33DD50FF39E0F3994160B7F6D0CFEE54FEC0BD4244E813C973",
+                      "StdoutSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  },
+                  {
+                      "Step":  "NODE-FINAL-PUBLIC-JSON",
+                      "NativeExit":  0,
+                      "Started":  true,
+                      "Captured":  true,
+                      "AtUtc":  "2026-11-10T11:21:41.9256714+00:00",
+                      "CompletedUtc":  "2026-11-10T11:21:42.7268725+00:00",
+                      "ProcessRecordSHA256":  "CF94A2E10058D461590B419AEDB69650686250ABFE6FFD377FF3B1BAAB91C008",
+                      "StdoutSHA256":  "1E9DD03C3DB8D9F1AE19F034636A3B047E2192767CE83D591C57DA455B027FCC",
+                      "StderrSHA256":  "F1945CD6C19E56B3C1C78943EF5EC18116907A4CA1EFC40A57D48AB1DB7ADFC5"
+                  }
+              ]
+}

@@ -1,0 +1,347 @@
+﻿diff --git a/server/app.js b/server/app.js
+index 109bcd2..155266f 100644
+--- a/server/app.js
++++ b/server/app.js
+@@ -6,8 +6,7 @@ import fastifyStatic from '@fastify/static';
+ import fastifyFormbody from '@fastify/formbody';
+ import { readConfigFile } from './config.js';
+ import { createPools } from './db.js';
+-import { createSoapClient } from './soap.js';
+-import { createAuditLog } from './audit.js';
++import { createDisabledSoapClient, createReadOnlyAudit } from './wow-srv-readonly.js';
+ import { readStatus } from './status.js';
+ import { renderPage, renderStatusStrip, escapeHtml } from './views/layout.js';
+ import { registerAccounts } from './sections/accounts.js';
+@@ -21,9 +20,27 @@ import { registerDb } from './sections/db.js';
+ const here = dirname(fileURLToPath(import.meta.url));
+ const root = join(here, '..');
+ 
+-export function buildApp({ config, soap, pools, audit }) {
++export function buildApp({ config, soap, pools, audit, readOnly = false }) {
+   const app = Fastify({ logger: false });
+ 
++  // Defense in depth: even a caller that provides a real SOAP client or audit
++  // object cannot make a read-only app execute SOAP or record a write.
++  if (readOnly) {
++    soap = createDisabledSoapClient();
++    audit = createReadOnlyAudit();
++  }
++
++  // Production entrypoint ALWAYS supplies readOnly: true. This hook runs
++  // before any section handler, including direct SQL writes to realmlist.
++  if (readOnly) {
++    app.addHook('onRequest', async (req, reply) => {
++      if (req.method !== 'GET' && req.method !== 'HEAD') {
++        return reply.code(405).header('Allow', 'GET, HEAD').type('text/plain')
++          .send('WOW-SRV read-only: mutating requests are disabled.');
++      }
++    });
++  }
++
+   // Fastify parses JSON out of the box but not form posts. Every action in the
+   // panel is an HTML form, so this plugin is required, not optional.
+   app.register(fastifyFormbody);
+@@ -143,12 +160,19 @@ ${rows.map((r) => `    <tr><td>${escapeHtml(r.at)}</td><td>${escapeHtml(r.sectio
+ }
+ 
+ async function main() {
+-  const config = readConfigFile(join(root, 'config.json'));
+-  const soap = createSoapClient(config.soap);
++  // Source-only patch does not create private config or any credentials.
++  if (process.platform !== 'win32' || (process.env.COMPUTERNAME ?? '').toUpperCase() !== 'WOW-SRV') {
++    throw new Error('WOW-SRV read-only entrypoint must not run on another host.');
++  }
++  if (!process.env.ProgramData || process.env.ProgramData.toLowerCase() !== 'c:\\programdata') {
++    throw new Error('WOW-SRV read-only entrypoint requires the expected Windows ProgramData.');
++  }
++  const privateRoot = join(process.env.ProgramData, 'VMANGOS', 'WowOps');
++  const config = readConfigFile(join(privateRoot, 'config.json'), { readOnly: true });
++  const soap = createDisabledSoapClient();
+   const pools = createPools(config.mysql);
+-  const audit = createAuditLog(join(root, 'audit.sqlite'));
+-
+-  const app = buildApp({ config, soap, pools, audit });
++  const audit = createReadOnlyAudit();
++  const app = buildApp({ config, soap, pools, audit, readOnly: true });
+   await app.listen({ host: '127.0.0.1', port: config.panel.port });
+   console.log(`wow-ops listening on http://127.0.0.1:${config.panel.port}`);
+ }
+diff --git a/server/config.js b/server/config.js
+index 8790f42..15821c0 100644
+--- a/server/config.js
++++ b/server/config.js
+@@ -126,18 +126,21 @@ function optionalTerrain(raw) {
+   return Object.freeze({ mapsDir: resolve(requireString('terrain.mapsDir', raw.terrain.mapsDir)) });
+ }
+ 
+-export function loadConfig(raw) {
++export function loadConfig(raw, { readOnly = false } = {}) {
++  if (typeof readOnly !== 'boolean') {
++    throw new Error('config: readOnly must be a boolean');
++  }
+   if (!raw || typeof raw !== 'object') {
+     throw new Error('config: expected an object');
+   }
+ 
+   const panel = requireSection(raw, 'panel');
+-  const soap = requireSection(raw, 'soap');
++  const soap = readOnly ? null : requireSection(raw, 'soap');
+   const mysql = requireSection(raw, 'mysql');
+ 
+   const cfg = {
+     panel: { port: requireNumber('panel.port', panel.port) },
+-    soap: {
++    soap: readOnly ? null : {
+       host: requireString('soap.host', soap.host),
+       port: requireNumber('soap.port', soap.port),
+       user: requireString('soap.user', soap.user),
+@@ -213,7 +216,7 @@ export function loadConfig(raw) {
+   cfg.events = { wowPatch: cfg.realm.wowPatch };
+ 
+   Object.freeze(cfg.panel);
+-  Object.freeze(cfg.soap);
++  if (cfg.soap) Object.freeze(cfg.soap);
+   Object.freeze(cfg.mysql);
+   Object.freeze(cfg.bots);
+   Object.freeze(cfg.realm);
+@@ -222,7 +225,7 @@ export function loadConfig(raw) {
+   return Object.freeze(cfg);
+ }
+ 
+-export function readConfigFile(path) {
++export function readConfigFile(path, options = {}) {
+   let text;
+   try {
+     text = readFileSync(path, 'utf8');
+@@ -232,5 +235,5 @@ export function readConfigFile(path) {
+     }
+     throw err;
+   }
+-  return loadConfig(JSON.parse(text));
++  return loadConfig(JSON.parse(text), options);
+ }
+diff --git a/server/sections/accounts.js b/server/sections/accounts.js
+index 86a5bb1..cf49d51 100644
+--- a/server/sections/accounts.js
++++ b/server/sections/accounts.js
+@@ -49,7 +49,7 @@ export function registerAccounts(app) {
+       readStatus({ soap, pools, config }),
+       listAccounts(pools, { includeBots, botPrefix: config.bots.accountPrefix, realmId: config.realm.id })
+     ]);
+-    const body = renderAccountsBody({ rows, includeBots, soapUser: config.soap.user, result: null, reachable: status.reachable });
++    const body = renderAccountsBody({ rows, includeBots, soapUser: config.soap?.user ?? '[read-only]', result: null, reachable: status.reachable });
+     reply.type('text/html').send(renderPage({ title: 'Accounts', active: 'accounts', body, status }));
+   });
+ 
+﻿diff --git a/server/wow-srv-readonly.js b/server/wow-srv-readonly.js
+new file mode 100644
+index 0000000..019c953
+--- /dev/null
++++ b/server/wow-srv-readonly.js
+@@ -0,0 +1,21 @@
++// WOW-SRV fork: deliberately non-networked SOAP and non-persistent audit for read-only phase.
++// No real SOAP client is constructed in the executable WOW-SRV entrypoint.
++export function createDisabledSoapClient() {
++  return Object.freeze({
++    execute: async () => ({
++      ok: false,
++      status: 'disabled',
++      output: 'SOAP is disabled in the WOW-SRV read-only deployment.',
++      durationMs: 0
++    }),
++    queueDepth: () => 0
++  });
++}
++
++export function createReadOnlyAudit() {
++  return Object.freeze({
++    recent: () => [],
++    record: () => { throw new Error('Audit writes are disabled in WOW-SRV read-only mode.'); },
++    close: () => {}
++  });
++}
+﻿diff --git a/test/wow-srv-accounts-readonly.test.js b/test/wow-srv-accounts-readonly.test.js
+new file mode 100644
+index 0000000..c3c1e76
+--- /dev/null
++++ b/test/wow-srv-accounts-readonly.test.js
+@@ -0,0 +1,28 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { buildApp } from '../server/app.js';
++import { createDisabledSoapClient, createReadOnlyAudit } from '../server/wow-srv-readonly.js';
++import { CONFIG } from './helpers/dbApp.js';
++
++test('WOW-SRV: GET /accounts renders with config.soap=null in read-only mode', async (t) => {
++  const config = { ...CONFIG, soap: null, panel: { port: 8420 } };
++  let queryCount = 0;
++  const pools = {
++    logon: { query: async () => { queryCount++; return [[]]; } },
++    characters: { query: async () => { queryCount++; return [[]]; } },
++    world: { query: async () => { queryCount++; return [[]]; } }
++  };
++  const app = buildApp({
++    config, pools, soap: createDisabledSoapClient(),
++    audit: createReadOnlyAudit(), readOnly: true
++  });
++  t.after(() => app.close());
++  const headers = { host: '127.0.0.1:8420' };
++  const result = await app.inject({ method: 'GET', url: '/accounts', headers });
++  assert.equal(result.statusCode, 200, 'accounts page should not dereference null SOAP config');
++  assert.match(result.body, /Accounts/i);
++  const beforePost = queryCount;
++  const blocked = await app.inject({ method: 'POST', url: '/accounts/create', headers, payload: {} });
++  assert.equal(blocked.statusCode, 405);
++  assert.equal(queryCount, beforePost, 'POST must be blocked before SQL');
++});
+﻿diff --git a/test/wow-srv-config-readonly.test.js b/test/wow-srv-config-readonly.test.js
+new file mode 100644
+index 0000000..e8ca8f5
+--- /dev/null
++++ b/test/wow-srv-config-readonly.test.js
+@@ -0,0 +1,54 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { loadConfig } from '../server/config.js';
++
++const MYSQL = Object.freeze({
++  host: '127.0.0.1', port: 3306, user: 'offline_fixture_user',
++  password: 'offline_fixture_password', database: 'realmd_dev'
++});
++
++function minimal() {
++  return { panel: { port: 8420 }, mysql: { logon: { ...MYSQL } } };
++}
++
++test('WOW-SRV config: readOnly accepts no SOAP section or credentials', () => {
++  const config = loadConfig(minimal(), { readOnly: true });
++  assert.equal(config.soap, null);
++  assert.equal(config.mysql.logon.database, 'realmd_dev');
++  assert.equal(config.panel.port, 8420);
++  assert.ok(Object.isFrozen(config));
++});
++
++test('WOW-SRV config: readOnly discards any supplied SOAP credentials', () => {
++  const raw = minimal();
++  raw.soap = { host: 'not-used', port: 9, user: 'forbidden-user', pass: 'forbidden-secret' };
++  const config = loadConfig(raw, { readOnly: true });
++  assert.equal(config.soap, null);
++  assert.ok(!JSON.stringify(config).includes('forbidden-secret'));
++});
++
++test('WOW-SRV config: ordinary mode still requires a SOAP section', () => {
++  assert.throws(() => loadConfig(minimal()), /missing section "soap"/);
++});
++
++test('WOW-SRV config: ordinary mode still requires SOAP user and password', () => {
++  const raw = minimal();
++  raw.soap = { host: '127.0.0.1', port: 7878, user: 'operator' };
++  assert.throws(() => loadConfig(raw), /soap.pass is required/);
++  raw.soap.pass = 'fixture-only';
++  delete raw.soap.user;
++  assert.throws(() => loadConfig(raw), /soap.user is required/);
++});
++
++test('WOW-SRV config: existing full SOAP configuration remains valid in ordinary mode', () => {
++  const raw = minimal();
++  raw.soap = { host: '127.0.0.1', port: 7878, user: 'operator', pass: 'fixture-only' };
++  const config = loadConfig(raw);
++  assert.equal(config.soap.user, 'operator');
++  assert.equal(config.soap.port, 7878);
++});
++
++test('WOW-SRV config: readOnly option is strictly boolean', () => {
++  assert.throws(() => loadConfig(minimal(), { readOnly: 'true' }), /readOnly must be a boolean/);
++  assert.throws(() => loadConfig(minimal(), { readOnly: 1 }), /readOnly must be a boolean/);
++});
+﻿diff --git a/test/wow-srv-readonly.test.js b/test/wow-srv-readonly.test.js
+new file mode 100644
+index 0000000..954749c
+--- /dev/null
++++ b/test/wow-srv-readonly.test.js
+@@ -0,0 +1,85 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { buildApp } from '../server/app.js';
++import { createDisabledSoapClient, createReadOnlyAudit } from '../server/wow-srv-readonly.js';
++import { CONFIG, HEADERS } from './helpers/dbApp.js';
++
++function fixture() {
++  let sqlCalls = 0;
++  const pools = {
++    logon: { query: async () => { sqlCalls += 1; return [[]]; } },
++    world: { query: async () => { sqlCalls += 1; return [[]]; } },
++    characters: { query: async () => { sqlCalls += 1; return [[]]; } }
++  };
++  const app = buildApp({
++    config: CONFIG,
++    soap: createDisabledSoapClient(),
++    audit: createReadOnlyAudit(),
++    pools,
++    readOnly: true
++  });
++  return { app, sqlCalls: () => sqlCalls };
++}
++
++test('WOW-SRV: all write methods and privileged endpoints are rejected before handlers', async (t) => {
++  const { app, sqlCalls } = fixture();
++  t.after(() => app.close());
++  for (const url of [
++    '/accounts/create', '/accounts/delete', '/server/announce', '/server/shutdown',
++    '/characters/erase', '/events/start', '/tickets/reset',
++    '/realms/create', '/realms/1/update', '/realms/1/delete'
++  ]) {
++    const result = await app.inject({ method: 'POST', url, headers: HEADERS, payload: {} });
++    assert.equal(result.statusCode, 405, `route ${url} not blocked`);
++    assert.equal(result.headers.allow, 'GET, HEAD');
++  }
++  for (const method of ['PUT', 'PATCH', 'DELETE', 'OPTIONS']) {
++    const result = await app.inject({ method, url: '/realms/1/delete', headers: HEADERS });
++    assert.equal(result.statusCode, 405, `${method} not blocked`);
++  }
++  assert.equal(sqlCalls(), 0, 'no SQL must run for rejected mutations');
++});
++
++test('WOW-SRV: disabled SOAP never performs a network call and reports offline', async () => {
++  const soap = createDisabledSoapClient();
++  const result = await soap.execute('.server info');
++  assert.equal(result.ok, false);
++  assert.equal(result.status, 'disabled');
++  assert.equal(soap.queueDepth(), 0);
++});
++
++test('WOW-SRV: GET /status and /events override a supplied live SOAP executor', async (t) => {
++  let unexpectedSoapCalls = 0;
++  const suppliedSoap = {
++    execute: async () => { unexpectedSoapCalls += 1; throw new Error('LIVE SOAP MUST NOT RUN'); },
++    queueDepth: () => 0
++  };
++  const pools = {
++    logon: { query: async () => [[]] },
++    world: { query: async () => [[]] }
++  };
++  const app = buildApp({
++    config: CONFIG, soap: suppliedSoap, audit: createReadOnlyAudit(),
++    pools, readOnly: true
++  });
++  t.after(() => app.close());
++  const status = await app.inject({ method: 'GET', url: '/status', headers: HEADERS });
++  assert.equal(status.statusCode, 200);
++  const events = await app.inject({ method: 'GET', url: '/events', headers: HEADERS });
++  assert.equal(events.statusCode, 200);
++  assert.equal(unexpectedSoapCalls, 0);
++});
++
++test('WOW-SRV: read-only audit cannot accept action records', () => {
++  const audit = createReadOnlyAudit();
++  assert.deepEqual(audit.recent(100), []);
++  assert.throws(() => audit.record({ command: '.server shutdown 1' }), /disabled/);
++});
++
++test('WOW-SRV: GET /status is served without real SOAP', async (t) => {
++  const { app } = fixture();
++  t.after(() => app.close());
++  const result = await app.inject({ method: 'GET', url: '/status', headers: HEADERS });
++  assert.equal(result.statusCode, 200);
++  assert.match(result.body, /SOAP is disabled/);
++});

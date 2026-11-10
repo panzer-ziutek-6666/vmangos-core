@@ -1,0 +1,91 @@
+﻿{
+    "PublishFiles":  [
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "appsettings.json",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\appsettings.json",
+                             "ExpectedSHA256":  "9ABFDE447CAC2C9348E9C43131108661FE70F576CC2AEE27B4C38A84B1DB5C6B",
+                             "ActualSHA256":  "9ABFDE447CAC2C9348E9C43131108661FE70F576CC2AEE27B4C38A84B1DB5C6B",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "Vmangos.AdminPanel.deps.json",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\Vmangos.AdminPanel.deps.json",
+                             "ExpectedSHA256":  "81BD333172F4491E5203B9BCF414C3C8B83E015F971370C7086708B8522A53A7",
+                             "ActualSHA256":  "81BD333172F4491E5203B9BCF414C3C8B83E015F971370C7086708B8522A53A7",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "Vmangos.AdminPanel.dll",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\Vmangos.AdminPanel.dll",
+                             "ExpectedSHA256":  "7C6E5A52252543F0BDB490CA40063A155CA1A22C44BDEECB560E0E2A04C34F83",
+                             "ActualSHA256":  "7C6E5A52252543F0BDB490CA40063A155CA1A22C44BDEECB560E0E2A04C34F83",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "Vmangos.AdminPanel.pdb",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\Vmangos.AdminPanel.pdb",
+                             "ExpectedSHA256":  "84F1AB29412A5056DD327B7E0E71562A186DB54DAA359D5F904C77D10B588EF5",
+                             "ActualSHA256":  "84F1AB29412A5056DD327B7E0E71562A186DB54DAA359D5F904C77D10B588EF5",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "Vmangos.AdminPanel.runtimeconfig.json",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\Vmangos.AdminPanel.runtimeconfig.json",
+                             "ExpectedSHA256":  "9FD781CDA327A8010D236D8B004D3A47D523C4AB220FBDC4D4636314896FC88D",
+                             "ActualSHA256":  "9FD781CDA327A8010D236D8B004D3A47D523C4AB220FBDC4D4636314896FC88D",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "Vmangos.AdminPanel.staticwebassets.endpoints.json",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\Vmangos.AdminPanel.staticwebassets.endpoints.json",
+                             "ExpectedSHA256":  "96330A1CAEDDDE8519FC03640C6A27F6747DA63373E43812535004E804AACD76",
+                             "ActualSHA256":  "96330A1CAEDDDE8519FC03640C6A27F6747DA63373E43812535004E804AACD76",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "web.config",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\web.config",
+                             "ExpectedSHA256":  "932047184B348BA10137B71ABF7AADCF180BF4BB69B773575EAF6ECBA0B80AC1",
+                             "ActualSHA256":  "932047184B348BA10137B71ABF7AADCF180BF4BB69B773575EAF6ECBA0B80AC1",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "wwwroot\\index.html",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\wwwroot\\index.html",
+                             "ExpectedSHA256":  "3891A127F4EE318B0C5B2054B96D0454A4DB75CFDA0458FF386A660D7E2A16E8",
+                             "ActualSHA256":  "3891A127F4EE318B0C5B2054B96D0454A4DB75CFDA0458FF386A660D7E2A16E8",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "wwwroot\\index.html.br",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\wwwroot\\index.html.br",
+                             "ExpectedSHA256":  "51AF3F975BFFA1B226E23044AB28F30473C522597A26BC9B9064385785631E05",
+                             "ActualSHA256":  "51AF3F975BFFA1B226E23044AB28F30473C522597A26BC9B9064385785631E05",
+                             "Match":  true
+                         },
+                         {
+                             "Kind":  "PUBLISH_BINDING",
+                             "Relative":  "wwwroot\\index.html.gz",
+                             "Path":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1\\wwwroot\\index.html.gz",
+                             "ExpectedSHA256":  "C777B7FD63986B5856651B0294F382E3E8E5B953F72CFBCDBA7CE2E6C6E8C44A",
+                             "ActualSHA256":  "C777B7FD63986B5856651B0294F382E3E8E5B953F72CFBCDBA7CE2E6C6E8C44A",
+                             "Match":  true
+                         }
+                     ],
+    "Result":  "PASS",
+    "A129ManifestSHA256":  "351D993EC405C7AB9758CF5304C6F49435289B0927A517A33C486BC5ACC0F9B6",
+    "SourceConfigurationBody":  "Public template changed only in review copy; original active/private configs excluded",
+    "Source":  "C:\\Scripts\\PANEL-CORE-MANIFEST-BUILD-R1-WOW-SRV-20261025-1845-PAYLOAD\\source",
+    "SourceProvenance":  "A129 export -\u003e A73/A71 exact source baseline -\u003e one-line TelemetryContract revision-format patch 20261025 -\u003e accepted publish matching all current IIS files",
+    "MaxReadWorkers":  3,
+    "ActivePhysicalPath":  "C:\\GRY\\wow\\admin-panel\\releases\\20261025-1845-PANEL-CORE-MANIFEST-R1"
+}

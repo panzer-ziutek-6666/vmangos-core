@@ -1,0 +1,16 @@
+﻿{
+    "SecretsExported":  false,
+    "Result":  "PASS",
+    "Unresolved":  0,
+    "Methods":  [
+                    "Explicit source allowlist",
+                    "Forbidden state/binary/path checks",
+                    "Key/token/DPAPI signatures",
+                    "Structural configs and credential tuples",
+                    "Context review of every fixture literal"
+                ],
+    "ScannedFiles":  643,
+    "HardBlocks":  0,
+    "Scope":  "Source review; not a claim of exhaustive vulnerability audit",
+    "FindingsReviewed":  42
+}

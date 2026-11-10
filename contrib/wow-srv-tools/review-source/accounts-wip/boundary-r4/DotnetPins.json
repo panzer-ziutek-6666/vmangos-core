@@ -1,0 +1,1142 @@
+[
+  {
+    "Path": "C:\\Program Files\\dotnet\\host\\fxr\\10.0.12\\hostfxr.dll",
+    "Length": 379688,
+    "SHA256": "838591885C5396FB0588A3AEDC2F3E841D3AFC67570868B1BCE615264005A44C",
+    "ModifiedUtc": "2026-08-22T13:32:20.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\hostpolicy.dll",
+    "Length": 378664,
+    "SHA256": "E92A2E71EEEAF7C574E905935B3E3724EF29BADE44317659DBE06F505E99DBE0",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\coreclr.dll",
+    "Length": 4614992,
+    "SHA256": "128AEE8C62A673D64739E585E3876B61133571CEC83A46240A62581D5465639B",
+    "ModifiedUtc": "2026-08-22T13:33:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Private.CoreLib.dll",
+    "Length": 16033576,
+    "SHA256": "1125ACC8106C43FC8BAD2D203C4C4485DF6182D292846C2FFF415C1040C54678",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\.version",
+    "Length": 51,
+    "SHA256": "5821D4886CE8720FEA8A95A798A003E0A31197DE1EFC4FD22FA6A008EECFA3A8",
+    "ModifiedUtc": "2026-08-22T13:26:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\clretwrc.dll",
+    "Length": 317736,
+    "SHA256": "7A2186201C87BBC597A1B8B26FACD88E68F03BE4C4A4211FD65CC6595C72E45B",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\clrgc.dll",
+    "Length": 674088,
+    "SHA256": "65E2F97D263824BFB9F75F92E66EBD22229AAF3A5FADDEF9345811D856C8840E",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\clrgcexp.dll",
+    "Length": 711464,
+    "SHA256": "23A8050EC68542989B6DA6CC906A90FAF8A14E6416FD2871A260B781B1C374AE",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\clrjit.dll",
+    "Length": 2092328,
+    "SHA256": "0749D8FC8E944D0576E1BB47120F87ADD8F875E5CD8968995633063FC79256F6",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\createdump.exe",
+    "Length": 71552,
+    "SHA256": "315307159925D33EB604186A512901D080ECFC4CD8B8198030A7D398C6AF2B0B",
+    "ModifiedUtc": "2026-08-22T13:32:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.CSharp.dll",
+    "Length": 980776,
+    "SHA256": "2000912F2FC52E0C64ED893D79F4E7B143502540FB7170B5AE5FCEA7099BA431",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.DiaSymReader.Native.amd64.dll",
+    "Length": 2377016,
+    "SHA256": "70E4B89978CE57EF87B28F4921F3140C383B04AA96E7F3BDB3C4EBB898FD8A72",
+    "ModifiedUtc": "2026-08-05T12:09:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.NETCore.App.deps.json",
+    "Length": 29720,
+    "SHA256": "DB6BF68420F350411629571D31AEA9232F05E9464E0F48F306041EFD0971615D",
+    "ModifiedUtc": "2026-08-22T13:27:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.NETCore.App.runtimeconfig.json",
+    "Length": 54,
+    "SHA256": "31C8CE517CDDC0DEACEB26B5DFF6BA5DF55AC4E06E9AFD0026E51FACA23DC8A4",
+    "ModifiedUtc": "2026-08-22T13:27:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.VisualBasic.Core.dll",
+    "Length": 1193768,
+    "SHA256": "2666B24EB6E295476B44ABD057EA250FD5957DB9C1C7ADEE6A223A747DDFE3D2",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.VisualBasic.dll",
+    "Length": 17192,
+    "SHA256": "E192508ADDE6A758138A5A8E28998DCCB64E7F45EAF30D8AB3564F87749028B1",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.Win32.Primitives.dll",
+    "Length": 15656,
+    "SHA256": "6C21472B0AE2F9B484A97614FAD5485A22F18F9F19EE1ADB9CEB3ED8DDB072D7",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\Microsoft.Win32.Registry.dll",
+    "Length": 116520,
+    "SHA256": "76849CFDE4369F3AE93E28261FE5E1010DBF1332F7DA95C98543CBA9B03961C0",
+    "ModifiedUtc": "2026-08-22T13:32:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\mscordaccore.dll",
+    "Length": 1356640,
+    "SHA256": "86C29A7B945525135DE16C3DCB71E3B8517848C459CBB21395B352D4E6BBA09C",
+    "ModifiedUtc": "2026-08-22T12:47:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\mscordaccore_amd64_amd64_10.0.1226.42308.dll",
+    "Length": 1356640,
+    "SHA256": "86C29A7B945525135DE16C3DCB71E3B8517848C459CBB21395B352D4E6BBA09C",
+    "ModifiedUtc": "2026-08-22T12:47:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\mscordbi.dll",
+    "Length": 1237888,
+    "SHA256": "753E92805F3886221F56DCFC07191AD7EE44235BF689DB0490BDF777F25E9175",
+    "ModifiedUtc": "2026-08-22T12:47:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\mscorlib.dll",
+    "Length": 59728,
+    "SHA256": "B698595367A7D4FA57CCACAB73751FDE0BB8F2415345C62CDFE7CED890DA2C0C",
+    "ModifiedUtc": "2026-08-22T13:31:42.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\mscorrc.dll",
+    "Length": 133968,
+    "SHA256": "F0D8C7491D4659A4C5A4C00615255A60E05634F311162C2775A51E03C070C9E0",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\msquic.dll",
+    "Length": 536344,
+    "SHA256": "B7158D427B01C70483BB3D80C5211E387DD98E9471C8A70E4484D449DE9157E8",
+    "ModifiedUtc": "2026-08-11T19:41:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\netstandard.dll",
+    "Length": 100648,
+    "SHA256": "3DC81DBC9DACD28261632C94410859EDA24C2DB50CD6C14309CBB2A434B50C57",
+    "ModifiedUtc": "2026-08-22T13:31:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.AppContext.dll",
+    "Length": 15144,
+    "SHA256": "D9DD9FA44E019F27172D6B2662E2B6038F48C270912AC8AAE53D4D909DA7E9BE",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Buffers.dll",
+    "Length": 15144,
+    "SHA256": "A1A35F5524E2F831D08CA55F702FBDDCB8C6DFECD264F0F563D81A1C8B8280BD",
+    "ModifiedUtc": "2026-08-22T13:31:42.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Collections.Concurrent.dll",
+    "Length": 231248,
+    "SHA256": "082F4BC0DA1141EB65111B6DA633D75624ADFB7BB067D7EE90C5622C8B30885B",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Collections.dll",
+    "Length": 296744,
+    "SHA256": "DF6F2037EABEE28100184E92F7536427BA2F086C1110629804D466B124BC4D54",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Collections.Immutable.dll",
+    "Length": 976680,
+    "SHA256": "B527DD7B2BEB82C22AA39787298CBEB33F3EAC9EB9B83A0F0271353421DB28DB",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Collections.NonGeneric.dll",
+    "Length": 104232,
+    "SHA256": "AA4D5216D066C91CB489F63C6CBFCAF1F47B6E74E070DB45639D3460454FC60B",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Collections.Specialized.dll",
+    "Length": 104272,
+    "SHA256": "E31AF1F866E880844E027BE59F545B9A6B34108E0B0680EBE3FBC19A53070819",
+    "ModifiedUtc": "2026-08-22T13:32:24.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.Annotations.dll",
+    "Length": 198480,
+    "SHA256": "E3BE2D35D81E6475C64110CFC099895B71DF22C8B46A18C2D7C76A913B8BA903",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.DataAnnotations.dll",
+    "Length": 16720,
+    "SHA256": "D40E8C7062E6B9CE11BA83EAB3D26BE0EEC8066B99970EA88B8E87FB75F411BD",
+    "ModifiedUtc": "2026-08-22T13:38:28.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.dll",
+    "Length": 30544,
+    "SHA256": "E3B6F75864EE944898540937C1F300E04F44A1B2729516F0BBF948589A8B14B2",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.EventBasedAsync.dll",
+    "Length": 46888,
+    "SHA256": "CC84FE814EF5E58271D83193E328F8EC220EFD4696D90AF9A7C4690C10451495",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.Primitives.dll",
+    "Length": 79656,
+    "SHA256": "1E2451184C287409EA25ACDE3C90F25950BF34D16458A6E52A94CA4292434F62",
+    "ModifiedUtc": "2026-08-22T13:33:32.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ComponentModel.TypeConverter.dll",
+    "Length": 767784,
+    "SHA256": "10DAE312A6697718F8CE3DFCDB17D6AE4B74687C765D74D50DE8A8E69E08F5E7",
+    "ModifiedUtc": "2026-08-22T13:32:24.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Configuration.dll",
+    "Length": 19240,
+    "SHA256": "3952A72E1F18774F16952B46C20E80ED2BC601A06ECA01F33FA924C738022A9C",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Console.dll",
+    "Length": 169808,
+    "SHA256": "3B85DAF02A3D9ED99B84BB1C639FE8B1CED46D8D157FA56F525F6B8C5BE43B3E",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Core.dll",
+    "Length": 23336,
+    "SHA256": "AC23FAF1B37FA49F1B117BAAD951A65609E799A6E669A6DF06D3552677E0C086",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Data.Common.dll",
+    "Length": 2770728,
+    "SHA256": "66BDD62047EE460E2CE2C33D15DD1173AC97997B2745864A905179594F821ACC",
+    "ModifiedUtc": "2026-08-22T13:33:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Data.DataSetExtensions.dll",
+    "Length": 15656,
+    "SHA256": "AEEAE0755C8C7F6747765CDF82FA43182E320E97F2035E3A0A19F21905E6C113",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Data.dll",
+    "Length": 25424,
+    "SHA256": "49F52958A2A6E461D0FD7A47E54A199EB263C69ECFCC0FC684B73B5918EBF466",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.Contracts.dll",
+    "Length": 16208,
+    "SHA256": "6C05CACD9B61B08AE75F2D783CC402B0B5FC848E3D68C29C10B93897CC083E8B",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.Debug.dll",
+    "Length": 15656,
+    "SHA256": "8B160FFE7518588BF64E13C01C6DCB2EF504D64F38BBF0F198D31E7B698DB92C",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.DiagnosticSource.dll",
+    "Length": 501544,
+    "SHA256": "6267C1BD1BDF2BDD4B5748B885B0ADCDA10F18697ADFEA8488A19A009AD44FDB",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.FileVersionInfo.dll",
+    "Length": 46928,
+    "SHA256": "E94F158142E93834DEC3100BDE3313935517D549FF36C65819A06D3104DEC427",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.Process.dll",
+    "Length": 329552,
+    "SHA256": "51A57FBE918F8B68930C090792B718FC0850EA12DA869D50B97A3796AF29A740",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.StackTrace.dll",
+    "Length": 46888,
+    "SHA256": "8F6397C1E2BA9B8B8BFA317962151B5035049CE8D6B3575E5027A0D0EEACC797",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.TextWriterTraceListener.dll",
+    "Length": 67368,
+    "SHA256": "1BF165CEE916A854E1150F489E4348CE94755359D5FCDCC0BC2BBBE6A7102BDD",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.Tools.dll",
+    "Length": 15144,
+    "SHA256": "841C5E2B6C171FA9AAFF0FC6295F3FBC93DC5DCAB44118B62F1C942BB674AFF2",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.TraceSource.dll",
+    "Length": 141096,
+    "SHA256": "8445C7F1BBAAE6CFFDE60E2C9A8753FAAA5100255FBE31D0A1927D9D9BB7F194",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Diagnostics.Tracing.dll",
+    "Length": 16208,
+    "SHA256": "9563D5EEC35F94D13A5E62EAA9535DBE0E9EA474F055DA132FB8AF46B0B01263",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.dll",
+    "Length": 50472,
+    "SHA256": "EF135F0BDA0C41E142FDBD67B93E5AA7911916CB250F7DF302F4151A3BBFA380",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Drawing.dll",
+    "Length": 20304,
+    "SHA256": "585A8DA9952D715F8DE7A7B1879B59D68FF8608B92F6ED1C5F0E1D251180D3C6",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Drawing.Primitives.dll",
+    "Length": 132944,
+    "SHA256": "17585B32CA91BAC8CCFF2EF1C6DDF62EE9EA5EFC552928C3A9D1B868394246E9",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Dynamic.Runtime.dll",
+    "Length": 16168,
+    "SHA256": "C0EAC30C791DB8C1A2B50B61C50D029F4DDD0EADFDD35433745001688A3E7466",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Formats.Asn1.dll",
+    "Length": 239440,
+    "SHA256": "A163FE5F96D1689F1BC1AC531B38C3ABA95792AC7DD52231D325D658947FBCFD",
+    "ModifiedUtc": "2026-08-22T13:32:24.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Formats.Tar.dll",
+    "Length": 272168,
+    "SHA256": "44C9984F269A158915195FD32007F22C3BB692DCFEB933CDA8EA45A3AC6CD1CE",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Globalization.Calendars.dll",
+    "Length": 15656,
+    "SHA256": "E0F3F3F6E4ACC7B6755782FED5CB075ECF70BEEE4FC5D404579AE99BC0883EF2",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Globalization.dll",
+    "Length": 15696,
+    "SHA256": "66902CFFD057673B4B77AA68FAF80D33FFA4C94510E61DB2A067943CC53B7702",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Globalization.Extensions.dll",
+    "Length": 15144,
+    "SHA256": "BE0390557CC72078A7217CF94FD44B9AB66AA30838C00A92AA78C62469C44AA0",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Compression.Brotli.dll",
+    "Length": 83752,
+    "SHA256": "0A59A95787EE15784D73079FDD5DC555B78659A6C560B6CBBF0D7452E638DF89",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Compression.dll",
+    "Length": 419624,
+    "SHA256": "C942747F84B730887090F5E0CF86D164C0EE402E524DCE2750E06A6DF48513FB",
+    "ModifiedUtc": "2026-08-22T13:32:20.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Compression.FileSystem.dll",
+    "Length": 15184,
+    "SHA256": "4AEEC2C0189F73BA8122F05C0D759008DDAE1A8873B167CC8A558D53F2AF80E1",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Compression.Native.dll",
+    "Length": 937256,
+    "SHA256": "4D174B78AA8B3516C7E3CEC0355DFE9AE570894055C377D2E5565D077A9A7A1E",
+    "ModifiedUtc": "2026-08-22T13:32:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Compression.ZipFile.dll",
+    "Length": 100176,
+    "SHA256": "2DA76EB281740BE485B5637DA8C60FE0CE12BC2848D1A1A81CE144FA74313E18",
+    "ModifiedUtc": "2026-08-22T13:32:20.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.dll",
+    "Length": 15656,
+    "SHA256": "388400CCB189B819D6EC5F1EF70710A39641D93ED5B870FC9324866B75DFB78B",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.FileSystem.AccessControl.dll",
+    "Length": 104232,
+    "SHA256": "F7F9ED6CDAB35274711E9345266784EC332AE8040DB184D141C70E7941FBBEC5",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.FileSystem.dll",
+    "Length": 15656,
+    "SHA256": "C251F33B29382C47B773D907463EDD9FE978A06E39EFD5670EF3B3B1D4F8C2B7",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.FileSystem.DriveInfo.dll",
+    "Length": 55120,
+    "SHA256": "0A7F3DD2FB6147A3FC046AEAC8501D764EFFE5A3D8CFA56D2B244AA50B874B98",
+    "ModifiedUtc": "2026-08-22T13:32:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.FileSystem.Primitives.dll",
+    "Length": 15144,
+    "SHA256": "D3B21B8B38E48C6B4D1CB5CFE9ADFE4ABAD7B3353601FEBD3C7E4027F9EF9C6B",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.FileSystem.Watcher.dll",
+    "Length": 87848,
+    "SHA256": "8AB1704E4BD171056EC5A11E886D5199D05A641C6D0233C53D4766BF30328DD3",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.IsolatedStorage.dll",
+    "Length": 87848,
+    "SHA256": "2272A8BDE18ED0E7C9E54ECE9B849B9BE76C90B978909D2B2FC94CF0CCBCE427",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.MemoryMappedFiles.dll",
+    "Length": 83752,
+    "SHA256": "6E8B281ECB2F0F5E7AAD3980F61D8812CAA6B37884737F542F95410A76663E0E",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Pipelines.dll",
+    "Length": 190248,
+    "SHA256": "EE9F0FD6C659F50799AFD103C6ED9C5E408967E28DFA059BDDF4B0A3FD2557DD",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Pipes.AccessControl.dll",
+    "Length": 15656,
+    "SHA256": "1102F25A6E88F2FAE81E4CD3628D8EF826F847B9C9B6A4D32FF8B37E0300DA35",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.Pipes.dll",
+    "Length": 165712,
+    "SHA256": "3804F9992861122E60990B0765D0B50B33CDC2E4D89D26D9DBF8641D1D0134A2",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.IO.UnmanagedMemoryStream.dll",
+    "Length": 15696,
+    "SHA256": "AD6A5F859589E1951103A00F45566DA079CF87BD8B03F0C6AD985A6F39F19C5A",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Linq.AsyncEnumerable.dll",
+    "Length": 1292072,
+    "SHA256": "925208E8AC40AC3F7B988ABA6CCBBB58ADAC38AD1876A7D97EE137BE6C21A653",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Linq.dll",
+    "Length": 698192,
+    "SHA256": "284D38945B6E92E847129BD28AF458B19818D0F2181F79882888AB2003F4C519",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Linq.Expressions.dll",
+    "Length": 3639080,
+    "SHA256": "8830F4A6A6982F53CFBB54F992858EE36B4994A6FF6E6078C39627E77BEF282F",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Linq.Parallel.dll",
+    "Length": 775976,
+    "SHA256": "AA6068E3D8F6B2E492CC63DCAAD6B02942EDBAE445CB2B88C24F1850B25C49F5",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Linq.Queryable.dll",
+    "Length": 182056,
+    "SHA256": "B3B3A9C1B87A51DACD46A3F9EC392C5D05E449152D44D6BD495DF0994350E2FA",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Memory.dll",
+    "Length": 161576,
+    "SHA256": "F8F9D38EFD6B0DE30954D6BF1F353E9617BFB36D3D245C013A3B12BE9F6BD88A",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.dll",
+    "Length": 17192,
+    "SHA256": "481B38C912F8779B3510CD00F079E45096EA22B6DEFDAAB66780D5AC3AE6986A",
+    "ModifiedUtc": "2026-08-22T13:31:40.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Http.dll",
+    "Length": 1746768,
+    "SHA256": "B98ED0CB80DD54C33FC049F33AF5448710752155BBD5CC8CBCD932E01F066801",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Http.Json.dll",
+    "Length": 128848,
+    "SHA256": "A9FE81BA3C048F9977E0099800EEFD570A49BE723C555725DA57BA797C92B4E0",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.HttpListener.dll",
+    "Length": 534312,
+    "SHA256": "3DFE11FB30C5F84C911D9562BE6C2037113CD8976EF2DEF3550AC415AE58955B",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Mail.dll",
+    "Length": 481064,
+    "SHA256": "B585A55EE67C80D7F02A84D50D626D279C7AA77FD3E38206B434BD20C181EEDC",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.NameResolution.dll",
+    "Length": 124712,
+    "SHA256": "E786C0940F5322F0AD6E8E34E7B582E5B050DF0FB2230329325307E61BFD994C",
+    "ModifiedUtc": "2026-08-22T13:32:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.NetworkInformation.dll",
+    "Length": 157520,
+    "SHA256": "7E8791833EB2D0AEA77B119FED3CAB8BF501F6A553155CC1C4E5B1C02F65593B",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Ping.dll",
+    "Length": 91984,
+    "SHA256": "06BB307343DB955A312634D00BA5E097CF5168A901284437592C28D780804E33",
+    "ModifiedUtc": "2026-08-22T13:32:24.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Primitives.dll",
+    "Length": 210728,
+    "SHA256": "4DBB41A178EF013A898327152ECCD146228DD2EB83859B9BB36078333B41F0F1",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Quic.dll",
+    "Length": 358224,
+    "SHA256": "AF5B52CDEE62D014AF677C411530A3FDE5C1C368ADECB8F83DCFE9246E8BBE73",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Requests.dll",
+    "Length": 374568,
+    "SHA256": "ED82D9D0B7942B2B02C5744A4591FBE2316879618ADFC5660C9F111F814155F2",
+    "ModifiedUtc": "2026-08-22T13:33:32.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Security.dll",
+    "Length": 665424,
+    "SHA256": "A78BD713E807729F15B0E085C67FD6CBFEFA85736A2618512D4FF1212759EBA5",
+    "ModifiedUtc": "2026-08-22T13:32:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.ServerSentEvents.dll",
+    "Length": 83752,
+    "SHA256": "C0B1944020D0E5688B90FBA9F29209E367674E29D2020F700C302994D5417EDA",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.ServicePoint.dll",
+    "Length": 15144,
+    "SHA256": "84FA83CD96E62FDA02991B8A8E99FA1C7B3AC08807B04F7486A896CFE6B4A760",
+    "ModifiedUtc": "2026-08-22T13:31:40.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.Sockets.dll",
+    "Length": 530216,
+    "SHA256": "645C56D637CE15976998119E50722A911315682CE141B4AAB98874CE1B063F3A",
+    "ModifiedUtc": "2026-08-22T13:33:58.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.WebClient.dll",
+    "Length": 165672,
+    "SHA256": "DEFA7BBF90C77ED01D6ADD53F678E4ADFBCF97F3B1152AFFEC06E652D327F1A2",
+    "ModifiedUtc": "2026-08-22T13:33:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.WebHeaderCollection.dll",
+    "Length": 63312,
+    "SHA256": "74D66F776B4C15936A7B887F47CEB8BF277DBE82E71A78DD3EA5D02502B081E7",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.WebProxy.dll",
+    "Length": 42832,
+    "SHA256": "408E3DAABB3F42B4F1B72A1E1DEF38F12BA58EB9D23DCA620086819CF7484195",
+    "ModifiedUtc": "2026-08-22T13:33:32.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.WebSockets.Client.dll",
+    "Length": 104232,
+    "SHA256": "F308A69B9EE1AC982F53D1D94374F4972A7E3C700742901FF7C2BBFB570019D2",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Net.WebSockets.dll",
+    "Length": 243496,
+    "SHA256": "C014A074D408C71011E26EAC69BE85003A852CFE115E8608BB5D4FD70536EB2E",
+    "ModifiedUtc": "2026-08-22T13:33:34.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Numerics.dll",
+    "Length": 15184,
+    "SHA256": "35ADC9360421B3B7A3D50399CB2C651C160158D7E8C302907ACBCE5F61F4A4F7",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Numerics.Vectors.dll",
+    "Length": 15656,
+    "SHA256": "A9A980EE33ED0C798A5E1960C4557521F465AC9E0987DFD2C3049D53B1F2FA5A",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ObjectModel.dll",
+    "Length": 79656,
+    "SHA256": "2179BB19F335B4FCACD0994AD2CCFDAC6840DEFF09C7889DEBFE9DBB5B88A3E6",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Private.DataContractSerialization.dll",
+    "Length": 2062120,
+    "SHA256": "8C07A5333C4E938CAD8AC8F24B5965121BC0622442A352CBE81C58F17C2349A8",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Private.Uri.dll",
+    "Length": 255824,
+    "SHA256": "B15C84D2120E1EC9612C66BA59BC3D7E67D841E2BCE7B7D0478CB212537539B4",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Private.Xml.dll",
+    "Length": 7788328,
+    "SHA256": "D71E72A7A9DE324352EDD281A46466B51BD0BDD2831B1573F8D3BAE8BD2DD4A6",
+    "ModifiedUtc": "2026-08-22T13:33:32.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Private.Xml.Linq.dll",
+    "Length": 390952,
+    "SHA256": "C832B73DE9783E6929CA5FF4863FC313E13EF7CFB5965C52587C4F77F6E037A7",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.DispatchProxy.dll",
+    "Length": 75600,
+    "SHA256": "BF93A361C0BBA8497889C9F7713ADD5968BA39394F9E6BDA27E86294C6C43560",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.dll",
+    "Length": 16168,
+    "SHA256": "95059346D6271DD6D0322CC321E5FB8CCEAB662F550C67AEE7615059E41739BB",
+    "ModifiedUtc": "2026-08-22T13:31:40.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Emit.dll",
+    "Length": 309032,
+    "SHA256": "09059981BBEEA0FDC5DF589BE5D7E3937D57E22BEC4D78CEB492C587926FC238",
+    "ModifiedUtc": "2026-08-22T13:32:24.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Emit.ILGeneration.dll",
+    "Length": 15656,
+    "SHA256": "6B42DDD05B0CA1C7342D73EA9F401FE588044215D65C67B756DEB780F0894A26",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Emit.Lightweight.dll",
+    "Length": 15656,
+    "SHA256": "D2724A2B7B46146877EC1F6E400C49EA05F84BDD31F3BBA52AE139EE68A4F779",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Extensions.dll",
+    "Length": 15144,
+    "SHA256": "CEB1B81E1EB488D87BD43D16DC54450B2A78E0B653C44C988AAE2A20ABC162BC",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Metadata.dll",
+    "Length": 1156904,
+    "SHA256": "82973E772017944A0548E445F30757595D95FE99E1F5C4A446DF8C4DB04B1C18",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.Primitives.dll",
+    "Length": 15656,
+    "SHA256": "C2BBD885D03DA5E880667C228AC1F56A5F3A72EA37D43F010ADA000ADC33DA28",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Reflection.TypeExtensions.dll",
+    "Length": 42792,
+    "SHA256": "7CAC73ED746CE05A4A2F1E61DD52D41322ECC6BA84CFEC463380F49487031459",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Resources.Reader.dll",
+    "Length": 15144,
+    "SHA256": "20BDB5D302B5E28F6042C9F281CFA3AE2F2358544CC40783052FE5ABF6AA859B",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Resources.ResourceManager.dll",
+    "Length": 15696,
+    "SHA256": "F709EB5CF16E26679782784C428825019785FCC7085562092425D4999BECE03D",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Resources.Writer.dll",
+    "Length": 50984,
+    "SHA256": "684836486B9BA2817EFA3099118860D259FD16DB0C4C0533D42CAD8C6C165B62",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.CompilerServices.Unsafe.dll",
+    "Length": 15184,
+    "SHA256": "6E685EC0477B21A688CD38BFCAFC673888CDF186C99DF3C96FAB352E96D6FDC8",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.CompilerServices.VisualC.dll",
+    "Length": 30504,
+    "SHA256": "5FD85D3D7B47A921BDF48BF938C6615A49A4A3D493E1EA199F1B997C709618F4",
+    "ModifiedUtc": "2026-08-22T13:32:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.dll",
+    "Length": 44840,
+    "SHA256": "76BE53624F64B23D0249DFA0BBE85390086DE7C44BFD490642EA86C6FAAF44AF",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Extensions.dll",
+    "Length": 17704,
+    "SHA256": "3D7B517D4FD89EE58C53E0F642CC9BE42E7A8669B51A85E861DAFE118067CBFD",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Handles.dll",
+    "Length": 15656,
+    "SHA256": "985457A3E6A67E96A445EE0FB69B2D58BCDADC4C964253FB63E2D5061A36B050",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.InteropServices.dll",
+    "Length": 112464,
+    "SHA256": "E5EB1679F3579C9141E2BB9DBDCE62624A623F38D299805CC1DE07BACD21841F",
+    "ModifiedUtc": "2026-08-22T13:33:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.InteropServices.JavaScript.dll",
+    "Length": 50984,
+    "SHA256": "5BA32BCDE2D72362DB2D6E02763ECE79FA35BC878B50493E956CE594307E997F",
+    "ModifiedUtc": "2026-08-22T13:33:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.InteropServices.RuntimeInformation.dll",
+    "Length": 15656,
+    "SHA256": "C26D9F94329422BD000F28F6C65FDC162BF9397A6D29E418A189D4CA49C5C3EC",
+    "ModifiedUtc": "2026-08-22T13:31:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Intrinsics.dll",
+    "Length": 17192,
+    "SHA256": "B07694EC91F3A200ACF0F8B37C6CE5FCF05126A9198AE156D839FA5CA8439DC5",
+    "ModifiedUtc": "2026-08-22T13:31:40.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Loader.dll",
+    "Length": 15656,
+    "SHA256": "9B9B2A4F0358D9146E76178DDB87D019BE380C78BAA7DAC853493D45DF089F03",
+    "ModifiedUtc": "2026-08-22T13:31:44.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Numerics.dll",
+    "Length": 354128,
+    "SHA256": "8AC94FB810C092A9297A903762E79A75AE07D7229D0721540C391F86D3D5D220",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Serialization.dll",
+    "Length": 17192,
+    "SHA256": "D565FC261CA98CBD14833821F777860291E8A0F775DE7AEE91778A9F6647F6F4",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Serialization.Formatters.dll",
+    "Length": 124712,
+    "SHA256": "5E8E957C6B7A63132555EDE5BCF5FE6A59934C83300E28074EC6E9845ECDD17F",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Serialization.Json.dll",
+    "Length": 15656,
+    "SHA256": "2FD71E3545DAB4FC89B3FE54D13A1142F26A0CF187EBE375B3F7FA210FCB2596",
+    "ModifiedUtc": "2026-08-22T13:31:56.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Serialization.Primitives.dll",
+    "Length": 38696,
+    "SHA256": "F96093940E64D8EEAD98C86DE9773D3C9D12C2B033BC6B1312AC88398303FDF3",
+    "ModifiedUtc": "2026-08-22T13:32:46.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Runtime.Serialization.Xml.dll",
+    "Length": 16680,
+    "SHA256": "EEDB66EA2CD1A26CC45A46D6631209CCBEC959AF82208872A93B3AE52F189222",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.AccessControl.dll",
+    "Length": 227112,
+    "SHA256": "CDC304F9DDB32023ADB8DB8953E56711C9B64462E4341D0B62E87CCD19DC7B10",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Claims.dll",
+    "Length": 100176,
+    "SHA256": "C53C8A7E95D8296F951872FDD2E6334D11C20BFFD4322F1A088773BF9DCAA3C2",
+    "ModifiedUtc": "2026-08-22T13:32:22.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.Algorithms.dll",
+    "Length": 17232,
+    "SHA256": "EB99AE7DBE058A1B015ABA6769CE1F65155B7FF51FF9A7203FCF6D7CDEA5FEF7",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.Cng.dll",
+    "Length": 16168,
+    "SHA256": "7319F97896D92A7D0729CF28DC6C4D1F797C1520B656EE01A780EEC726EC2C16",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.Csp.dll",
+    "Length": 16208,
+    "SHA256": "4002AF141E9CB29875B677841ADF64A9681E5672C2595492DCBC161460D4E121",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.dll",
+    "Length": 2549544,
+    "SHA256": "E0A839A540E47343B53A936B32D91599A3470005228D50FD0B896F8BBDCC65B0",
+    "ModifiedUtc": "2026-08-22T13:33:32.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.Encoding.dll",
+    "Length": 15656,
+    "SHA256": "994494AEC7760F40FADE2264AA7C13EEBAE36360F0B1399A7134BB19C9D58FDA",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.OpenSsl.dll",
+    "Length": 15656,
+    "SHA256": "1A8902BBAD1B577A98BEC62A8472105DC1E9A253E390F69FBE3D167E93206968",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.Primitives.dll",
+    "Length": 15656,
+    "SHA256": "194CCCEA9354BB248E44C954B5373F9069163F8F21524B3EE4B3185FE436BC15",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Cryptography.X509Certificates.dll",
+    "Length": 16680,
+    "SHA256": "7439C3B90BC2EE49A9275B28ED29052B4D48B45999AC1B7D25593033B1BB8DD6",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.dll",
+    "Length": 18256,
+    "SHA256": "D8EFD304765E859369698EFEF9B3CA707DEFA8E142721FE5605D7A2DE7D38375",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Principal.dll",
+    "Length": 15144,
+    "SHA256": "1D3E351058BE3A33214B23B308FE57F78CD6FD4D8FAD448FC84CBBE7376129F9",
+    "ModifiedUtc": "2026-08-22T13:31:48.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.Principal.Windows.dll",
+    "Length": 178000,
+    "SHA256": "2311A3F92971DE918943573DFB66E04E25C1D543663951EB24E8EB1A0DCD4251",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Security.SecureString.dll",
+    "Length": 15696,
+    "SHA256": "73AAC97072B7DEEFA4DE9647BF822162224F1452AD467841B989FF89D4D94595",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ServiceModel.Web.dll",
+    "Length": 16680,
+    "SHA256": "CE91013EE3A9A9D69A85E258F7749E6ECE488295D7CB66F7C1079F2E8678FC5E",
+    "ModifiedUtc": "2026-08-22T13:38:28.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ServiceProcess.dll",
+    "Length": 15696,
+    "SHA256": "63FC498C9D04E3C4345DFDB8016AD0639D54562DD7D8C707C072792C854DF944",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.Encoding.CodePages.dll",
+    "Length": 862032,
+    "SHA256": "226E216E33C94EF7594BDFFE670BA4DC5907151C113CB41AC9E9D570227E1765",
+    "ModifiedUtc": "2026-08-22T13:33:12.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.Encoding.dll",
+    "Length": 15696,
+    "SHA256": "5E347DB6B4F9B2746D50E1AC85BE2D9CC7DC4038FDE98AC4295BC7030C83CDA9",
+    "ModifiedUtc": "2026-08-22T13:31:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.Encoding.Extensions.dll",
+    "Length": 15656,
+    "SHA256": "8F51B9535DB64FE027A40D6076200B1A6B0889BF05F62BB8E68C3EB083C7F113",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.Encodings.Web.dll",
+    "Length": 124752,
+    "SHA256": "D20431F20D992E71A4E82E5F25C822474E2F4097D8527972D3D78EA1F26E47C3",
+    "ModifiedUtc": "2026-08-22T13:32:20.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.Json.dll",
+    "Length": 1890128,
+    "SHA256": "FA99F413BE21ED5F484A09093FE5F0BEBA7DE3062CF9CC9F847DBF8108DBA55A",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Text.RegularExpressions.dll",
+    "Length": 1034064,
+    "SHA256": "060BCC88A688E687FF1404B83B5FB5CF17E19EC57F33D5B8A48AB494DA83C134",
+    "ModifiedUtc": "2026-08-22T13:33:30.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.AccessControl.dll",
+    "Length": 75560,
+    "SHA256": "66D618B5522B3E4F7A3C7F2BD872FC378FA6F9BBDCA3636854EB1A8CB948E631",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Channels.dll",
+    "Length": 157480,
+    "SHA256": "AFC5DEB3C32B3F64BCED2025D0B01B316D41B691EBC6CCB1A2EC445AD4C15E39",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.dll",
+    "Length": 83792,
+    "SHA256": "6C32ED1BF8067E4169E8FEDDD15E6489B89D19D1C7AAE1520A551B57745D0A60",
+    "ModifiedUtc": "2026-08-22T13:34:00.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Overlapped.dll",
+    "Length": 15696,
+    "SHA256": "89FDE15F8E520C4BCBC6CBFDCEBA2BAED8670CDF52399A4CD7A21C6EFB276C1A",
+    "ModifiedUtc": "2026-08-22T13:31:54.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Tasks.Dataflow.dll",
+    "Length": 472872,
+    "SHA256": "A895B0C73D3A1AFC4D89C1D9E445ED447AF12864C25AAD2C4CB7398FF50AA934",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Tasks.dll",
+    "Length": 16680,
+    "SHA256": "F80B21F7DAE04377B73945456CABE25E2AB1F4B564095AED546C2AA571644567",
+    "ModifiedUtc": "2026-08-22T13:31:52.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Tasks.Extensions.dll",
+    "Length": 15696,
+    "SHA256": "F148E3A1414B7C2763AE21529AD79AD759F7CFD3C885256B64B0D2209DEC2613",
+    "ModifiedUtc": "2026-08-22T13:31:40.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Tasks.Parallel.dll",
+    "Length": 132904,
+    "SHA256": "6FA359BDBEBB56BE96339F244ED41658AFCEAD5E010074DA470DF1115D1E7699",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Thread.dll",
+    "Length": 15696,
+    "SHA256": "CE71949BB1EA67B686E799128582015EBF8758F1107E59E43F342ECE3F662930",
+    "ModifiedUtc": "2026-08-22T13:33:10.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.ThreadPool.dll",
+    "Length": 15656,
+    "SHA256": "58FBC6C4B9C72087152FD0F0670A527098C00B0C19BA8D0979D3CA5CE07C6936",
+    "ModifiedUtc": "2026-08-22T13:33:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Threading.Timer.dll",
+    "Length": 15144,
+    "SHA256": "9E4620846572F49AEB476AA99405071B4BBD0DF4323E4E232787ED73642B1EE5",
+    "ModifiedUtc": "2026-08-22T13:33:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Transactions.dll",
+    "Length": 16720,
+    "SHA256": "56ABFCA0350C111D077B3D86A2469EA3DA4FCCC1871F7C51A8B4FDB664BB0EDE",
+    "ModifiedUtc": "2026-08-22T13:33:16.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Transactions.Local.dll",
+    "Length": 640808,
+    "SHA256": "8D0283A311A16333FFB6F966D9765E4D8B866777AD99291A93B30DB349A15BC4",
+    "ModifiedUtc": "2026-08-22T13:33:38.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.ValueTuple.dll",
+    "Length": 15696,
+    "SHA256": "07A5347F6A597E5E0D72109EFA1A525697E8C3F74FB0029005500F8EBBF9187A",
+    "ModifiedUtc": "2026-08-22T13:31:42.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Web.dll",
+    "Length": 15144,
+    "SHA256": "BC260B3DB247AD9A6E4A82A275DA85C3691A41272CC745CB7EAEFCF1F31CC817",
+    "ModifiedUtc": "2026-08-22T13:33:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Web.HttpUtility.dll",
+    "Length": 63272,
+    "SHA256": "2CEDEF51B0A2C2B84240583339ECF2422C650E3388AA46F3494160B93B673887",
+    "ModifiedUtc": "2026-08-22T13:33:36.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Windows.dll",
+    "Length": 15696,
+    "SHA256": "716EEE98CEEE87D38F0B301224462F8442AA793F4B1B9C3FFAC315753320AB37",
+    "ModifiedUtc": "2026-08-22T13:33:06.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.dll",
+    "Length": 23376,
+    "SHA256": "277A84BA155FE7808A514F32694A8157EC9F0EEEEF00EF9643E5250004054FF0",
+    "ModifiedUtc": "2026-08-22T13:33:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.Linq.dll",
+    "Length": 15696,
+    "SHA256": "AE04903B25717FA4695E7E63489091F0D461E791E0BD264C6C85250D668F540D",
+    "ModifiedUtc": "2026-08-22T13:33:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.ReaderWriter.dll",
+    "Length": 21840,
+    "SHA256": "8E48FED4D12BCFFFF01E8059CAAFB564697275797D2F5EC6823FDD82B87FE938",
+    "ModifiedUtc": "2026-08-22T13:33:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.Serialization.dll",
+    "Length": 16208,
+    "SHA256": "489694401C60905CB6DCA8EF0BF738CB609CD45B337126A01C825B913086BA43",
+    "ModifiedUtc": "2026-08-22T13:33:04.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.XDocument.dll",
+    "Length": 15696,
+    "SHA256": "3FF858607DE5146051498A7124EF983BEA280D86E165F993516C6C26AF81CFB5",
+    "ModifiedUtc": "2026-08-22T13:33:08.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.XmlDocument.dll",
+    "Length": 15656,
+    "SHA256": "A50B9B3A03596E36E73E7A7D54F4D018E8DCFAA7FE79E8CF900AF8838EF3EC36",
+    "ModifiedUtc": "2026-08-22T13:33:04.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.XmlSerializer.dll",
+    "Length": 17744,
+    "SHA256": "0B7D057C2B5B2272E8D4096A755EDFD96F3CF03AB9AAA3FEF54B462BF48D517E",
+    "ModifiedUtc": "2026-08-22T13:33:14.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.XPath.dll",
+    "Length": 15656,
+    "SHA256": "C817B11C58D95FA942FBC62A4CFA8219E16DAFA5641EB004CB2BE424028ED5D8",
+    "ModifiedUtc": "2026-08-22T13:33:02.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Xml.XPath.XDocument.dll",
+    "Length": 30504,
+    "SHA256": "5BCD27A7E93515B745993F6DDA51391033883CB8A1A8A2E3DAD5CAED3548F0DA",
+    "ModifiedUtc": "2026-08-22T13:32:50.0000000Z"
+  },
+  {
+    "Path": "C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\WindowsBase.dll",
+    "Length": 16208,
+    "SHA256": "0EC46A38F29A234B9A4D0AE9364C8322F661A47C831C5B948F2787B7CA12DBBD",
+    "ModifiedUtc": "2026-08-22T13:38:28.0000000Z"
+  }
+]

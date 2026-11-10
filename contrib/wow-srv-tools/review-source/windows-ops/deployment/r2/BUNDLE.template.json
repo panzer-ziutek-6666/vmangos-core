@@ -1,0 +1,15 @@
+﻿{
+    "VersionRoot":  "C:\\ProgramData\\VMANGOS\\AdminPanelBridge\\core-e8160a07-full-local-r1-v2",
+    "Release":  {
+                    "id":  "core-e8160a07-full-local-r1",
+                    "sha256":  "4225AEF75FAE50905DAF1BABE258C35C1C3663E53870AB03F621E7E45F0084A1"
+                },
+    "CapabilitySHA256":  null,
+    "Operation":  null,
+    "Phase":  "Prepared",
+    "CollectorVersion":  "COLLECTOR-RELEASE-MANIFESTS-R4-R2-WOW-SRV-20261025-2348",
+    "Schema":  1,
+    "CollectorCodeSHA256":  "D92D2F7984757C98EB32A3908ECCAF688E42007BF69EDB829CDD1E0225FFACA7",
+    "Approved":  false,
+    "PlanSHA256":  "FD1C405883A520F03EB10FAB8A822D2791E2689CDCD9A1A3A3B9E869C2759AF2"
+}

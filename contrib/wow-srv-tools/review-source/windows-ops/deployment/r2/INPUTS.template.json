@@ -1,0 +1,6 @@
+﻿{
+    "SourceDefaults":  "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-candidate.ini",
+    "DevLedger":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\PHASE-LEDGER.json",
+    "CandidateManifest":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\CANDIDATE-MANIFEST.json",
+    "SourceMigrationDefaults":  "C:\\ProgramData\\VMANGOS\\R3Approvals\\source-backup-candidate.ini"
+}

@@ -1,0 +1,9 @@
+﻿# wow-ops — odrębne repo i adaptacja read-only
+
+Baza: `tomaszkubiak-courses/wow-ops`, lokalny HEAD `1a6c64d7cf434dbb7477ada61c85a2d4c855163d`, branch wow-srv-adaptation. Nie wykonano fetch/merge/rebase/push. Snapshot źródeł upstream dołączono jako zależność wraz z jego MIT LICENSE i autorstwem; nasze zmiany to wyłącznie app.js, config.js, sections/accounts.js, nowy wow-srv-readonly.js i trzy nowe pliki testów. Patch siedmiu plików sprawdzono i nałożono na czystą izolowaną bazę tych plików; wynik zgodny treściowo, normalizacja wyłącznie CRLF/LF/BOM.
+
+Adaptacja blokuje mutujące metody przed handlerem, wyłącza konstrukcję realnego klientaSOAP, nie utrwala audytu i poprawia renderowanie kont z config.soap=null. Zależności: Node24.21.0, package-lock, fastify/formbody/static/mysql2. Nie zawiera node_modules. Trzy testy adaptacji:12/12 PASS, supplied fakepools/transports i in-memoryinject; nie otwarto serwera ani nie połączono się z DB/SOAP.
+
+Publiczny config.example w tej kopii ma placeholdery i nieoperacyjny port0. Domyślne `npm test` w kopii ograniczono do trzech bezpiecznych testów; to nowa korekta opakowania, nie część historycznego siedmioplikowego patcha. Nie uruchamiać hurtowo pozostałych testów upstream: część wymaga lub mutuje żywąDB. Znany legacy db-accounts test wykluczono. Nie wywoływać npmstart/import-dbc/extract-art w ramach review.
+
+Historyczny Step34HTTP_SMOKE pozostaje niezaliczony: odczyt Allow z niewłaściwej kolekcji nagłówków. Brak grantu do referencyjnych tabelDBC i brak artassets to odrębne braki live; nie nadano nowych praw ani nie odtwarzano danych. Nowe offline12PASS nie zamyka tych pozycji. Nie utożsamiać Nodewow-ops z WindowsAuth/IISControlCenter ani jego sterowaniem.

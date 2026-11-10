@@ -1,0 +1,38 @@
+﻿{
+    "CPlusPlusBuild":  "NOT_NEEDED_UNCHANGED_SOURCE",
+    "Panel":  {
+                  "TestNativeExit":  0,
+                  "TesterBuildNativeExit":  0,
+                  "Tests":  34,
+                  "SDK":  "10.0.401",
+                  "Scope":  "Full source build and actual new assembly/PDB; synthetic telemetry fixture, no live boundary",
+                  "BuildNativeExit":  0,
+                  "AssemblySHA256":  "E93A6413FB1FF8ED9CCDE2F511B08F3079363DCA24FF29D511038FA1A2CBBAC1",
+                  "Failed":  0
+              },
+    "CoreBuild":  "NOT_RUN",
+    "Postprocessing":  {
+                           "Resolved":  "Parsed existing spec-format summary tests12/pass12/fail0; no build/test rerun",
+                           "OriginalWrapper":  "FAIL after all real tests passed; regex expected TAP only"
+                       },
+    "WowOps":  {
+                   "Passed":  12,
+                   "NativeExit":  0,
+                   "Failed":  0,
+                   "Node":  "v24.21.0",
+                   "Tests":  12,
+                   "PackageLockSHA256":  "D433BB722A66BFC2808A8DEBF5A84009B8B43F4A0F19DC1DDBF4BAEC2EA550F1",
+                   "Scope":  "Three read-only adaptation files; fake pools/transports; no listen, SQL, SOAP or account action"
+               },
+    "Result":  "PASS",
+    "Accounts":  {
+                     "Fixture":  "NOT_RUN",
+                     "SourcePins":  "A140 and A154 accepted source bindings verified",
+                     "NativeVerifyR4":  "NOT_RUN",
+                     "CoreTests":  121,
+                     "NativePolicyTests":  961,
+                     "LiveReady":  false,
+                     "Rebuilt":  false,
+                     "BoundaryModelTests":  153
+                 }
+}

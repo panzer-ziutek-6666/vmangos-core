@@ -1,0 +1,122 @@
+﻿{
+    "schemaVersion":  1,
+    "releaseId":  "core-e8160a07-full-local-r1",
+    "sourceCommit":  "e8160a07e67708f75597924e936390bfb1be52c7",
+    "runtimeRevisionPrefix":  "e8160a07e67708f75597",
+    "purpose":  "production",
+    "status":  {
+                   "build":  "PASS",
+                   "configure":  "PASS",
+                   "verifier":  "PASS"
+               },
+    "artifacts":  [
+                      {
+                          "sha256":  "30E0D6D437DE3CB422544444F9793605BFC3B2A08AB642D57DDC34272345C16B",
+                          "name":  "mangosd.exe",
+                          "bytes":  23099904,
+                          "sourcePath":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\mangosd.exe"
+                      },
+                      {
+                          "sha256":  "EA22B39DF7539A180FD3CC7FB919CEB987632D479E4AF8E0A6199DD8BE093CB2",
+                          "name":  "realmd.exe",
+                          "bytes":  876032,
+                          "sourcePath":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\candidate-runtime\\realmd.exe"
+                      }
+                  ],
+    "patches":  [
+                    {
+                        "sha256":  "470D65FBB033EB5CF0DC3358166E5E0378B0EE67034B1575B516298121C4F6F8",
+                        "path":  "src/game/Chat/Chat.cpp"
+                    },
+                    {
+                        "sha256":  "AF3D9881382F3DDB7ACD3BCC87129702F97946B392AF52FAA0314D7E2A556E48",
+                        "path":  "src/game/Handlers/ChatHandler.cpp"
+                    },
+                    {
+                        "sha256":  "8DF715DC93A030E8F2E2EDB2A6982050ADB1A8B6D3187F4F451CD862C201EA35",
+                        "path":  "src/game/Objects/Player.cpp"
+                    },
+                    {
+                        "sha256":  "8C6CC933F7940374C7C8B51FA464E07AD59405E871B85A6E18AD5D81CE6C3D54",
+                        "path":  "src/mangosd/Master.cpp"
+                    },
+                    {
+                        "sha256":  "32BEF97C7919C029AA6494488C6A44BBB0FDDCCE445AA51EAC07A11A33B0146A",
+                        "path":  "src/mangosd/WorldRunnable.cpp"
+                    },
+                    {
+                        "sha256":  "4118C18113B2206BD3CEE335DD9AA9979500E14012425589A2258ED1603DABE1",
+                        "path":  "src/mangosd/remote/RemoteAccess/RASocket.cpp"
+                    },
+                    {
+                        "sha256":  "02AD22DA7F18E77501BF0028BCE93CAECFD94E7D491B1F8934DE83A8CECA5D8C",
+                        "path":  "src/mangosd/remote/soap/MaNGOSsoap.cpp"
+                    },
+                    {
+                        "sha256":  "91FC38D5705E5F877F59A569CD9F094B94F0C74AFBF77346FA9C5551E595AEEE",
+                        "path":  "src/realmd/Main.cpp"
+                    },
+                    {
+                        "sha256":  "3E8567BFC7C3CE3F4C4B288E997C18542A83DCB1928CBE82752391638E7266AA",
+                        "path":  "src/shared/Database/DatabaseMysql.cpp"
+                    },
+                    {
+                        "sha256":  "F2B0034EC4C0422C19CE1627A16C2A8073F040605DAEE645296DBB6110F465EC",
+                        "path":  "src/shared/Database/DatabaseMysql.h"
+                    },
+                    {
+                        "sha256":  "A610057C296E89411E8F520AE772A8F9E2EA23C1F1237628ADAB6F5CBBF3B060",
+                        "path":  "src/shared/Database/SqlDelayThread.cpp"
+                    },
+                    {
+                        "sha256":  "8E55E72FA0D59F877A86256E36DC0E4F4D122510625A13250912E0FBCEA5B0BB",
+                        "path":  "src/shared/Database/SqlDelayThread.h"
+                    },
+                    {
+                        "sha256":  "E36E46FAD02C989386255FD627AAC89911C1132E5898489702698A011A1DF7CA",
+                        "path":  "src/shared/Database/SqlOperations.cpp"
+                    },
+                    {
+                        "sha256":  "5575D23CA2B3492F5139D5E2E7484BF4E70D12B6363C09D66F3B98256EAE9BD2",
+                        "path":  "src/shared/Database/SqlOutcome.h"
+                    },
+                    {
+                        "sha256":  "07F27F9809B6743BA70F0439ED0462C865169D4FE59E1BB4C6E1F9CFF2D4F80B",
+                        "path":  "src/shared/ServiceWin32.cpp"
+                    }
+                ],
+    "evidence":  [
+                     {
+                         "sha256":  "D3FD840BFDC65D5852612DA64005F2945689D3A66308525CD8B7B059878A4DBB",
+                         "path":  "C:\\Scripts\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210-PAYLOAD\\CANDIDATE-MANIFEST.json"
+                     },
+                     {
+                         "sha256":  "046419E0F8FC7FCADDF0B59FEE7384998AD979B5704E5AE69C3C082F14966535",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210\\BUILD-VERIFY-RESULT.json"
+                     },
+                     {
+                         "sha256":  "C1291A4DE6C56FC5F9668C1B5D02AD5F0E1347457B2B3AD8B39BC5F1D16EAC0D",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\PHASE-LEDGER.json"
+                     },
+                     {
+                         "sha256":  "CCB13E008EC41193A7E5E30816F971EF4354DFFCA86F8F4FEDB0FCB9ED80FAA3",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevMigrations-7ddeb3c13abd4ca48f8b4e795e80bcc6\\RECEIPT.json"
+                     },
+                     {
+                         "sha256":  "303676A84B9B24B20E4199D224E404B32429337D2488699E1D5BE46AA027D572",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevMigrations-7ddeb3c13abd4ca48f8b4e795e80bcc6\\INDEPENDENT-VERIFIER.json"
+                     },
+                     {
+                         "sha256":  "A751F8AFA490A68095E7D6ED93D1B8CEE644FBB4DDD73261DD9CA968AE935156",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevAccept-e56bd2d4340e412a82b9a5c4b65abb3e\\RECEIPT.json"
+                     },
+                     {
+                         "sha256":  "5A81E15733A486F58B253A309E6959E7FF607969AC067ED3B3874CB08C79EE9C",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\COREUPDATE-DEV-CONTINUE-R3-WOW-SRV-20261109-0850\\runs\\DevAccept-e56bd2d4340e412a82b9a5c4b65abb3e\\INDEPENDENT-VERIFIER.json"
+                     },
+                     {
+                         "sha256":  "2AB8D1345E885D82473E78F909AF422F4D6ACA5B7D41F73988307A528E58F9FC",
+                         "path":  "C:\\GRY\\wow\\diagnostics\\CORE-FULL-UPDATE-CANDIDATE-R1-WOW-SRV-20261109-0210\\SOURCE-BEFORE-BUILD.tsv"
+                     }
+                 ]
+}
