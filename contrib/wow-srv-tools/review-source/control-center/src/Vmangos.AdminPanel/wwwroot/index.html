@@ -42,7 +42,7 @@
     <section class="card svc"><div class="svc-h"><div class="svc-name">MySQL</div><div class="state wait" id="mysql"><span class="dot"></span>Loading...</div></div><div class="port">3306</div><div class="sub">database listener</div></section>
     <section class="card svc"><div class="svc-h"><div class="svc-name">realmd</div><div class="state wait" id="realmd"><span class="dot"></span>Loading...</div></div><div class="port">3724</div><div class="sub">authentication listener</div></section>
     <section class="card svc"><div class="svc-h"><div class="svc-name">mangosd</div><div class="state wait" id="mangosd"><span class="dot"></span>Loading...</div></div><div class="port">8085</div><div class="sub">world readiness</div></section>
-    <section class="card svc"><div class="svc-h"><div class="svc-name">SOAP</div><div class="state wait" id="soap"><span class="dot"></span>Loading...</div></div><div class="port">7878</div><div class="sub">127.0.0.1 only</div></section>
+    <section class="card svc"><div class="svc-h"><div class="svc-name">SOAP</div><div class="state wait" id="soap"><span class="dot"></span>Loading...</div></div><div class="port">7878</div><div class="sub">Expected: loopback only</div></section>
 
     <section class="card pad runtime"><div class="title">Runtime status</div><table class="table">
       <tr><td>Host</td><td id="host">—</td></tr>
@@ -180,7 +180,9 @@ async function refresh(){
     renderSvc('mangosd',s.services.mangosd);
 
     const soap=document.getElementById('soap');
-    soap.innerHTML=`<span class="dot"></span>${s.soap.listening?'LISTEN':'DOWN'} · ${s.soap.localOnly?'localhost only':'EXPOSED'}`;
+    const soapLabel = !s.soap.listening ? 'DOWN'
+      : s.soap.localOnly ? 'LISTEN · localhost only' : 'LISTEN · non-loopback';
+    soap.innerHTML=`<span class="dot"></span>${soapLabel}`;
     soap.className='state '+(s.soap.listening&&s.soap.localOnly?'ok':'bad');
 
     document.getElementById('footerStatus').textContent=
